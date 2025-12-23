@@ -1,62 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Search</title>
-
-  <script src="https://unpkg.com/lunr/lunr.js"></script>
-
-  <style>
-    body {
-      font-family: system-ui, sans-serif;
-      max-width: 800px;
-      margin: auto;
-      padding: 2rem;
-    }
-
-    input {
-      width: 100%;
-      padding: 0.5rem;
-      font-size: 1rem;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      margin: 0.5rem 0;
-    }
-  </style>
-</head>
-<body>
-
-<h1>Search</h1>
-
-<input id="search-box" type="text" placeholder="Type to search...">
-
-<ul id="results"></ul>
-
 <script>
-    
-document.getElementById('search-box').addEventListener('input', function () {
+let idx;
+let pages = [];
 
-  console.log("INPUT EVENT WORKS");          // ← 1
-  console.log("QUERY:", this.value);          // ← 2
-  console.log("IDX:", idx);                   // ← 3
+console.log("SCRIPT START");
+
+// 1️⃣ Загружаем search.json
+fetch('/kina-rutul-dict/search.json')
+  .then(res => res.json())
+  .then(data => {
+    console.log("SEARCH.JSON LOADED", data);
+
+    pages = data;
+
+    // 2️⃣ Строим индекс Lunr
+    idx = lunr(function () {
+      this.ref('id');
+      this.field('title');
+      this.field('content');
+
+      pages.forEach(page => this.add(page));
+    });
+
+    console.log("LUNR INDEX READY");
+  })
+  .catch(err => {
+    console.error("FAILED TO LOAD search.json", err);
+  });
+
+// 3️⃣ Обработка ввода
+document.getElementById('search-box').addEventListener('input', function () {
+  console.log("INPUT EVENT WORKS");
 
   const query = this.value.trim();
+  console.log("QUERY:", query);
+
   const ul = document.getElementById('results');
   ul.innerHTML = '';
 
   if (!query || !idx) {
-    console.log("EARLY RETURN");              // ← 4
+    console.log("NO QUERY OR IDX NOT READY");
     return;
   }
 
   const results = idx.search(query);
-  console.log("RESULTS:", results);           // ← 5
+  console.log("RESULTS:", results);
 
   results.forEach(r => {
     const page = pages.find(p => p.id === r.ref);
@@ -68,7 +55,3 @@ document.getElementById('search-box').addEventListener('input', function () {
   });
 });
 </script>
-
-
-</body>
-</html>
