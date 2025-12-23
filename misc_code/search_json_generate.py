@@ -23,7 +23,7 @@ for _, r in df.iterrows():
         "id": id,
         "title": r["Lexical entry"],
         "content": content,
-        "url": f"/kina-rutul-dict/words/{id}"
+        "url": f"/kina-rutul-dict/words/{id}.html"
     })
 
 with open("search.json", "w", encoding="utf-8") as f:
