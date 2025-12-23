@@ -1,3 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search</title>
+
+  <script src="https://unpkg.com/lunr/lunr.js"></script>
+
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Search</h1>
+
+<input id="search-box" type="text" placeholder="Type to search...">
+
+<ul id="results"></ul>
+
 <script>
 let idx;
 let pages = [];
@@ -55,3 +95,7 @@ document.getElementById('search-box').addEventListener('input', function () {
   });
 });
 </script>
+
+
+</body>
+</html>
