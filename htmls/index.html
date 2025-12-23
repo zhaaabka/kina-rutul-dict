@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionary of Kina Rutul</title>
+
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 1200px;
+            margin: auto;
+            padding: 2rem;
+        }
+
+        .tabs {
+            margin-top: 2rem;
+        }
+
+        .tab-buttons {
+            display: flex;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .tab-buttons button {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .tab-buttons button.active {
+            border-bottom: 2px solid black;
+            font-weight: bold;
+        }
+
+        .tab-content {
+            display: none;
+            padding-top: 1rem;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+
+    <script>
+        function openTab(id) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-buttons button').forEach(el => el.classList.remove('active'));
+
+            document.getElementById(id).classList.add('active');
+            document.getElementById('btn-' + id).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+
+<h1>Dictionary of Kina Rutul</h1>
+
+
+<p>This is the dictionary of the Rutul language (Lezgic < East-Caucasian; <a href='https://glottolog.org/resource/languoid/id/rutu1240'>rutu1240</a>), spoken in the settlement of Kina (Russia, Dagestan Republic).</p>
+
+<p>This dictionary was collected during the fieldwork in 2016-2023 of Linguistic convergence laboratory (HSE University). We are grateful for all the consultants who helped us in our work.</p>
+
+<p>The dictionary contains 1200+ lexical entries of different parts of speech (nouns, verbs, etc.), list of meanings collected for these entries, exemplifying sentences and also some morphological information.</p>
+
+
+<div class="tabs">
+    <h1>How to cite</h1>
+    <div class="tab-buttons">
+        <button id="btn-text" class="active" onclick="openTab('text')">Plain text</button>
+        <button id="btn-bibtex" onclick="openTab('bibtex')">BibTeX</button>
+    </div>
+
+    <div id="text" class="tab-content active">
+        <pre>Dictionary of Kina Rutul.
+Moscow.
+<a href='https://lingconlab.github.io/kina-rutul-dict/'>https://lingconlab.github.io/kina-rutul-dict/</a></pre>
+    </div>
+
+    <div id="bibtex" class="tab-content">
+        <pre>@misc{alekseevaetal2025,
+  title = {Dictionary of Kina Rutul},
+  author = {A. Alekseeva and N. Beklemishev and M. Daniel and N. Dobrushina and K. Filatov and A. Ivanova and T. Maisak},
+  year = 2025,
+  publisher = {Linguistic Convergence Laboratory, HSE University},
+  address = Moscow,
+  url = <a href='https://lingconlab.github.io/kina-rutul-dict/'>https://lingconlab.github.io/kina-rutul-dict/</a>
+}</pre>
+    </div>
+</div>
+
+</body>
+</html>

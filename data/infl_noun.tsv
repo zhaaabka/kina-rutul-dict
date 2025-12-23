@@ -1,0 +1,680 @@
+lexeme_id	Lexical entry	Orthography	Glossing label	Gender	Attributive
+n1	ábɨr	абыр	behavior	3	abɨrdid
+n2	awán	аван	rope	4	awnád
+n3	awár	авар	avar	1	awárad
+n4	aʁsaqál	агъсахъал	aksakal	1	aʁsaqálad
+n5	aʁɨ́l	агъыл	corral	4	aʁɨ́lad
+n6	adát	адат	custom	4	adatad
+n7	azúkʼʷaj	азукӀвай	curdled_milk	3	azúkʼʷajed
+n8	ajʁɨ́r	айгъыр	stallion	3	ajʁɨ́rad
+n9	alwér	алвер	trade	4	alwerad
+n10	alláh	аллагь	Allah	NO DATA	alláhad
+n11	aχbazán	ахбазан	apricot	3	aχbazánad
+n12	áˤräbi	аӀраьби	carriage	4	aˤräbijed
+n13	aˤjná	аӀйна	glass	3	aˤjníjed
+n14	ará ~ aˤrá	ара ~ аӀра	distance	4	aˤrijid
+n15	áˤrab	аӀраб	sickle	3	áˤrabad
+n16	aˤq	аӀхъ	shadow	3	aˤqáˤd
+n17	babá	баба	elder_relative	1	babád
+n18	bábaj	бабай	grandmother	2	bábajdɨ
+n19	baʁ	багъ	garden	4	baʁdid
+n20	bahna	багьна	reason	NO DATA	baχnijid
+n21	badú	баду	trousers	3	badújed
+n22	baqʼáqʼaj	бакьакьай	tick	3	baqʼáqʼajed
+n23	baltá	балта	axe	4	baltɐ́jid
+n24	balúʁ	балугъ	fish	3	balʁúd
+n25	ban	бан	pasture	3	banád
+n26	bar	бар	burden2	3	bardid
+n27	barmák	бармак	headdress	3	barmakad
+n28	begʲ	бегʼ	side1	3	begíd
+n29	bejní	бейни	brain	4	bejníjed
+n30	bekʼʲ	бекӀʼ	tar	4	bekʼéldɨ
+n31	bel	бел	forehead	4	beldɨ
+n32	ber	бер	spade	4	berád
+n33	bibíčil	бибичил	swallow	3	bibíčiled
+n34	bicʼérxen	бицӀерхьен	spleen	3	bicʼerxenad
+n35	buʁáz	бугъаз	throat	3	buʁázad
+n36	bukʼʷ	букӀв	animal_lip	3	bukʼójid
+n37	buχɐ́jri	буха̂йри	fireplace	3	buχɐ́jrijed
+n38	bɐbɐdíd	ба̂ба̂дид	grandfather	1	bɐbɐdíddɨ
+n39	bɨz	быз	bumblebee	4	bɨzɨ́rdɨ
+n40	bɨláχ	былах	wellspring	3	bɨláχad
+n41	bɨlɨtʼ	былытӀ	penis	NO DATA	NO DATA
+n42	bɨrǯ	бырдж	financial_debt	4	NO DATA
+n43	bɨčʼ	бычӀ	flower	4	bɨčʼíd
+n44	waz	ваз	moon	3	wazɨ́rdɨ ~ wazɨldɨ
+n45	wakír ~ wakíl	вакир ~ вакил	wedding_witness	NO DATA	wakiled
+n46	walɨ́g	валыг	clothes	4	walgɨ́d
+n47	warlɨ	варлы	rich_man	NO DATA	warlɨjed
+n48	waχt	вахт	time1	3	waχtindid ~ waχtid
+n49	waˤʔší	ваӀъши	wild_animal	3	waˤʔšíjid
+n50	wirɨ́ʁ	вирыгъ	sun	3	wirʁɨ́d
+n51	wixʲ	вихьʼ	cattle_shed	4	wixíd
+n52	wɨgɨ́n	выгын	dog_fang	3	wɨgnád
+n53	wɨɣɨ́l	выгӀыл	husband	1	wɨɣlíd
+n54	wɨɣɨ́ldɨ	выгӀылды	man	NO DATA	wɨɣɨ́lnɨwdɨ
+n55	wɨ́zɨr	вызыр	sheep_shed	4	wɨ́zɨrad
+n56	wɨs	выс	sunny_slope	3	wɨ́sad
+n57	gag	гаг	father_in_law	1	gágdɨ
+n58	gágaj	гагай	uncle	1	gagajdɨ
+n59	gadá	гада	youngster	1	gɨdíjed
+n60	gaj	гай	aunt	2	gajdɨ
+n61	gardán	гардан	neck	3	gardánad ~ gardándɨ
+n62	gaˤš	гаӀш	starvation	3	gáˤšdɨ
+n63	gʷaláχ	гвалах	work.n	3	gʷaláχad
+n64	gʷarg	гварг	spine	3	gʷárgɨd
+n65	géǯej	геджей	beehive	3	géǯejed
+n66	gel	гел	lamb	3	gíldɨ
+n67	get	гет	cat	3	gitɨ́rdɨ
+n68	gígu	гигу	cuckoo	3	gígujed
+n69	gim	гим	meeting_area	3	gimɨ́d
+n70	girdáb	гирдаб	saw.n	3	girdábad
+n71	gičʼ	гичӀ	fear.n	3	gíčʼed
+n72	gurǯí	гурджи	georgian	1	gurǯíjed
+n73	güzgé	гуьзге	mirror	4	güzgíjid
+n74	gülégʲ	гуьлегʼ	lock.n	4	gülgǘd
+n75	ʁʷab	гъваб	root	3	ʁʷabád ~ ʁʷabɨ́ldɨ
+n76	ʁil	гъил	leg	4	ʁíldɨ ~ ʁílid
+n77	ʁílijdɨ	гъилийды	shoe	4	ʁílijdid
+n78	ʁubáʁ	гъубагъ	bee	3	ʁubʁúd
+n79	ʁul	гъул	window	3	ʁulíd
+n80	ʁuˤd	гъуӀд	partridge	3	ʁúˤdirdɨ
+n81	ʁuˤn	гъуӀн	shoulder	4	ʁuˤnád
+n82	ʁuˤrdígen	гъуӀрдиген	pillow	3	ʁuˤrdígenad
+n83	ʁɨlɨ́ʁ	гъылыгъ	egg	3	ʁɨlʁɨ́d
+n84	ʁɨˤ	гъыӀ	bridge	3	ʁɨˤd
+n85	ʁɨˤb	гъыӀб	frog	3	ʁɨˤbɨ́rdɨ
+n86	ʁɨˤbrí	гъыӀбри	eyelash	4	ʁɨˤbríjed
+n87	ʁɨˤld	гъыӀлд	summer	4	ʁɨ́ˤldid
+n88	ʁɨˤr	гъыӀр	hare	3	ʁɨˤrád
+n89	ʁɨˤrč	гъыӀрч	wildfowl	3	ʁɨˤrčéd
+n90	ʁɨˤrčéqan	гъыӀрчехъан	hunter	1	ʁɨˤrčéqandɨ ~ ʁɨˤrčéqanid
+n91	gɨbɨ́l	гыбыл	cloud	3	gɨblíd
+n92	gɨwáʔan	гыва́ъан	sock	4	gɨwấʔânid
+n93	gɨwɐ́li	гыва̂ли	plum	3	gɨwɐ́lijed
+n94	gɨlɨ́mat	гылымат	fur_coat	4	gɨlɨ́matdid
+n95	gɨmɨ́š	гымыш	silver	4	gɨmɨ́šed
+n96	gɐnín	га̂нин	mother_in_law	2	gɐníndɨ
+n97	gɨrcʼ	гырцӀ	chudu	4	gɨ́rčʼɨd
+n98	gɨtʼ	гытӀ	corn_ear	4	gɨtʼɐ́jid
+n99	gɨtʼí	гытӀи	stack	3	gɨtʼíjed
+n100	gɨˤχ	гыӀх	hook	4	gɨˤχájid
+n101	hawá	гьава	air	3	hawɨ́jid
+n102	hajwán	гьайван	animal	3	hajwánad
+n103	haqʼ	гьакь	hollow	4	háqʼad
+n104	háqʼal	гьакьал	mind	3	háqʼaled ~ háqʼaldɨ
+n105	hamqʼúdɨ	гьамкьуды	noon	4	hamqʼúdɨd
+n106	háraj	гьарай	shout	3	hárajed
+n107	haramzada	гьарамзада	fraudster	1	haramzadɐjed
+n108	haˤjáː	гьаӀйаа	conscience	3	NO DATA
+n109	haˤqʼ	гьаӀкь	law	4	haˤqʼdɨ
+n110	haˤráqʼi	гьаӀракьи	vodka	4	haˤráqʼijed
+n111	haˤfdá	гьаӀфда	week	4	haˤfdɨ́
+n112	hejwán	гьейван	horse	3	hejwánad
+n113	héjeg	гьейег	cauldron	3	héjegad
+n114	heš	гьеш	caraway	3	héšid
+n115	huʁál	гьугъал	rain	4	huʁlád
+n116	huqʼúl	гьукьул	head	3	huqʼlíd
+n117	huˤrmet ~ huˤrmat	гьуӀрмет ~ гьуӀрмат	respect	3	huˤrmetdid ~ huˤrmɐtdid
+n118	hɨkɨ́jid ~ hakɨ́jed	гьыкыйид	fairy_tale	4	hákɨjedad
+n119	hɨnɨ́š	гьыныш	God	1	hɨnčíd
+n120	ɣal	гӀал	mouth	4	ɣɐ́lid ~ ɣaldɨ
+n121	ɣam	гӀам	awn	3	ɣamɨ́ldɨ
+n122	ɣar	гӀар	snake	3	ɣárad
+n123	ɣárɣal	гӀаргӀал	oat	3	ɣárɣaled
+n124	ɣɨrɨ́ɣ	гӀырыгӀ	stomach	3	ɣɨrɣɨ́d
+n125	dawár	давар	cattle	NPL	dawárad
+n126	dawát	дават	wedding	3	dawátad
+n127	daʁmá ~ damʁá	дагъма ~ дамгъа	scar1	4	damʁɨjid
+n128	daʁɨstan	дагъыстан	Daghestan	3	daʁɨstandid ~ daʁɨstanad
+n129	dahár	дагьар	stone	3	dahrád
+n130	dádal	дадал	rooster	3	dádaled
+n131	daj	дай	foal	3	dajéd
+n132	dal	дал	branch	3	dálɨrdɨ
+n133	dam	дам	forest	4	dámɨd
+n134	damár	дамар	vein	3	damrad
+n135	dan	дан	cheek	3	danɨd
+n136	daná	дана	bull	3	danɨ́jid
+n137	dáraku	дараку	roof_roller	4	dárakujed
+n138	daráqʼdɨ	даракьды	egg_yolk	4	NO DATA
+n139	darwáza	дарваза	gate	4	darwázajed
+n140	darc	дарц	lesson	4	darcád
+n141	daʔ	даъ	foremilk	3	dáʔad
+n142	daˤq	даӀхъ	back_of_head	4	daˤqáldɨ
+n143	daˤʔwí	даӀъви	war	3	daˤʔwíjed
+n144	dewé	деве	camel	3	dewéjed
+n145	degá	дега	wickiup	4	degɨ́jɨd
+n146	derjáh	дерйагь	sea	3	derjáhad
+n147	ӡ̌ad	джад	forge	4	ӡ̌ádad
+n148	ǯaláχ	джалах	joint	4	ǯalaχad
+n149	ǯam	джам	bowl	3	ǯamad
+n150	ǯamaːt ~ ǯamaˤʔt	джамаат ~ джамаӀъат	folk	3	ǯamaˤʔtɨd
+n151	ǯan	джан	body	4	ǯendíd
+n152	ǯandák	джандак	animal_carcass	4	ǯandakad
+n153	ǯar	джар	sour_cream	3	ǯarád
+n154	ӡ̌ʷel	джвел	sheaf	3	ӡ̌ʷeled
+n155	ǯehʲrá	джегьра	spinning_wheel	3	ǯehʲrijid
+n156	ǯib	джиб	pocket	3	ǯíbad
+n157	ǯíwɨr	дживыр	roe	3	ǯíwɨrad
+n158	ǯigá	джига	place2	3	ǯigɨ́jid
+n159	ǯihíl	джигьил	young	1	ǯihíled
+n160	ӡ̌il	джил	floor	3	ӡ̌ilíd
+n161	ǯins	джинс	jeans	NO DATA	ǯinsɨd
+n162	ǯunúkʼ	джунукӀ	hawk	3	ǯunkʼud ~ ǯunukʼad
+n163	ǯɨbɨ́r	джыбыр	tail	3	ǯibrɨ́d
+n164	ʒɨ́ʒɨχ	дзыдзых	ant	3	ʒɨ́ʒɨχad
+n165	ӡɨr	дзыр	copper	4	ӡɨrad
+n166	dibír	дибир	mullah	1	dibírad
+n167	did	дид	father	1	díddɨ
+n168	dikʼáj	дикӀай	clay_pot	4	dikʼajed
+n169	dunʁúz	дунгъуз	pig	3	dunʁuzad
+n170	dunk	дунк	tree_stump	4	dúnkad
+n171	dur	дур	spoon	4	durúd
+n172	dur	дур	name	3	durúd
+n173	dustáʁ	дусдагъ	prison	3	dustaʁdid
+n174	dust	дуст	friend1	1	dustad
+n175	duχ	дух	son	1	duχardɨ
+n176	dušmán	душман	enemy	1	dušmanad
+n177	düzém	дуьзем	valley	4	düzemad
+n178	dükár	дуькар	infant	1	dükrád
+n179	dükʼʲ	дуькӀʼ	millet	3	dükʼǘd
+n180	dültí	дуьлти	lake	3	dültijed
+n181	dünja	дуьнья	world	3	dünjadɨ
+n182	duʔáˤ	дуӀъаӀ	prayer	4	duʔuˤjid
+n183	dɨd	дыд	fly	3	dɨdɨ́rdɨ ~ dɨdad
+n184	dɨlán	дылан	plough	4	dɨlɨ́ndid
+n185	dɨn	дын	sheep_wool	4	dɨnid
+n186	dɨrmɨχ	дырмых	rake	NO DATA	čʼɨχáˤrad
+n187	ébɨr	ебыр	blood	3	ébɨrdid
+n188	egˠ	ег	horseshoe	3	egáldɨ
+n189	edémi	едеми	person1	1	edémijed
+n190	ékul	екул	nest	4	ékuled
+n191	ermeni ~ armʲan	ермени ~ армян	armenian	1	ermenijid ~ armenindɨ
+n192	eχɨ́ːr	ехыыр	end	NO DATA	NO DATA
+n193	eč	еч	apple	3	íčirdɨ
+n194	zaz	заз	thorn	3	zazɨldɨ
+n195	zamána	замана	time2	3	zamanajid
+n196	zaráfat	зарафат	joke	3	zarafatdid
+n197	zelé	зеле	leech	3	zeléjed
+n198	zer	зер	cow	3	zírdɨ
+n199	zímag	зимаг	bracelet	3	zímagad
+n200	zindán	зиндан	anvil	3	zindanad
+n201	zinǯír	зинджир	chain	3	zinǯirad
+n202	zúba	зуба	thigh	3	zúbojed
+n203	zuqʼʷáˤl	зукьваӀл	dogwood	4	zuqʼʷáˤled
+n204	zur	зур	urine	4	zurud
+n205	züzéngʲ ~ jüzéngʲ	зуьзенгʼ ~ йуьзенгʼ	stirrup	4	jüzenged
+n206	iǯ	идж	earmark	4	iǯejid
+n207	iǯilás	иджилас	gathering	3	iǯilásad
+n208	ijési	ийеси	master	1	ijésijed
+n209	ijsán ~ insán	ийсан ~ инсан	person	1	insánad
+n210	iqʼ	икь	urbech	3	íqʼad
+n211	il	ил	smell	4	ildíd
+n212	ílesdɨ	илесды	food	4	ílesdid
+n213	ilčí	илчи	swat	1	ilčíjed
+n214	irejχáˤn	ирейхаӀн	basil	4	irejχáˤnad
+n215	irín	ирин	pus	4	irínad
+n216	isítma	иситма	fever	3	NO DATA
+n217	iskʼám	искӀам	table	3	iskʼámad
+n218	it	ит	honey	4	ítɨd
+n219	iχtílet	ихтилет	story	4	eχdiletad
+n220	ičí	ичи	abdomen	4	ičíjed
+n221	išɨ́ʁ	ишигъ	light	4	išʁɨ́d
+n222	jazná	йазна	son_in_law	1	jaznájed
+n223	jak	йак	meat	4	jígɨd
+n224	jakʷ	йакв	morning	4	jakʷád
+n225	jalɨ́ʁ	йалыгъ	headscarf	3	jalɨ́ʁad
+n226	jamág	йамаг	meal	4	jamágad
+n227	jardúst	йардуст	friend2	1	jardustad
+n228	jaχʷ	йахв	loom	4	NO DATA
+n229	jac	йац	ox	3	jacad
+n230	jac	йац	capra_caucasica	3	jacad
+n231	jezúb	йезуб	grain1	3	jezúbad
+n232	jer	йер	place	3	jerad
+n233	jerí	йери	half	4	jerijid
+n234	jetím	йетим	orphan	1	jetímad
+n235	jiz	йиз	snow	4	jizɨ́rdɨ ~ jizɨ́ldɨ
+n236	jiqʼ	йикь	middle	4	jiqʼad
+n237	jikʼʲ	йикӀʼ	heart	4	jikʼíd
+n238	jíleg	йилег	iron	4	jílegad
+n239	jímel	йимел	donkey	3	jímeled
+n240	jis	йис	moth	3	jisɨ́rdɨ
+n241	jíxaˤlʲ	йихьаӀлʼ	mole	NO DATA	NO DATA
+n242	juldáš	йулдаш	friend3	1	juldašed
+n243	jurʁán	йургъан	blanket	3	jurʁánad
+n244	juš	йуш	night	4	jušéd
+n245	jǘtʼel	йуьтӀел	knot.n	4	jǘtʼeled
+n246	juˤχ	йуӀх	birch	3	júˤχud
+n247	jɨʁ	йыгъ	daytime	4	jɨʁád
+n248	jɨˤχ	йыӀх	marrow	4	jɨˤχɨˤd
+n249	jɨ́ˤχɨn	йыӀхын	wound	4	jɨˤχɨˤned rang
+n250	kantʼ	кантӀ	knife	4	kántʼid
+n251	kapɨ́r	капыр	dagger	4	kapɨrad
+n252	kar	кар	thing	4	kardid
+n253	kafán	кафан	shroud	3	NO DATA
+n254	kač	кач	horn	4	qʼačʼáldɨ
+n255	kʷam	квам	hole	3	kʷámɨrdɨ
+n256	kellé	келле	skull	3	kellíjid
+n257	kerkí	керки	hoe	4	kerkíjed
+n258	kef	кеф	pleasure	NO DATA	kefdɨ
+n259	kilít	килит	door_bolt	3	NO DATA
+n260	kitáb	китаб	book	4	kitábad
+n261	klass	класс	class	NO DATA	klassad
+n262	kow	ков	heel	3	kowɨ́d
+n263	kowχá	ковха	foreman	1	kowχɨ́jed
+n264	kub	куб	namaz	3	kúbad
+n265	kubúk	кубук	foam	4	kubkúd
+n266	kul	кул	bush	3	kúlɨrdɨ ~ kúlurdɨ
+n267	kulák	кулак	wind	3	kulkúd
+n268	kumág	кумаг	help.n	NO DATA	kumɐ́gdid
+n269	kundé	кунде	small_dough_circle	3	kundíjid
+n270	kura	кура	bread_oven	3	kurɐ́jid
+n271	kursí	курси	stool	3	kursíjid
+n272	kurúg	куруг	bellows	3	kurugad
+n273	kurús	курус	appearance	3	kursúd
+n274	kuč	куч	she_dog	3	kučíd
+n275	kuš	куш	corner	3	kušíd
+n276	külégʲ	куьлегʼ	elbow	4	külgǘd
+n277	kümʁár	куьмгъар	chimney	3	kümʁárad
+n278	ɢab	къабыр	dishes	4	ɢabad
+n279	ɢaʁ	къагъ	scabbard	4	ɢaʁɨldɨ
+n280	ɢaz	къаз	goose	3	ɢázɨrdɨ
+n281	ɢalá	къала	tower	4	ɢalɨjid
+n282	ɢaláj	къалай	tin	4	ɢalɐjid
+n283	ɢamčí	къамчи	whip	3	ɢamčíjed
+n284	ɢarg	къарг	ram	3	ɢárgɨd
+n285	ɢarí	къари	wife	2	ɢaríjed
+n286	ɢatír	къатир	mule	3	ɢatírad
+n287	ɢač	къач	eyebrow	3	ɢačilɨd ~ ɢačildɨ
+n288	ɢačáχ	къачах	outlaw	1	ɢačáχad
+n289	ɢaˤbáj	къаӀбай	chaff	4	ɢaˤbɐ́jed
+n290	ɢaˤcʼ	къаӀцӀ	tongs	3	ɢaˤcʼaldɨ
+n291	ɢer	къер	dandruff	4	ɢerád
+n292	ɢizíl	къизил	gold	4	ɢizíled
+n293	ɢiráʁ	къирагъ	edge	4	ɢirʁɨ́d
+n294	ɢow	къов	ceiling	4	ɢowɨ́d
+n295	ɢuj	къуй	pit	3	ɢujéd
+n296	ɢum	къум	sand	4	ɢumɨ́jid
+n297	ɢunší	къунши	neighbor	1	ɢunšíjed
+n298	ɢurʁúšin	къургъушин	lead	4	ɢurʁúšined
+n299	ɢucʼ	къуцӀ	wood_chip	4	ɢucʼúd
+n300	kɨb	кыб	dung_fuel	3	kɨbɨ́rdɨ
+n301	kɨlí	кыли	toe	3	kɨlíjed
+n302	kɨlɨ́ng	кылынг	pick_axe	3	kɨlɨ́ngad
+n303	kɐšír	ка̂шир	porrigde	3	kašírad
+n304	qʼabɨχ	кьабых	shell	4	qʼabχɨ́d
+n305	qʼámčʼel	кьамчӀел	braid	3	qʼámčʼeled
+n306	qʼan	кьан	bottom	4	qʼanéd
+n307	qʼacʼ	кьацӀ	chin	4	qʼacʼɨ́d
+n308	qʼačʼ	кьачӀ	green_beans	4	qʼačʼáldɨ
+n309	qʼaˤb	кьаӀб	cradle	3	qʼáˤbad
+n310	qʼʷab	кьваб	slab_for_roof	3	qʼʷabɨ́rdɨ
+n311	qʼʷaqʼ	кьвакь	knee	3	qʼʷaqʼɨ́d
+n312	qʼʷanáqʼ	кьванакь	hand_palm	4	qʼʷanáqʼad
+n313	qʼʷarč	кьварч	hoof	3	qʼʷarčéd
+n314	qʼʷeʔ	кьвеъ	top.n	NO DATA	NO DATA
+n315	qʼe	кье	malt	3	qʼejid
+n316	qʼel	кьел	salt	3	qʼíldɨ
+n317	qʼilinӡ̌	кьилиндж	saber	4	qʼilínӡ̌ed
+n318	qʼimét	кьимет	price	3	NO DATA
+n319	qʼin	кьин	oath	4	qʼinad
+n320	qʼir	кьир	wheat	3	qʼírad
+n321	qʼismát	кьисмат	fortune	4	qʼismɨ́tid
+n322	qʼul	кьул	board	4	qʼulád
+n323	qʼuˤl	кьуӀл	mouse	3	qʼuˤlíd
+n324	qʼɨdɨ́qʼ	кьыдыкь	skin	4	qʼɨdqʼɨ́d
+n325	qʼɨk	кьык	bird_comb	4	qʼɨ́kad
+n326	qʼɨ́ltan	кьылтан	head_temple	4	qʼɨ́ltɐned
+n327	qʼɨlɨqʼ	кьылыкь	testicles	NO DATA	NO DATA
+n328	qʼɨn	кьын	he_goat	3	qʼɨnád
+n329	qʼɨrɨ́b	кьырыб	bone	4	qʼɨrbɨ́d
+n330	qʼɨrɨ́qʼ	кьырыкь	avalanche	3	qʼɨrqʼɨ́d
+n331	qʼɨq	кьыхъ	calf	3	NO DATA
+n332	qʼɨš	кьыш	cooked_grease	3	qʼɨšɨ́d
+n333	qʼɨˤd	кьыӀд	winter	4	qʼɨ́ˤjid
+n334	qʼɨˤrɨ́s	кьыӀрыc	pole_for_ceiling	4	qʼɨˤrsɨ́d
+n335	qʼɨ́ˤčʼid ~ qʼɨ́ˤdɨ́čʼ	кьыӀчид ~ кьыӀдыч	scissors	4	qʼɨ́ˤčʼídad ~ qʼɨdɨ́čʼed
+n336	kʲapáˤʁ	кяпаӀгъ	paw	4	NO DATA
+n337	kʼaz	кӀаз	pitcher	3	NO DATA
+n338	kʼɐzít	кӀа̂зит	paper	4	NO DATA
+n339	kʼakʼál	кӀакӀал	pebble	3	kʼakʼlád
+n340	kʼar	кӀар	spool	4	kʼarád
+n341	kʼarɨ́maj	кӀарымай	rug	3	NO DATA
+n342	kʼatʼ	кӀатӀ	hen	3	kʼɐtʼírdɨ
+n343	kʼä́tχajmar	кӀаьтхаймар	twins	HPL	NO DATA
+n344	kʼéddal	кӀеддал	clay	3	NO DATA
+n345	kʼɨr	кӀир	shrimp	4	NO DATA
+n346	kʼutʼún	кӀутӀу́н	kidney	3	kʼutʼnád
+n347	kʼüxʲ	кӀуьхʼ	beak	4	NO DATA
+n348	kʼɨčʼ	кӀычӀ	button	3	kʼɨčʼíd
+n349	kʼɐ́šen	кӀа̂шен	charcoal	3	kʼɐ́šened
+n350	kʼɨšníš	кӀышниш	cilantro	3	kʼɨšníšed
+n351	laqʼ	лакь	chest_box	3	laqʼɨldɨ
+n352	lar	лар	dirt	3	lárdid
+n353	leqʼízar	лекьизар	gallbladder	NO DATA	NO DATA
+n354	lempé	лемпе	lamp	3	lempíjid
+n355	lecʼ	лецӀ	river	3	lecʼúrdɨ
+n356	lirfáj	лирфай	dove	3	lirfájed
+n357	lit	лит	shepherdʼs_coat	4	litɐ́jed
+n358	lixʲ	лихьʼ	louse	3	lixírdɨ
+n359	liʔ	лиъ	cow_hide	4	liʔéjid
+n360	luqʼún	лукьун	knitting_needle	3	luqʼnéd
+n361	lɨz	лыз	mortar	4	lɨzɨ́rdɨ
+n362	lɨzɨ́d	лызыд	dough	4	lɨzdíd
+n363	lɨkʼ	лыкӀ	slave	1	lɨ́kʼad
+n364	lɨs	лыс	sorrel	3	lɨsɨ́rdɨ
+n365	lɨčʼ	лычӀ	heifer	3	lɨčʼéd
+n366	lɨšán	лышан	scar2	4	lɨšnád
+n367	lɨšánči	лышанчи	bride_groom	NO DATA	lɨšánčijed
+n368	lɨˤqʼ	лыӀкь	eagle	3	lɨˤqʼɨ́rdɨ
+n369	lʲaqʼ	лякь	liver	4	leqʼíd
+n370	maʁ	магъ	ploughshare	3	maʁɨ́ldɨ
+n371	majé	майе	sperm	NO DATA	NO DATA
+n372	mɐjít	ма̂йит	human_corpse	4	mɐjítad
+n373	makák	макак	thorny_plant	4	makákad
+n374	máɢʷal	макъвал	nettle	4	máɢʷaled
+n375	maqʼaˤwaqʼ	макьаӀвакь	lizard2	4	maqʼaˤwaqʼad
+n376	mal	мал	livestock	3	maldid
+n377	mamzilʲ	мамзилʼ	time	NO DATA	mamzíled
+n378	manút	манут	ruble	3	manutad
+n379	manútbɨr	манутбыр	money	NO DATA	NO DATA
+n380	mas	мас	wall	4	masáldɨ
+n381	maqáˤq	махъаӀхъ	feather	4	maqáˤqad
+n382	maqɨ́k	махъык	bat	3	maːqɨ́kad
+n383	mašín	машин	car	3	mašínad
+n384	maʔ	маъ	animal_fat	4	maɁáldɨ
+n385	maˤqʼáˤqʼaˤl	маӀкьаӀкьаӀл	mite	3	maˤqʼaˤqʼaˤlid
+n386	maˤχʷ	маӀхв	oak	3	maˤχʷáldɨ
+n387	maˤʔlím	маӀълим	teacher	1	maˤʔlimad
+n388	maˤʔní	маӀъни	song	4	маӀънийед
+n389	megʲbɨr	мегʼбыр	fringe	NPL	NO DATA
+n390	mejwá	мейва	fruit	3	mejwɨ́jid
+n391	mel	мел	group	3	meléd
+n392	menčʼ	менчӀ	earwax	4	menčʼéd
+n393	mes	мес	bedclothes	3	meséd
+n394	mexʲ	мехьʼ	handful_two_hands	3	mexʲéd
+n395	mešúkʼ	мешукӀ	sack	3	mešúkʼʷad
+n396	mihmán	мигьман	guest	1	mihmanad
+n397	miz	миз	tongue	3	mizíd
+n398	mixʲ	михьʼ	elk	3	mixírdɨ ~ mixíd
+n399	mičék	мичек	mosquito	3	mičéked
+n400	mišéwɨr	мишевыр	squirrel	3	mišéwɨrad
+n401	mukʼ	мукӀ	dance.n	3	mukʼad
+n402	musúrman	мусурман	muslim	1	musulmanad
+n403	mušúχʷar ~ mušúχar	мушухвар ~ мушухар	badger	3	mušúχarad
+n404	muˤɢʷ	муӀкъв	village	3	múˤɢud
+n405	muˤlúˤq	муӀлуӀхъ	earthworm	3	muˤlqúˤd
+n406	mɐʁáˤd	ма̂гъаӀд	stairs	3	mɐʁáˤjid
+n407	mɨk	мык	ice	4	mɨkɨ́rdɨ
+n408	mɨm ~ mum	мым ~ мум	wax	4	mumɐ́jed
+n409	mɨrí	мыри	creek	3	mɨríjed
+n410	mɨsleʔaˤt	мыслеъаӀт	consent	3	mɨsleʔaˤtdid
+n411	mɨsmár	мысмар	nail	4	mɨsmárad
+n412	mɨtɨ́l	мытыл	kid	3	mɨtlád
+n413	mɨχɨ́r	мыхыр	cliff	3	mɨχrɨ́d
+n414	mixdáb	михьдаб	school	3	mixdabad
+n415	mɨ́čeb	мычеб	deception	4	mɨ́čebad
+n416	mɨčʼrí	мычӀри	beard	3	mɨčʼríjed
+n417	mɨˤχɨ́ˤd	мыӀхыӀд	hayloft	3	mɨˤχdíd
+n418	mɨˤχɨ́ˤl	мыӀхыӀл	young_she_goat	3	mɨˤχˤlád
+n419	naʁʷ	нагъв	tear.n	3	naʁʷújid ~ neʁíd ~ naʁʷɨldɨ /
+n420	naɢá	накъа	wild_strawberry	4	naɢɐjid
+n421	naqʼ	накь	dream	4	neqʼíd
+n422	naqʼʷ	накьв	earth	3	naqʼújid
+n423	naqʼrá	накьра	drum	4	naqʼrɨjid
+n424	naχʷ	нахв	straw	3	naχújid
+n425	nacʼ	нацӀ	reed	4	nacʼɨ́ldɨ
+n426	naˤχ	наӀх	evening	4	náˤχad
+n427	nek	нек	milk.n	3	nekɨ́jid
+n428	nekʲáh ~ neká	некягь ~ нека	marriage	4	nekʲahad
+n429	nemc	немц	german	1	nemcad
+n430	netʼ	нетӀ	nit	3	netʼírdɨ
+n431	neχírkan	нехиркан	cow_herdsman	1	neχírkaned
+n432	nigé	ниге	rosehip	3	nigijid
+n433	niɣré	нигӀре	threshing_board	4	nihʲrɨ́jid
+n434	nin	нин	mother	2	níndɨ
+n435	nisé	нисе	cheese	4	nisíjid
+n436	nixrébɨr	нихьребыр	bridle	4	nixrijid ~ nixrimɨd
+n437	now	нов	gutter	3	nówad
+n438	nüšéj	нуьшей	young_sheep	3	nüšéjed
+n439	owʁú	овгъу	poison	3	owʁújed
+n440	paj	пай	fraction	3	pájed
+n441	palankáš ~ palankáč	паланкаш ~ паланкач	strainer	3	palankášed
+n442	palčɨ́ˤqʼ	палчыӀкь	mud	3	palčɨ́ˤqʼad
+n443	papɨ́r	папыр	saddle	3	paprɨ́d
+n444	paráˤχul	параӀхул	blister	3	paráˤχuled
+n445	parčé	парче	fabric	4	parčíjid
+n446	paqrá	пахъра	pea	3	paqrɨ́jid
+n447	paxʷ	пахьв	mushroom	3	paxʷáldɨ
+n448	páˤɢʷal	паӀкъвал	burdock	3	páˤɢʷaled
+n449	pejʁambar ~ pajʁambar	пейгъамбар ~ пайгъамбар	Prophet	1	pejʁambárad
+n450	pɨc	пыц	vagina	NO DATA	NO DATA
+n451	pʼɨz	пӀыз	lip	4	pʼɨzɨ́d
+n452	rabɣántʼej	рабгӀантӀей	firefly	3	rabɣántʼejed
+n453	rak	рак	door	4	rigːíd
+n454	rat	рат	threshing_floor	4	ridíd
+n455	raˤʁ	раӀгъ	comb.n	4	raˤʁɐ́jid
+n456	raˤq	раӀхъ	road	3	raqɨˤd
+n457	rigídad	ригидад	yard	4	rigídadid
+n458	rigmízal	ригмизал	doorpost	3	rigmízalad ~ rigmízalid
+n459	riší	риши	sister	2	rišíd
+n460	rub	руб	awl	3	rubɐjed
+n461	rub	руб	needle	3	rubɨ́jed
+n462	rud	руд	gut	4	rudójed
+n463	ruˤχ	руӀх	mill	3	ruˤχˤbúd
+n464	ruˤχúˤb	руӀхуӀб	garlic	3	ruˤχˤbúd
+n465	rɨš	рыш	girl	2	rɨšéd
+n466	rɨˤqʼ	рыӀкь	broth	3	rɨˤqʼɨd
+n467	rɨˤq	рыӀхъ	ash	3	rɨˤqɨ́d
+n468	sabɨ́n	сабын	soap	4	sabníd
+n469	sánaˤʔat	санаӀъат	workmanship	4	sánaˤʔated
+n470	sant	сант	hammer	4	sántid
+n471	safrá	сафра	gall	3	leqʼízarad
+n472	saʔáˤt	саъаӀт	hour	4	saʔáˤtaˤd
+n473	särhät	саьргьаьт	boundary	3	särhä́tad
+n474	sʷal	свал	snowcock	3	sólirdɨ
+n475	sen	сен	year	4	sɨdɨ́d
+n476	ses	сес	voice	3	sésad ~ sesɨrdɨ
+n477	si	си	bear	3	sírdɨ
+n478	sikʼʲ	сикӀʼ	fox	3	sikʼíd
+n479	sípɨl	сипыл	onion	3	sípɨled
+n480	sir	сир	secret	4	sirɨjid
+n481	sif	сиф	sieve.n	3	sifɨ́jid
+n482	su	су	fried_flour	3	sujíd
+n483	suk	сук	grain2	3	sukúd
+n484	supelej	супелей	barbel	NO DATA	supelejed
+n485	sur	сур	side2	4	surúd
+n486	sus	сус	daughter_in_law	2	súsdɨ
+n487	sutkʼá	суткӀа	day_duration	4	NO DATA
+n488	suʔal	суъал	question	4	suʔalad
+n489	süpél	суьпел	moustache	3	süplíd
+n490	sürkéš	суьркеш	wild_leek	3	sükéšad
+n491	sütǘl	суьтуьл	wallpost	3	sütléd
+n492	sɨw	сыв	mountain	3	sɨwád
+n493	sɨkʼɨ́l	сыкӀыл	rye	3	sɨkʼlíd
+n494	sɨl	сыл	tombstone	3	sɨrɨ́d
+n495	sɨn	сын	barberry	4	sɨníd
+n496	sɨr	сыр	grave	4	sɨrɨ́d
+n497	sɨrsɨ́r	сырсыр	hoarfrost	3	sɨrsɨ́rad
+n498	sɨrɨ́χčej	сырыхчей	thief	1	sɨrɨχčejid
+n499	sɨrɨ́cʼal	сырыцӀал	marten	3	sɨrɨ́cʼaled
+n500	sɨs	сыс	tooth	4	sɨsɨ́d
+n501	taj	тай	pair	4	tajéd
+n502	tajé	тайе	large_stack	3	tajíjed
+n503	taptápaj	таптапай	rat	NO DATA	taptápajed
+n504	telebe	телебе	pupil	3	telebejed
+n505	tiké	тике	piece	4	tikíjid
+n506	tifáng	тифанг	gun	3	tifangad
+n507	tu ~ tuʔ	ту ~ туъ	spit.n	4	tujid
+n508	tuz	туз	dust	4	tuzád ~ tuzɨ́jid
+n509	tum	тум	seed	3	tumójid
+n510	tup	туп	wheel	3	tupójed
+n511	tur	тур	net	4	turójed
+n512	túχum	тухум	clan	3	tuχúmdid
+n513	tuχumbɨr	тухумбыр	seeds	3	NO DATA
+n514	tükʲ	туькʼ	weasel	3	tükǘrdɨ
+n515	tɨlá	тыла	dog	3	tɨlɨ́jed
+n516	tʼak	тӀак	basket	3	tʼakárdɨ
+n517	tʼankʼ	тӀанкӀ	water_drop	3	tʼánkʼad
+n518	tʼarílkʼa	тӀарилкӀа	plate	4	tʼarilkʼid
+n519	tʼátʼal	тӀатӀал	stick	4	tʼátʼaled
+n520	tʼebébel	тӀебебел	butterfly	3	tʼebébeled
+n521	tʼebúrʁʷan	тӀебургъван	spinning_top	3	tʼebúrʁʷaned
+n522	tʼexʲ	тӀехьʼ	ewe	3	tʼéxid
+n523	tʼiwílqʼaj	тӀивилкьай	snail	3	tʼiwílqʼajed
+n524	tʼilí	тӀили	finger	3	tʼɨlíjed
+n525	tʼíli	тӀили	leaf	3	tʼílijed
+n526	tʼilíjadɨ	тӀилийады	ring	3	tʼilíjaːdid
+n527	tʼitʼ	тӀитӀ	breast	3	tʼitʼíd
+n528	tʼul	тӀул	rod	3	tʼulurdɨ
+n529	tʼur	тӀур	bud	3	tʼurôjid
+n530	tʼɨb	тӀыб	owl	3	tʼɨbɨ́rdɨ
+n531	tʼɨlɨ́nkʼ	тӀылынкӀ	thimble	3	tʼɨlɨlɨnkʼad
+n532	tʼɨmɨ́l	тӀымыл	grape	4	tʼɨmlád
+n533	tʼɨn	тӀын	trough	3	tʼɨnád
+n534	ubúl	убул	wolf	3	ublíd
+n535	ubɨ́r ~ ubúr	убыр ~ убур	ear	4	ubrɨ́d ~ ubrúd
+n536	uqʼʷ	укьв	grass	4	úqʼud
+n537	ul	ул	eye	3	ulíd
+n538	úma	ума	buttock	3	umajed
+n539	un	ун	sound	4	undíd
+n540	urg	ург	young_ram	3	úrgud
+n541	urús	урус	russian	1	urúsad
+n542	ús	ус	log	4	úsud ~ úsɨd
+n543	ustʼúl	устӀул	chair	3	ustʼúlad
+n544	uχ	ух	axle	4	úχad
+n545	uχún	ухун	womanʼs_dress	3	uχnád
+n546	úχur	ухур	thread	4	úχurad
+n547	uxún	ухьун	belly	3	uxníd
+n548	úˤmur	уӀмур	life	3	uˤmurdid
+n549	uˤrdégʲ	уӀрдегʼ	duck	3	uˤrdéged
+n550	findíqʼ	финдикь	hazelnut	3	findíqʼɨd
+n551	χabár	хабар	piece_of_news	3	χabardid
+n552	χadrá	хадра	bead	3	χadrɐ́jid
+n553	χadrábɨr	хадрабыр	necklace	NO DATA	χadrɨjmɨd
+n554	χajmá	хайма	mat	3	χajmijid
+n555	χak	хак	stake	3	χakɨ́ldɨ
+n556	χal	хал	house	4	χáldɨ
+n557	χalíče	халиче	carpet	3	χaličijid
+n558	χar	хар	hail	3	χarád
+n559	χarápʼ	харапӀ	ruin	4	χarápʼad
+n560	χat	хатӀ	writing	4	χattid
+n561	χač	хач	cross	4	χačidɨ
+n562	χaʔíš	хаъиш	request	4	χaʔišed
+n563	χaˤbáqaˤn	хаӀбаӀхъан	shepherd	1	χaˤbáqaˤned
+n564	χadáˤχul	хаӀдаӀхул	whey	3	χadáˤχuled
+n565	χáˤdej	хаӀдей	star	3	χáˤdejed
+n566	χaˤl	хаӀл	sky	4	χáˤldɨ
+n567	χaˤlewáz	хаӀлеваз	rainbow	4	χaˤlewazad
+n568	χaˤn	хаӀн	fermented_drink	4	χaˤnad
+n569	χaˤrád	хаӀрад	butter	4	χaˤradad
+n570	χʷakʼ	хвакӀ	grain_gutter	4	χʷákʼad
+n571	χʷar	хвар	mare	3	χʷarad
+n572	χed	хед	cherry_plum	3	χídirdɨ
+n573	χezékʲ	хезекʼ	sledge	4	χezeked
+n574	χizán	хизан	family	3	χizandid
+n575	χik	хик	walnut	3	χikɨ́rdɨ
+n576	χin	хин	shady_slope	3	χínad
+n577	χindándaj	хиндандай	widow	2	χindándajed
+n578	χinkʼál	хинкӀал	khinkal	4	χinkʼalad
+n579	χud	худ	fist	3	χudad
+n580	χudúl	худул	lung	3	χudlád
+n581	χuj	хуй	field_for_cultivation	4	χujid
+n582	χuk	хук	tree	3	χukád
+n583	χulúk	хулук	sleeve	4	χulkúd
+n584	χumúχd	хумухд	autumn	4	χumúχdid
+n585	χuˤr	хуӀр	flour	3	χuˤrud
+n586	qabán	хъабан	boar	3	qabánad
+n587	qadár	хъадар	norm	3	qadárad
+n588	qanát	хъанат	wing	4	qanátad
+n589	qapáʁ	хъапагъ	cauldron_lid	4	qapáʁad
+n590	qarpɨ́z	хъарпыз	watermelon	3	qarpɨ́zad
+n591	qaˤd	хъаӀд	crow	3	qáˤdirdɨ
+n592	qaˤráˤqaˤl	хъаӀраӀхъаӀл	magpie	3	qaˤráˤqaˤled
+n593	qʷaˤnčʼ	хъваӀнчӀ	donkey_foal	3	qʷáˤnčʼed
+n594	quˤšim	хъуӀшим	gang	3	qušímad
+n595	qɨlɨ́ncʼ	хъылынцӀ	hedgehog	3	qɨlɨ́ncʼad
+n596	qɨˤmčʼí	хъыӀмчӀи	rennet	4	qɨˤmčʼíjid
+n597	qɨˤmɨ́tʼ	хъыӀмытӀ	snivel	3	NO DATA
+n598	χɨd	хыд	lime_tree	3	χɨdɨ́rdɨ
+n599	χɨdí	хыди	cousin	1	χɨdíd
+n600	χɨdɨ́l	хыдыл	grandchild	1	χɨdɨ́lad
+n601	χɨl	хыл	hand	4	χɨlíd
+n602	χɨládi	хылади	roof	4	χɨladid
+n603	χɨlíjdɨ	хылийды	mitten	4	χɨlíjdid
+n604	χɨnɨ́χ	хыных	child	1	χɨnχɨ́d
+n605	χɨˤw	хыӀв	udder	4	χɨˤwɨd
+n606	χɨˤwáʔad	хыӀваъад	yoke	4	NO DATA
+n607	χɨˤl	хыӀл	particle	4	χɨˤlɨjid
+n608	χɨˤn	хыӀн	faeces	4	χɨˤníd
+n609	χɨˤr	хыӀр	pear	3	χɨˤrɐ́jid
+n610	xad	хьад	spring	4	xɨ́jid
+n611	xaǯálat	хьаджалат	misfortune	4	xaǯalatad
+n612	xal	хьал	footprint	3	xaléd
+n613	xanx	хьанхь	gums	4	xanxmɨd
+n614	xar	хьар	clay_stove_for_bread	3	xárad
+n615	xač	хьач	blackberry	4	xačáldɨ
+n616	xeb	хьеб	claw	3	xebɨ́rdɨ ~ xebɨ́ldɨ
+n617	xed	хьед	water	4	xíjid
+n618	xésɨm	хьесым	face	4	xésɨmad
+n619	xexʲ	хьехьʼ	nose	3	xexíd
+n620	xid	хьид	cow_dung	4	xidid
+n621	xul	хьул	mildew	4	xulajid
+n622	xum	хьум	smoke	4	xumád
+n623	xur	хьур	raspberry	4	xurɐ́jid
+n624	xɨw ~ xow ~ xuw	хьыв ~ хьов ~ хьув	bread	3/4	xɨwád
+n625	xɨdɨ́ldɨ	хьыдылды	woman	2	xɨdɨnowdɨ
+n626	xɨlán	хьылан	pitchfork	4	xɨlɨ́ndid
+n627	xɨlí	хьыли	armful	4	xɨlijed
+n628	xɨrɨ́s	хьырыс	broom	3	xɨrɨsid
+n629	xɨt	хьыт	cartilage	4	xɨtɐjid
+n630	xɨtʼ	хьытӀ	barley	3	xɨ́tʼad
+n631	cʼaj	цӀай	fire	4	cʼíd
+n632	cʼakʼárakʼ	цӀакӀаракӀ	lizard1	4	cʼakʼárakʼad
+n633	cʼacʼ	цӀацӀ	chukhta	3	cʼacʼɨ́ldɨ
+n634	cʼihʲ	цӀигь	she_goat	3	cʼihíd
+n635	cʼikʼʲ	цӀикӀʼ	dog_puppy	3	cʼikʼíd
+n636	cʼikʼʷ	цӀикӀʼв	skein	3	cʼikʼud
+n637	cʼɨcʼ	цӀыцӀ	grasshopper	4	cʼɨcʼɨ́rdɨ
+n638	čaná	чана	jaw	4	čanájed
+n639	čangál	чангал	fork	4	čangálad
+n640	čapár	чапар	fence	4	čapárad
+n642	čarχ	чарх	whetstone	4	čarχɨd
+n643	čaχmáχ	чахмах	flint	4	čaχmaχad
+n644	čaχɨ́r	чахыр	wine	4	čaχɨ́rad
+n645	čejláʁ	чейлагъ	riverbank	4	čejlaʁad
+n646	čemrá	чемра	fog	4	čemrɨ́jd
+n647	čij	чий	dew	4	číjed
+n648	čikmá	чикма	boot	4	čakmɨ́jid
+n649	čul	чул	desert	4	čúldɨ
+n650	čümčé	чуьмче	ladle	3	čümčijid
+n651	čɨxár	чыхьар	mane	4	čɨxrad
+n652	čʼabál	чӀабал	sheep	3	čʼabɐ́led ~ čʼabled
+n653	čʼankʼ	чӀанкӀ	trap.n	4	čʼankʼad
+n654	čʼar	чӀар	hair	3	čʼarád
+n655	čʼaráqʼaj	чӀаракьай	shin	4	čʼaráqʼajed
+n656	čʼatʼ	чӀатӀ	little_span	NO DATA	NO DATA
+n657	čʼaˤɢɨn	чӀаӀкъын	step.n	4	NO DATA
+n658	čʼel	чӀел	language	3	čʼíldɨ
+n659	čʼil	чӀил	belt	3	čʼilɐ́jid
+n660	čʼinákʼ	чӀинакӀ	scythe	3	čʼinkʼɨ́d
+n661	čʼir	чӀир	ground	4	čʼirɨ́d
+n662	čʼub	чӀуб	great_span	3	čʼubúd
+n663	čʼul	чӀул	willow	3	čʼúlɨrdɨ
+n664	šagár	шагар	sugar	4	šagrád
+n665	šahád	шагьад	witness	1	šahádad
+n666	šalá	шала	burden1	3	šalɨ́jed
+n667	šamdam	шамдам	candle	4	NO DATA
+n668	šámkal	шамкал	spider	3	šámkaled
+n669	šarák	шарак	chick	3	šarkád
+n670	šʷet	швет	gadfly	3	šʷetírdɨ
+n671	šéher	шегьер	city	3	šehérdid
+n672	šésaj	шесай	young_heifer	3	šésajed
+n673	šibílʲ	шибилʼ	gravel	4	NO DATA
+n674	šídɨqʼ	шидыкь	mint	4	šidɨqʼad
+n675	šíkɨl	шикыл	picture	3	šikɨlad
+n676	šin	шин	sweat	4	NO DATA
+n677	šint	шинт	bedbug	3	šintád
+n678	šu	шу	brother	1	šud
+n679	šurúk	шурук	bird	3	šurkúd
+n680	ɨˤbrá	ыӀбра	measuring_container	4	ɨˤbríjed
