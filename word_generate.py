@@ -184,7 +184,7 @@ def check_page_name(label: str) -> None:
 
 def generate_pages(data_file: str, infl_files: List[str]):
     template_file = "word_template.html"
-    out_dir = 'words_htmls'
+    out_dir = 'words'
     complex_pos = {
         f'complex {pos}': f'This is a complex {pos} consisting of the words:'
         for pos in ['verb', 'noun']

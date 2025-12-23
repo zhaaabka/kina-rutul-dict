@@ -14,7 +14,7 @@ import os
 import sys
 
 INPUT_TSV = os.path.join("data", "rutul_dict.tsv")
-OUTPUT_HTML = "htmls/dictionary.html"
+OUTPUT_HTML = "dictionary.html"
 STYLESHEET = "styles.css"
 
 if not os.path.exists(INPUT_TSV):

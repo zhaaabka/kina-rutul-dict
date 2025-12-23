@@ -29,7 +29,7 @@ html = template.render(
     )
 )
 
-with open("htmls/index.html", "w", encoding="utf-8") as f:
+with open("index.html", "w", encoding="utf-8") as f:
     f.write(html)
 
 print("index.html создан")
