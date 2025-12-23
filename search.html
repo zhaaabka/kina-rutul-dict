@@ -39,59 +39,65 @@
 <ul id="results"></ul>
 
 <script>
-let idx;
-let pages = [];
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM READY");
 
-console.log("SCRIPT START");
+  let idx;
+  let pages = [];
 
-// 1️⃣ Загружаем search.json
-fetch('/kina-rutul-dict/search.json')
-  .then(res => res.json())
-  .then(data => {
-    console.log("SEARCH.JSON LOADED", data);
+  const input = document.getElementById("search-box");
+  const resultsList = document.getElementById("results");
 
-    pages = data;
+  console.log("INPUT:", input);
 
-    // 2️⃣ Строим индекс Lunr
-    idx = lunr(function () {
-      this.ref('id');
-      this.field('title');
-      this.field('content');
+  // 1️⃣ Загружаем search.json
+  fetch("/kina-rutul-dict/search.json")
+    .then(res => res.json())
+    .then(data => {
+      console.log("SEARCH.JSON LOADED");
 
-      pages.forEach(page => this.add(page));
+      pages = data;
+
+      // 2️⃣ Проверяем, что lunr реально есть
+      if (typeof lunr === "undefined") {
+        console.error("LUNR NOT LOADED");
+        return;
+      }
+
+      // 3️⃣ Создаём индекс
+      idx = lunr(function () {
+        this.ref("id");
+        this.field("title");
+        this.field("content");
+
+        pages.forEach(p => this.add(p));
+      });
+
+      console.log("LUNR INDEX READY");
+    })
+    .catch(err => {
+      console.error("FAILED TO LOAD search.json", err);
     });
 
-    console.log("LUNR INDEX READY");
-  })
-  .catch(err => {
-    console.error("FAILED TO LOAD search.json", err);
-  });
+  // 4️⃣ Поиск
+  input.addEventListener("input", function () {
+    console.log("INPUT EVENT");
 
-// 3️⃣ Обработка ввода
-document.getElementById('search-box').addEventListener('input', function () {
-  console.log("INPUT EVENT WORKS");
+    const query = this.value.trim();
+    resultsList.innerHTML = "";
 
-  const query = this.value.trim();
-  console.log("QUERY:", query);
+    if (!query || !idx) return;
 
-  const ul = document.getElementById('results');
-  ul.innerHTML = '';
+    const results = idx.search(query);
 
-  if (!query || !idx) {
-    console.log("NO QUERY OR IDX NOT READY");
-    return;
-  }
+    results.forEach(r => {
+      const page = pages.find(p => p.id === r.ref);
+      if (!page) return;
 
-  const results = idx.search(query);
-  console.log("RESULTS:", results);
-
-  results.forEach(r => {
-    const page = pages.find(p => p.id === r.ref);
-    if (!page) return;
-
-    const li = document.createElement('li');
-    li.innerHTML = `<a href="${page.url}">${page.title}</a>`;
-    ul.appendChild(li);
+      const li = document.createElement("li");
+      li.innerHTML = `<a href="${page.url}">${page.title}</a>`;
+      resultsList.appendChild(li);
+    });
   });
 });
 </script>
