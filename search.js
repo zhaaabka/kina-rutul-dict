@@ -2,55 +2,73 @@
   const input = document.getElementById("search");
   const resultsDiv = document.getElementById("results");
 
-  const entries = window.data;
+  const data = window.data;
 
   function normalize(text) {
     return text
       .toLowerCase()
       .normalize("NFD")
-      .replace(/[\u0300-\u036fːʼʁɨ]/g, "");
+      .replace(/[\u0300-\u036fːʼʁɨˤʷ]/g, "");
   }
 
-  function entryMatches(entry, query) {
+  function matchesEntry(key, entry, query) {
     const q = normalize(query);
 
-    if (normalize(entry.lemma).includes(q)) return true;
+    // 1. Заголовок (ключ словаря)
+    if (normalize(key).includes(q)) return true;
 
-    if (entry.translations) {
-      for (const tr of entry.translations) {
-        if (normalize(tr.text).includes(q)) return true;
+    // 2. Переводы
+    for (const tr of entry.translations || []) {
+      if (
+        (tr.text_rus && normalize(tr.text_rus).includes(q)) ||
+        (tr.text_en && normalize(tr.text_en).includes(q))
+      ) {
+        return true;
       }
     }
 
-    if (entry.examples) {
-      for (const ex of entry.examples) {
-        if (
-          normalize(ex.original).includes(q) ||
-          normalize(ex.translation).includes(q)
-        ) {
-          return true;
-        }
+    // 3. Примеры
+    for (const ex of entry.examples || []) {
+      if (
+        normalize(ex.original).includes(q) ||
+        normalize(ex.translation).includes(q)
+      ) {
+        return true;
       }
+    }
+
+    // 4. Словоизменение
+    for (const form of entry.inflection || []) {
+      if (normalize(form).includes(q)) return true;
     }
 
     return false;
   }
 
-  function renderEntry(entry) {
+  function renderEntry(key, entry) {
     const div = document.createElement("div");
     div.className = "entry";
 
-    div.innerHTML = `
-      <div class="lemma">${entry.lemma}</div>
-      ${entry.pos ? `<div class="pos">${entry.pos}</div>` : ""}
+    const translations = entry.translations
+      .map(t => `• ${t.text_rus}${t.text_en ? " — " + t.text_en : ""}`)
+      .join("<br>");
 
-      ${entry.translations?.map(t =>
-        `<div>• ${t.text}</div>`
-      ).join("") || ""}
-
-      ${entry.examples?.map(ex =>
+    const examples = (entry.examples || [])
+      .map(ex =>
         `<div class="example">"${ex.original}" — ${ex.translation}</div>`
-      ).join("") || ""}
+      )
+      .join("");
+
+    const inflection = entry.inflection.length
+      ? `<div><b>Формы:</b> ${entry.inflection.join(", ")}</div>`
+      : "";
+
+    div.innerHTML = `
+      <div class="lemma">${key}</div>
+      <div class="pos">${entry.pos}</div>
+      <div>${translations}</div>
+      ${inflection}
+      ${examples}
     `;
 
     return div;
@@ -62,10 +80,10 @@
 
     if (query.length < 2) return;
 
-    Object.values(entries).forEach(entry => {
-      if (entryMatches(entry, query)) {
-        resultsDiv.appendChild(renderEntry(entry));
+    for (const [key, entry] of Object.entries(data)) {
+      if (matchesEntry(key, entry, query)) {
+        resultsDiv.appendChild(renderEntry(key, entry));
       }
-    });
+    }
   });
 })();
