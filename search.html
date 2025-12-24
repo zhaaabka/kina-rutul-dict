@@ -63,7 +63,6 @@
 
 <h1>Search</h1>
 
-<input id="search" type="text" placeholder="Введите слово или перевод">
 <div id="virtual-keyboard" style="margin-top: 1em;">
   <span class="virtual-key">Ӏ</span>
   <span class="virtual-key">ˤ</span>
@@ -87,6 +86,29 @@
   <span class="virtual-key">ü</span>
   <span class="virtual-key">а̂ </span>
   <span class="virtual-key">о̂</span>
+</div>
+<input id="search" type="text" placeholder="Введите слово или перевод">
+<div id="search-modes" style="margin: 0.5em 0;">
+  <label>
+    <input type="radio" name="mode" value="all" checked>
+    всё
+  </label>
+  <label>
+    <input type="radio" name="mode" value="lemma">
+    лемма
+  </label>
+  <label>
+    <input type="radio" name="mode" value="translation">
+    перевод
+  </label>
+  <label>
+    <input type="radio" name="mode" value="example">
+    пример
+  </label>
+  <label>
+    <input type="radio" name="mode" value="example_translation">
+    перевод примера
+  </label>
 </div>
 
 <div id="results"></div>

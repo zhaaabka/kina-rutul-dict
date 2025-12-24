@@ -15,35 +15,62 @@
     .normalize("NFC");
 }
 
-  function matchesEntry(key, entry, query) {
-    const q = normalize(query);
+function getSearchMode() {
+  const checked = document.querySelector(
+    'input[name="mode"]:checked'
+  );
+  return checked ? checked.value : "all";
+}
 
-    if (normalize(key).includes(q)) return true;
+ function matchesEntry(key, entry, query) {
+  const q = normalize_q(query);
+  const mode = getSearchMode();
 
-    for (const tr of entry.translations || []) {
-      if (
-        (tr.text_rus && normalize(tr.text_rus).includes(q)) ||
-        (tr.text_en && normalize(tr.text_en).includes(q))
-      ) {
-        return true;
-      }
-    }
-
-    for (const ex of entry.examples || []) {
-      if (
-        normalize(ex.original).includes(q) ||
-        normalize(ex.translation).includes(q)
-      ) {
-        return true;
-      }
-    }
-
-    for (const f of entry.inflection || []) {
-      if (normalize(f).includes(q)) return true;
-    }
-
-    return false;
+  function match(text) {
+    return text && normalize_q(text).includes(q);
   }
+
+  // лемма + словоизменение
+    if (mode === "lemma" || mode === "all") {
+        if (match(key)) return true;
+
+        for (const f of entry.inflection || []) {
+        if (match(f)) return true;
+  }
+}
+
+  // перевод
+  if (mode === "translation" || mode === "all") {
+    for (const tr of entry.translations || []) {
+      if (match(tr.text_rus) || match(tr.text_en)) {
+        return true;
+      }
+    }
+  }
+
+  // пример
+  if (mode === "example" || mode === "all") {
+    for (const ex of entry.examples || []) {
+      if (match(ex.original)) return true;
+    }
+  }
+
+  // перевод примера
+  if (mode === "example_translation" || mode === "all") {
+    for (const ex of entry.examples || []) {
+      if (match(ex.translation)) return true;
+    }
+  }
+
+  // общий
+  if (mode === "all") {
+    for (const f of entry.inflection || []) {
+      if (match(f)) return true;
+    }
+  }
+
+  return false;
+}
 
   function highlight(text, query) {
   if (!query) return text;
@@ -70,44 +97,76 @@
 }
 
   function renderEntry(key, entry, query) {
+    const mode = getSearchMode();
     const div = document.createElement("div");
     div.className = "entry";
 
-    /* 1️⃣ Заголовок + ссылка */
+    /* Заголовок + ссылка */
     const link = `/kina-rutul-dict/words/${entry.id}.html`;
 
     const inflection =
-      entry.inflection && entry.inflection.length
-        ? `, ${entry.inflection.join(", ")}`
-        : "";
+        entry.inflection && entry.inflection.length
+            ? `, ${entry.inflection
+                .map(f =>
+                    (mode === "lemma" || mode === "all")
+                    ? highlight(f, query)
+                    : f
+                )
+                .join(", ")}`
+            : "";
+
 
     const header = `
-      <a href="${link}"><b>${highlight(key, query)}</b></a>
-      (${entry.pos}${inflection})
+        <a href="${link}">
+            <b>${
+                (mode === "lemma" || mode === "all")
+                ? highlight(key, query)
+                : key
+            }</b>
+        </a>
+        (${entry.pos}${inflection})
     `;
 
-    /* 2️⃣ Переводы */
+    /* Переводы */
     const translations = entry.translations
-      .map(
-        (t, i) =>
-          `${i + 1}. ${highlight(t.text_rus, query) || ""}${
-            highlight(t.text_en, query) ? " | " + highlight(t.text_en, query) : ""
-          };`
-      )
-      .join(" ");
+        .map((t, i) => {
+            const rus =
+            (mode === "translation" || mode === "all")
+                ? highlight(t.text_rus, query)
+                : t.text_rus;
 
-    /* 3️⃣ Примеры */
+            const eng =
+            (mode === "translation" || mode === "all")
+                ? highlight(t.text_en, query)
+                : t.text_en;
+
+            return `${i + 1}. ${rus || ""}${eng ? " | " + eng : ""};`;
+        })
+        .join(" ");
+
+
+    /* Примеры */
     let examples = "";
     if (entry.examples && entry.examples.length) {
-      examples =
+    examples =
         " Примеры: " +
         entry.examples
-          .map(
-            ex =>
-              `<i>${highlight(ex.original, query)}</i> — ${highlight(ex.translation, query)};`
-          )
-          .join(" ");
-    }
+        .map(ex => {
+            const original =
+            (mode === "example" || mode === "all")
+                ? highlight(ex.original, query)
+                : ex.original;
+
+            const translation =
+            (mode === "example_translation" || mode === "all")
+                ? highlight(ex.translation, query)
+                : ex.translation;
+
+            return `<i>${original}</i> — ${translation};`;
+        })
+        .join(" ");
+}
+
 
     div.innerHTML = `
       ${header}: ${translations}${examples}
