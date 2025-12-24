@@ -3,11 +3,15 @@
   const resultsDiv = document.getElementById("results");
   const data = window.data;
 
-  function normalize(text) {
-    return text
-      .toLowerCase()
-      .normalize("NFD")
-  }
+ function normalize(text) {
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    // удаляем ТОЛЬКО ударение (acute, grave)
+    .replace(/[\u0301]/g, "")
+    .normalize("NFC");
+}
+
 
   function matchesEntry(key, entry, query) {
     const q = normalize(query);
