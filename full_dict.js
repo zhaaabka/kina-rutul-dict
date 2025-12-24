@@ -1558,7 +1558,7 @@ window.data = {
   },
   "begid tʼul | бегид тӀул": {
     "id": "cn1",
-    "pos": "c",
+    "pos": "cn",
     "inflection": [],
     "translations": [
       {
@@ -1886,7 +1886,7 @@ window.data = {
   },
   "buʁazad tʼur | бугъазад тӀур": {
     "id": "cn2",
-    "pos": "c",
+    "pos": "cn",
     "inflection": [],
     "translations": [
       {
@@ -4906,7 +4906,7 @@ window.data = {
   },
   "ʁildɨ qʼan | гъилды кьан": {
     "id": "cn3",
-    "pos": "c",
+    "pos": "cn",
     "inflection": [],
     "translations": [
       {
@@ -15442,7 +15442,7 @@ window.data = {
   },
   "lacʼɨd rud | лацӀыд руд": {
     "id": "cn4",
-    "pos": "c",
+    "pos": "cn",
     "inflection": [],
     "translations": [
       {
@@ -18592,7 +18592,7 @@ window.data = {
   },
   "nindɨ uxun | нинды ухьун": {
     "id": "cn5",
-    "pos": "c",
+    "pos": "cn",
     "inflection": [],
     "translations": [
       {
@@ -19555,7 +19555,7 @@ window.data = {
   },
   "rud-uxun | руд-ухьун": {
     "id": "cn6",
-    "pos": "c",
+    "pos": "cn",
     "inflection": [],
     "translations": [
       {
@@ -23287,7 +23287,7 @@ window.data = {
   },
   "uxnid dan | ухьнид дан": {
     "id": "cn7",
-    "pos": "c",
+    "pos": "cn",
     "inflection": [],
     "translations": [
       {
@@ -23615,7 +23615,7 @@ window.data = {
   },
   "χaldɨ xeb | халды хьеб": {
     "id": "cn8",
-    "pos": "c",
+    "pos": "cn",
     "inflection": [],
     "translations": [
       {
@@ -26197,7 +26197,7 @@ window.data = {
   },
   "xɨlijed qʼan | хьылийед кьан": {
     "id": "cn9",
-    "pos": "c",
+    "pos": "cn",
     "inflection": [],
     "translations": [
       {
@@ -27558,7 +27558,7 @@ window.data = {
   },
   "šamkaled χal | шамкалед хал": {
     "id": "cn10",
-    "pos": "c",
+    "pos": "cn",
     "inflection": [],
     "translations": [
       {

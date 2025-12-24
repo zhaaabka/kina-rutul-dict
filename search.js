@@ -7,14 +7,24 @@
   return text
     .toLowerCase()
     .normalize("NFD")
-    // удаляем ТОЛЬКО ударение (acute, grave)
     .replace(/[\u0301]/g, "")
     .normalize("NFC");
 }
 
+ function normalize_q(text) {
+  return text
+    .replace(/[I1lӏ]/g, "Ӏ")
+    .toLowerCase()
+    .replace(/ˁ/g, "ˤ")
+    .replace(/['’]/g, "ʼ")
+    .replace(/:/g, "ː")
+    .normalize("NFD")
+    .replace(/[\u0301]/g, "")
+    .normalize("NFC");
+}
 
   function matchesEntry(key, entry, query) {
-    const q = normalize(query);
+    const q = normalize_q(query);
 
     if (normalize(key).includes(q)) return true;
 
