@@ -1,32 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <title>Search</title>
 
-  <script src="https://unpkg.com/lunr/lunr.js"></script>
-
   <style>
     body {
       font-family: system-ui, sans-serif;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
       padding: 2rem;
     }
-
     input {
       width: 100%;
       padding: 0.5rem;
       font-size: 1rem;
     }
-
-    ul {
-      list-style: none;
-      padding: 0;
+    .entry {
+      margin-top: 1.5rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 1rem;
     }
-
-    li {
-      margin: 0.5rem 0;
+    .lemma {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .pos {
+      color: #555;
+      font-style: italic;
+    }
+    .example {
+      margin-left: 1rem;
+      color: #333;
     }
   </style>
 </head>
@@ -34,74 +39,13 @@
 
 <h1>Search</h1>
 
-<input id="search-box" type="text" placeholder="Type to search...">
+<input id="search" type="text" placeholder="Введите слово или перевод">
 
-<ul id="results"></ul>
+<div id="results"></div>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("DOM READY");
-
-  let idx;
-  let pages = [];
-
-  const input = document.getElementById("search-box");
-  const resultsList = document.getElementById("results");
-
-  console.log("INPUT:", input);
-
-  // 1️⃣ Загружаем search.json
-  fetch("/kina-rutul-dict/search.json")
-    .then(res => res.json())
-    .then(data => {
-      console.log("SEARCH.JSON LOADED");
-
-      pages = data;
-
-      // 2️⃣ Проверяем, что lunr реально есть
-      if (typeof lunr === "undefined") {
-        console.error("LUNR NOT LOADED");
-        return;
-      }
-
-      // 3️⃣ Создаём индекс
-      idx = lunr(function () {
-        this.ref("id");
-        this.field("title");
-        this.field("content");
-
-        pages.forEach(p => this.add(p));
-      });
-
-      console.log("LUNR INDEX READY");
-    })
-    .catch(err => {
-      console.error("FAILED TO LOAD search.json", err);
-    });
-
-  // 4️⃣ Поиск
-  input.addEventListener("input", function () {
-    console.log("INPUT EVENT");
-
-    const query = this.value.trim();
-    resultsList.innerHTML = "";
-
-    if (!query || !idx) return;
-
-    const results = idx.search(query + "*");
-
-    results.forEach(r => {
-      const page = pages.find(p => p.id === r.ref);
-      if (!page) return;
-
-      const li = document.createElement("li");
-      li.innerHTML = `<a href="${page.url}">${page.title}</a>`;
-      resultsList.appendChild(li);
-    });
-  });
-});
-</script>
-
+<!-- ВАЖНО: порядок -->
+<script src="data.js"></script>
+<script src="search.js"></script>
 
 </body>
 </html>
