@@ -101,7 +101,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ---------- HIGHLIGHT (for search, if used) ---------- */
+/* ---------- HIGHLIGHT (for search) ---------- */
 
 mark {
   background-color: var(--accent-soft);

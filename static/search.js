@@ -30,7 +30,7 @@ function getSearchMode() {
     return text && normalize(text).includes(q);
   }
 
-  // лемма + словоизменение
+ 
     if (mode === "lemma" || mode === "all") {
         if (match(key)) return true;
 
@@ -39,7 +39,7 @@ function getSearchMode() {
   }
 }
 
-  // перевод
+  
   if (mode === "translation" || mode === "all") {
     for (const tr of entry.translations || []) {
       if (match(tr.text_rus) || match(tr.text_en)) {
@@ -48,14 +48,14 @@ function getSearchMode() {
     }
   }
 
-  // пример
+ 
   if (mode === "example" || mode === "all") {
     for (const ex of entry.examples || []) {
       if (match(ex.original)) return true;
     }
   }
 
-  // перевод примера
+  
   if (mode === "example_translation" || mode === "all") {
     for (const ex of entry.examples || []) {
       if (match(ex.translation)) return true;
@@ -94,7 +94,7 @@ function getSearchMode() {
     const div = document.createElement("div");
     div.className = "entry";
 
-    /* Заголовок + ссылка */
+
     const link = `/kina-rutul-dict/words/${entry.id}.html`;
 
     const inflection =
@@ -120,7 +120,7 @@ function getSearchMode() {
         (${entry.pos}${inflection})
     `;
 
-    /* Переводы */
+
     const translations = entry.translations
         .map((t, i) => {
             const rus =
@@ -182,7 +182,7 @@ function getSearchMode() {
   });
 })();
 
-// ===== virtual keyboard =====
+
 document.querySelectorAll(".virtual-key").forEach(key => {
   key.addEventListener("click", () => {
     const input = document.getElementById("search");
@@ -199,7 +199,7 @@ document.querySelectorAll(".virtual-key").forEach(key => {
 
     input.selectionStart = input.selectionEnd = start + char.length;
 
-    // запускаем поиск
+    
     input.dispatchEvent(new Event("input"));
 
     input.focus();

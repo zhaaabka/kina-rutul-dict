@@ -4,30 +4,9 @@ from typing import Generator, List, Tuple
 import csv
 import re
 import os
+import tqdm
 
-from jinja2 import (Environment,
-                    FileSystemLoader,
-                    Template)
-from tqdm import tqdm
-"""
-import xlsxwriter
-import xlsxwriter.worksheet
-"""
-
-def generate_html(data: dict,
-                  template: Template,
-                  out_file: Path,
-                  **kwargs) -> None:
-    """Generates a single html file and saves it at `out_file`
-
-    Args:
-        data (dict): data to give to the template
-        template (Template): jinja2 template
-        out_file (Path): out file name
-    """
-    with open(out_file, 'w', encoding='utf-8') as f:
-        f.write(template.render(data=data,
-                                **kwargs))
+from jinja2 import (Environment, FileSystemLoader, Template)
 
 def merge_meanings(data: dict) -> None:
     """Merges meanings in a dict.
@@ -213,63 +192,29 @@ def generate_pages(data_file: str, infl_files: List[str]):
             merge_meanings(data)
             split_examples(data)
             insert_inflection(data, inflection_data)
-            #pprint(data)
 
             check_page_name(data['lexeme_id'])
 
             out_file = out_dir.joinpath(
                 f"{data['lexeme_id'].replace(', ', '-')}.html"
             )
-            # 1. сначала рендерим КОНТЕНТ статьи
+            
             word_content = word_template.render(
                 data=data,
                 complex_pos=complex_pos,
                 glossing_labels=glossing_labels
             )
 
-            # 2. оборачиваем в base.html
+            
             full_html = base_template.render(
                 title=f"Kina Rutul — {data['Lexical entry']}",
                 content=word_content
             )
 
-            # 3. записываем файл
+            
             with open(out_file, "w", encoding="utf-8") as f:
                 f.write(full_html)
 
-"""
-def generate_xlsx(data_file: str, infl_files: list[str]):
-    def write_tsv_to_worksheet(
-            file: str, 
-            worksheet: xlsxwriter.worksheet.Worksheet
-        ) -> Generator[Tuple[str], None, None]:
-        with open(file, 'r', encoding='utf-8') as f:
-            reader = csv.reader(f, delimiter='\t')
-            row_num = 0
-            for row_data in reader:
-                worksheet.write_row(row=row_num, col=0, data=row_data)
-                row_num += 1
-    
-    writer = xlsxwriter.Workbook('data/rutul_dict.xlsx')
-    
-    main_worksheet = writer.add_worksheet('rutul_dict')
-    write_tsv_to_worksheet(data_file, main_worksheet)
-
-    for file in infl_files:
-        sheet_name = os.path.basename(file)
-        worksheet = writer.add_worksheet(sheet_name)
-        write_tsv_to_worksheet(file, worksheet)
-
-    writer.close()
-
-if __name__ == '__main__':
-    data_file = 'data/rutul_dict.tsv'
-    infl_files = ['data/infl_adj.tsv',
-                  'data/infl_noun.tsv',
-                  'data/infl_verb.tsv']
-    generate_pages(data_file, infl_files)
-    generate_xlsx(data_file, infl_files)
-"""
 
 if __name__ == '__main__':
     data_file = 'data/rutul_dict.tsv'

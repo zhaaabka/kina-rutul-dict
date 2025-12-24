@@ -40,4 +40,4 @@ html = base_template.render(
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(html)
 
-print("index.html создан")
+print("Сгенерирован index.html")
