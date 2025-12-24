@@ -113,3 +113,27 @@
     }
   });
 })();
+
+// ===== virtual keyboard =====
+document.querySelectorAll(".virtual-key").forEach(key => {
+  key.addEventListener("click", () => {
+    const input = document.getElementById("search");
+
+    const start = input.selectionStart;
+    const end = input.selectionEnd;
+
+    const char = key.textContent;
+
+    input.value =
+      input.value.slice(0, start) +
+      char +
+      input.value.slice(end);
+
+    input.selectionStart = input.selectionEnd = start + char.length;
+
+    // запускаем поиск
+    input.dispatchEvent(new Event("input"));
+
+    input.focus();
+  });
+});

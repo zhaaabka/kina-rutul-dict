@@ -33,37 +33,54 @@
       margin-left: 1rem;
       color: #333;
     }
+
+    .virtual-key {
+      display: inline-block;
+      padding: 0.3em 0.5em;
+      margin: 0.15em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+      user-select: none;
+      font-size: 1.1em;
+    }
+
+    .virtual-key:hover {
+      background: #eee;
+    }
+
+    .virtual-key:active {
+      background: #ddd;
+    }
   </style>
 </head>
 <body>
 
 <h1>Search</h1>
 
-<div class="search" style="width: 65%;margin:auto;">
-  <input id="search" type="text" placeholder="Введите слово или перевод">
-  <div id="virtual-keyboard" style="margin-top: 1em;">
-    <span class="virtual-key">Ӏ</span>
-    <span class="virtual-key">ˤ</span>
-    <span class="virtual-key">ʷ</span>
-    <span class="virtual-key">ʲ</span>
-    <span class="virtual-key">ʼ</span>
-    <span class="virtual-key">ː</span>
-    <span class="virtual-key">ʁ</span>
-    <span class="virtual-key">χ</span>
-    <span class="virtual-key">ɢ</span>
-    <span class="virtual-key">ɣ</span>
-    <span class="virtual-key">ʔ</span>
-    <span class="virtual-key">ʒ</span>
-    <span class="virtual-key">ǯ</span>
-    <span class="virtual-key">š</span>
-    <span class="virtual-key">č</span>
-    <span class="virtual-key">ɐ</span>
-    <span class="virtual-key">ɞ</span>
-    <span class="virtual-key">ɨ</span>
-    <span class="virtual-key">ä</span>
-    <span class="virtual-key">ü</span>
-    <span class="virtual-key">â</span>
-  </div>
+<input id="search" type="text" placeholder="Введите слово или перевод">
+<div id="virtual-keyboard" style="margin-top: 1em;">
+  <span class="virtual-key">Ӏ</span>
+  <span class="virtual-key">ˤ</span>
+  <span class="virtual-key">ʷ</span>
+  <span class="virtual-key">ʲ</span>
+  <span class="virtual-key">ʼ</span>
+  <span class="virtual-key">ː</span>
+  <span class="virtual-key">ʁ</span>
+  <span class="virtual-key">χ</span>
+  <span class="virtual-key">ɢ</span>
+  <span class="virtual-key">ɣ</span>
+  <span class="virtual-key">ʔ</span>
+  <span class="virtual-key">ʒ</span>
+  <span class="virtual-key">ǯ</span>
+  <span class="virtual-key">š</span>
+  <span class="virtual-key">č</span>
+  <span class="virtual-key">ɐ</span>
+  <span class="virtual-key">ɞ</span>
+  <span class="virtual-key">ɨ</span>
+  <span class="virtual-key">ä</span>
+  <span class="virtual-key">ü</span>
+  <span class="virtual-key">â</span>
 </div>
 
 <div id="results"></div>
