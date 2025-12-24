@@ -5,14 +5,6 @@
 
  function normalize(text) {
   return text
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0301]/g, "")
-    .normalize("NFC");
-}
-
- function normalize_q(text) {
-  return text
     .replace(/[I1lӏ]/g, "Ӏ")
     .toLowerCase()
     .replace(/ˁ/g, "ˤ")
@@ -24,7 +16,7 @@
 }
 
   function matchesEntry(key, entry, query) {
-    const q = normalize_q(query);
+    const q = normalize(query);
 
     if (normalize(key).includes(q)) return true;
 
@@ -53,7 +45,31 @@
     return false;
   }
 
-  function renderEntry(key, entry) {
+  function highlight(text, query) {
+  if (!query) return text;
+
+  const normText = normalize_q(text);
+  const normQuery = normalize_q(query);
+
+  if (!normQuery) return text;
+
+  let result = "";
+  let i = 0;
+
+  while (i < text.length) {
+    if (normText.slice(i, i + normQuery.length) === normQuery) {
+      result += `<mark>${text.slice(i, i + normQuery.length)}</mark>`;
+      i += normQuery.length;
+    } else {
+      result += text[i];
+      i++;
+    }
+  }
+
+  return result;
+}
+
+  function renderEntry(key, entry, query) {
     const div = document.createElement("div");
     div.className = "entry";
 
@@ -66,7 +82,7 @@
         : "";
 
     const header = `
-      <a href="${link}"><b>${key}</b></a>
+      <a href="${link}"><b>${highlight(key, query)}</b></a>
       (${entry.pos}${inflection})
     `;
 
@@ -74,8 +90,8 @@
     const translations = entry.translations
       .map(
         (t, i) =>
-          `${i + 1}. ${t.text_rus || ""}${
-            t.text_en ? " | " + t.text_en : ""
+          `${i + 1}. ${highlight(t.text_rus, query) || ""}${
+            highlight(t.text_en, query) ? " | " + highlight(t.text_en, query) : ""
           };`
       )
       .join(" ");
@@ -88,7 +104,7 @@
         entry.examples
           .map(
             ex =>
-              `<i>${ex.original}</i> — ${ex.translation};`
+              `<i>${highlight(ex.original, query)}</i> — ${highlight(ex.translation, query)};`
           )
           .join(" ");
     }
