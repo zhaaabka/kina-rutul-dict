@@ -23,11 +23,11 @@ function getSearchMode() {
 }
 
  function matchesEntry(key, entry, query) {
-  const q = normalize_q(query);
+  const q = normalize(query);
   const mode = getSearchMode();
 
   function match(text) {
-    return text && normalize_q(text).includes(q);
+    return text && normalize(text).includes(q);
   }
 
   // лемма + словоизменение
@@ -62,21 +62,14 @@ function getSearchMode() {
     }
   }
 
-  // общий
-  if (mode === "all") {
-    for (const f of entry.inflection || []) {
-      if (match(f)) return true;
-    }
-  }
-
   return false;
 }
 
   function highlight(text, query) {
   if (!query) return text;
 
-  const normText = normalize_q(text);
-  const normQuery = normalize_q(query);
+  const normText = normalize(text);
+  const normQuery = normalize(query);
 
   if (!normQuery) return text;
 
@@ -183,7 +176,7 @@ function getSearchMode() {
 
     for (const [key, entry] of Object.entries(data)) {
       if (matchesEntry(key, entry, query)) {
-        resultsDiv.appendChild(renderEntry(key, entry));
+        resultsDiv.appendChild(renderEntry(key, entry, query));
       }
     }
   });
