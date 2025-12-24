@@ -1,0 +1,154 @@
+:root {
+  --accent: #1f6f5b;
+  --accent-soft: #e6f2ee;
+  --text-main: #111;
+  --text-muted: #555;
+}
+
+/* ---------- BASE ---------- */
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--text-main);
+  background: #fff;
+  line-height: 1.5;
+}
+
+.page-container {
+  max-width: 900px;
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+/* ---------- NAVBAR ---------- */
+
+.navbar-brand {
+  color: var(--accent) !important;
+}
+
+.nav-link {
+  color: var(--accent);
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- HEADINGS ---------- */
+
+h1, h2, h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: 1.7rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+/* ---------- TABLES ---------- */
+
+table {
+  font-size: 0.95rem;
+}
+
+.dict-table th {
+  font-weight: 600;
+  padding-right: 1rem;
+  vertical-align: top;
+}
+
+.dict-table td {
+  vertical-align: top;
+}
+
+/* ---------- MEANINGS ---------- */
+
+ol {
+  padding-left: 1.3rem;
+}
+
+ol > li {
+  margin-bottom: 0.8rem;
+}
+
+/* ---------- EXAMPLES ---------- */
+
+.example {
+  margin-left: 1rem;
+  color: var(--text-muted);
+}
+
+.example i {
+  color: var(--text-main);
+}
+
+/* ---------- LINKS ---------- */
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- HIGHLIGHT (for search, if used) ---------- */
+
+mark {
+  background-color: var(--accent-soft);
+  padding: 0 0.2em;
+}
+
+.virtual-key {
+  display: inline-block;
+  padding: 0.3em 0.5em;
+  margin: 0.15em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1.1em;
+}
+
+.virtual-key:hover {
+  background: #eee;
+}
+
+.virtual-key:active {
+  background: #ddd;
+}
+
+.entry {
+  margin-top: 1.5rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+}
+
+.lemma {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.pos {
+  color: #555;
+  font-style: italic;
+}
+
+.example {
+  margin-left: 1rem;
+  color: #333;
+}
+
+mark {
+  background: var(--accent-soft);
+  padding: 0 0.1em;
+}

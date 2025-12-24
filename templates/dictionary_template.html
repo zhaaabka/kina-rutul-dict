@@ -1,0 +1,60 @@
+<h1>Dictionary</h1>
+
+<h2>How to use</h2>
+<p>... (инструкции) ...</p>
+
+<table id="dict" class="display" style="width:100%">
+  <thead>
+    <tr>
+      {% for c in columns %}
+        <th>{{ c }}</th>
+      {% endfor %}
+    </tr>
+    <tr>
+      {% for c in columns %}
+        <th>
+          <input type="text"
+                 placeholder="Поиск {{ c }}"
+                 style="width:100%; box-sizing:border-box;">
+        </th>
+      {% endfor %}
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for row in rows %}
+      <tr>
+        {% for c in columns %}
+          <td>{{ row[c]|safe }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<!-- JS для DataTables -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+<script>
+$(document).ready(function () {
+  const table = $('#dict').DataTable({
+    pageLength: 20,
+    orderCellsTop: true,
+    fixedHeader: false,
+    dom: 'lrtip',
+    order: [[2, 'asc']]  // Orthography
+  });
+
+  $('#dict thead tr:eq(1) th').each(function (i) {
+    const input = $(this).find('input');
+    if (input.length) {
+      input.on('keyup change clear', function () {
+        if (table.column(i).search() !== this.value) {
+          table.column(i).search(this.value).draw();
+        }
+      });
+    }
+  });
+});
+</script>

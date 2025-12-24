@@ -12,6 +12,7 @@ import pandas as pd
 import html
 import os
 import sys
+from jinja2 import Environment, FileSystemLoader
 
 INPUT_TSV = os.path.join("data", "rutul_dict.tsv")
 OUTPUT_HTML = "dictionary.html"
@@ -115,22 +116,20 @@ for _, r in df.iterrows():
     if len(meanings_rus) > 1:
         rus_html = ""
         for j in range(len(meanings_rus)):
-            if j == len(meanings_rus) - 1:
-                rus_html += f"{j + 1}. {meanings_rus[j]}"
-            else:
-                rus_html += f"{j + 1}. {meanings_rus[j]}\n"
+            sep = "<br>" if j < len(meanings_rus) - 1 else ""
+            rus_html += f"{j + 1}. {html.escape(meanings_rus[j])}{sep}"
     else:
-        rus_html = meanings_rus[0]
+        rus_html = html.escape(meanings_rus[0])
+
     
     if len(meanings_eng) > 1:
         eng_html = ""
         for j in range(len(meanings_eng)):
-            if j == len(meanings_eng) - 1:
-                eng_html += f"{j + 1}. {meanings_eng[j]}"
-            else:
-                eng_html += f"{j + 1}. {meanings_eng[j]}\n"
+            sep = "<br>" if j < len(meanings_eng) - 1 else ""
+            eng_html += f"{j + 1}. {html.escape(meanings_eng[j])}{sep}"
     else:
-        eng_html = meanings_eng[0]
+        eng_html = html.escape(meanings_eng[0])
+
     """
     rus_html = make_meaning_html_from_row(r, [f"meaning_{i}_rus" for i in range(1,5)])
     eng_html = make_meaning_html_from_row(r, [f"meaning_{i}" for i in range(1,5)])
@@ -145,72 +144,37 @@ for _, r in df.iterrows():
         "Part of Speech": html.escape(str(pos)) if pos is not None else ""
     })
 
-# Собираем HTML (как раньше — DataTables CDN)
-html_parts = []
-html_parts.append("<!doctype html>")
-html_parts.append("<html lang='en'>")
-html_parts.append("<head>")
-html_parts.append('  <meta charset="utf-8">')
-html_parts.append('  <meta name="viewport" content="width=device-width, initial-scale=1">')
-html_parts.append('  <title>Dictionary of Kina Rutul</title>')
-html_parts.append(f'  <link rel="stylesheet" href="{STYLESHEET}">')
-html_parts.append('  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">')
-html_parts.append("<style>ol { padding: 0; margin: 0; }</style>")
-html_parts.append("</head>")
-html_parts.append("<body>")
-html_parts.append("<h2>How to use</h2>")
-html_parts.append("<p>... (инструкции) ...</p>")
+env = Environment(
+    loader=FileSystemLoader("."),
+    autoescape=True
+)
 
-html_parts.append('<table id="dict" class="display" style="width:100%">')
-cols = ["Glossing Label", "Lexical entry", "Orthography", "Russian", "English", "Part of Speech"]
-html_parts.append("  <thead>")
-html_parts.append("    <tr>")
-for c in cols:
-    html_parts.append(f"      <th>{c}</th>")
-html_parts.append("    </tr>")
-html_parts.append("    <tr>")
-for c in cols:
-    html_parts.append(f'      <th><input type="text" placeholder="Поиск {c}" style="width: 100%; box-sizing: border-box;"></th>')
-html_parts.append("    </tr>")
-html_parts.append("  </thead>")
-html_parts.append("  <tbody>")
-for r in rows_html:
-    html_parts.append("    <tr>")
-    for c in cols:
-        val = r[c] or ""
-        html_parts.append(f"      <td>{val}</td>")
-    html_parts.append("    </tr>")
-html_parts.append("  </tbody>")
-html_parts.append("</table>")
+dict_template = env.get_template("templates/dictionary_template.html")
+base_template = env.get_template("templates/base.html")
 
-html_parts.append('<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>')
-html_parts.append('<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>')
-html_parts.append("""
-<script>
-$(document).ready(function() {
-  var table = $('#dict').DataTable({
-    pageLength: 20,
-    orderCellsTop: true,
-    fixedHeader: false,
-    dom: 'lrtip'
-  });
-  $('#dict thead tr:eq(1) th').each(function (i) {
-    var input = $(this).find('input');
-    if (input.length) {
-      input.on('keyup change clear', function () {
-        if (table.column(i).search() !== this.value) {
-          table.column(i).search(this.value).draw();
-        }
-      });
-    }
-  });
-});
-</script>
-""")
-html_parts.append("</body>")
-html_parts.append("</html>")
+
+columns = [
+    "Glossing Label",
+    "Lexical entry",
+    "Orthography",
+    "Russian",
+    "English",
+    "Part of Speech"
+]
+
+# 1. рендерим КОНТЕНТ таблицы
+content = dict_template.render(
+    columns=columns,
+    rows=rows_html
+)
+
+html_out = base_template.render(
+    title="Dictionary of Kina Rutul",
+    content=content,
+    base_url="/kina-rutul-dict/"
+)
 
 with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
-    f.write("\n".join(html_parts))
+    f.write(html_out)
 
 print(f"Готово: сгенерирован {OUTPUT_HTML}")

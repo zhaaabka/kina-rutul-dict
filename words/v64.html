@@ -1,140 +1,194 @@
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Rutul | kíwɨqʼɨr</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <style>
-            .small-container {
-                width: 60%; 
-                margin: auto;
-            }
-            @media (max-width: 768px) {
-                .small-container {
-                    width: 100%;
-                }
-            }
-            .dict-table td {
-                padding-left: 10;
-            }
-        </style>
-    </head>
-    <body>
-        <!-- NAVIGATION BAR -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../dictionary.html">Dictionary</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- PAGE BODY -->
-        <div class="container pt-3" style="padding-bottom: 50;">
-            <div class="small-container">
-                <!-- Lexical entry -->
-                <p class="h3">kíwɨqʼɨr</p>
-                <p>
-                    <b>verb</b>
-                    <br>
-                    
-                    <table class="dict-table" style="margin-top: 10;">
-                        <tr>
-                            <th>Orthography:</th>
-                            <td>кивыкьыр</td>
-                        </tr>
-                        <tr>
-                            <th>Glossing label:</th>
-                            <td>SURF-come</td>
-                        </tr>
-                    </table>
-                </p>
-                <!-- Meanings -->
-                <p class="h5">Meanings</p>
-                <ol class="list-group list-group-numbered">
-                
-                    <li class="list-group-item">
-                        touch (intr.) <br> дотрагиваться (неперех.)
-                        <br>
-                        <ul>
-                            
-                                <li><i>zad zirɨ χɨl kíqʼɨr / зад зиры хыл ки́кьыр</i><br>‘Я корову рукой тронул’</li>
-                            
-                        
-                            
-                                <li><i>zirɨra xijik bukʼbɨr kíwiqʼɨr / зирыра хьийик букӀбыр ки́викьыр</i><br>‘Корова коснулась воды губами’</li>
-                            
-                        
-                            
-                                <li><i>zer kíwɨrqʼara masalɨk / зер ки́выркьара масалык</i><br>‘Корова касается стенки’</li>
-                            
-                        
-                            
-                                <li><i>masalɨk kiwɨqʼa / масалык кивыкьа</i><br>‘[Корове: ] Касайся стены’</li>
-                            
-                        
-                            
-                                <li><i>zad zerɨ χɨl kíqʼɨr / зад зеры хыл ки́кьыр</i><br>‘Мать потрогала ребенка’</li>
-                            
-                        
-                            
-                                <li><i>nin kiriqʼɨr χɨnχɨk / нин кирикьыр хынхык</i><br>‘Мать потрогала корову рукой’</li>
-                            
-                        </ul>
-                    </li>
-                    
-                </ol>
-                <br>
-                <!-- Comment -->
-                
-                <!-- Inflection -->
-                
-                    <p class="h5">Inflection</p>
-                
-                
-                
-                <table class="dict-table">
-                
-                <tr>
-                    <th>Perfective, Gender 3</th>
-                    <td>kíwɨqʼɨr</td>
-                </tr>
-                
-                <tr>
-                    <th>Imperfective, Gender 3</th>
-                    <td>kiwírqʼara</td>
-                </tr>
-                
-                <tr>
-                    <th>Infinitive, Gender 3</th>
-                    <td>kiwíqʼas</td>
-                </tr>
-                
-                <tr>
-                    <th>Imperative, Gender 3</th>
-                    <td>kíwiqʼa</td>
-                </tr>
-                
-                <tr>
-                    <th>Prohibitive, Gender 3</th>
-                    <td>kimérwiqʼ</td>
-                </tr>
-                
-                </table>
-                
-            </div>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kina Rutul — kíwɨqʼɨr</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
+  <!-- Custom style -->
+  <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light border-bottom">
+  <div class="container">
+    <a class="navbar-brand fw-semibold" href="/index.html">
+      Home
+    </a>
+
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item ms-3">
+          <a class="nav-link" href="/dictionary.html">Dictionary</a>
+        </li>
+        <li class="nav-item ms-3">
+          <a class="nav-link" href="/search.html">Search</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE CONTENT -->
+<main class="container page-container">
+  
+
+<h1>
+  kíwɨqʼɨr
+</h1>
+
+<p class="text-muted">
+  <b>Orthography:</b> кивыкьыр <br>
+  <b>Part of speech:</b> verb <br>
+  <b>Glossing label:</b>
+  SURF-come
+</p>
+
+<hr>
+
+
+
+<h2>Meanings</h2>
+
+<ol>
+
+  <li class="mb-3">
+
+    <div>
+      <b>touch (intr.)</b>
+      
+        — дотрагиваться (неперех.)
+      
+    </div>
+
+
+    
+      <ul class="mt-2">
+        
+          <li class="example">
+            <i>zirɨra xijik bukʼbɨr kíwiqʼɨr</i>
+            
+              / <i>зирыра хьийик букӀбыр ки́викьыр</i>
+            
+            — ‘Я корову рукой тронул’
+          </li>
+        
+          <li class="example">
+            <i>zer kíwɨrqʼara masalɨk</i>
+            
+              / <i>зер ки́выркьара масалык</i>
+            
+            — ‘Корова коснулась воды губами’
+          </li>
+        
+          <li class="example">
+            <i>masalɨk kiwɨqʼa</i>
+            
+              / <i>масалык кивыкьа</i>
+            
+            — ‘Корова касается стенки’
+          </li>
+        
+          <li class="example">
+            <i>zad zerɨ χɨl kíqʼɨr</i>
+            
+              / <i>зад зеры хыл ки́кьыр</i>
+            
+            — ‘[Корове: ] Касайся стены’
+          </li>
+        
+          <li class="example">
+            <i>nin kiriqʼɨr χɨnχɨk</i>
+            
+              / <i>нин кирикьыр хынхык</i>
+            
+            — ‘Мать потрогала ребенка’
+          </li>
+        
+          <li class="example">
+            <i>nine χɨl kiqʼɨr zirek</i>
+            
+              / <i>нине хыл кикьыр зирек</i>
+            
+            — ‘Мать потрогала корову рукой’
+          </li>
+        
+      </ul>
+    
+
+  </li>
+
+</ol>
+
+
+
+
+<hr>
+<h2>Inflection</h2>
+
+<table class="table table-sm table-borderless w-auto">
+  
+    
+    <tr>
+      <th>Perfective, Gender 3</th>
+      <td>kíwɨqʼɨr</td>
+    </tr>
+    
+  
+    
+    <tr>
+      <th>Imperfective, Gender 3</th>
+      <td>kiwírqʼara</td>
+    </tr>
+    
+  
+    
+    <tr>
+      <th>Infinitive, Gender 3</th>
+      <td>kiwíqʼas</td>
+    </tr>
+    
+  
+    
+    <tr>
+      <th>Imperative, Gender 3</th>
+      <td>kíwiqʼa</td>
+    </tr>
+    
+  
+    
+    <tr>
+      <th>Prohibitive, Gender 3</th>
+      <td>kimérwiqʼ</td>
+    </tr>
+    
+  
+</table>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="container text-muted small mt-5 mb-4">
+  Dictionary of Kina Rutul · HSE University
+</footer>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+</body>
 </html>

@@ -196,7 +196,9 @@ def generate_pages(data_file: str, infl_files: List[str]):
     if not out_dir.is_dir():
         out_dir.mkdir()
     env = Environment(loader=FileSystemLoader(templates_dir))
-    template = env.get_template(template_file)
+    word_template = env.get_template("word_template.html")
+    base_template = env.get_template("base.html")
+
 
     inflection_data = load_inflection(*infl_files)
     glossing_labels = load_glossing_labels(data_file)
@@ -218,13 +220,23 @@ def generate_pages(data_file: str, infl_files: List[str]):
             out_file = out_dir.joinpath(
                 f"{data['lexeme_id'].replace(', ', '-')}.html"
             )
-            generate_html(
+            # 1. сначала рендерим КОНТЕНТ статьи
+            word_content = word_template.render(
                 data=data,
-                template=template,
-                out_file=out_file,
                 complex_pos=complex_pos,
                 glossing_labels=glossing_labels
             )
+
+            # 2. оборачиваем в base.html
+            full_html = base_template.render(
+                title=f"Kina Rutul — {data['Lexical entry']}",
+                content=word_content
+            )
+
+            # 3. записываем файл
+            with open(out_file, "w", encoding="utf-8") as f:
+                f.write(full_html)
+
 """
 def generate_xlsx(data_file: str, infl_files: list[str]):
     def write_tsv_to_worksheet(

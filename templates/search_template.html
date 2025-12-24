@@ -1,0 +1,43 @@
+<h1>Search</h1>
+
+<div id="virtual-keyboard" class="mb-3">
+  <span class="virtual-key">Ӏ</span>
+  <span class="virtual-key">ˤ</span>
+  <span class="virtual-key">ʷ</span>
+  <span class="virtual-key">ʲ</span>
+  <span class="virtual-key">ʼ</span>
+  <span class="virtual-key">ː</span>
+  <span class="virtual-key">ʁ</span>
+  <span class="virtual-key">χ</span>
+  <span class="virtual-key">ɢ</span>
+  <span class="virtual-key">ɣ</span>
+  <span class="virtual-key">ʔ</span>
+  <span class="virtual-key">ʒ</span>
+  <span class="virtual-key">ǯ</span>
+  <span class="virtual-key">š</span>
+  <span class="virtual-key">č</span>
+  <span class="virtual-key">ɐ</span>
+  <span class="virtual-key">ɞ</span>
+  <span class="virtual-key">ɨ</span>
+  <span class="virtual-key">ä</span>
+  <span class="virtual-key">ü</span>
+  <span class="virtual-key">а̂</span>
+  <span class="virtual-key">о̂</span>
+</div>
+
+<input id="search" type="text"
+       class="form-control mb-2"
+       placeholder="Введите слово или перевод">
+
+<div id="search-modes" class="mb-3">
+  <label><input type="radio" name="mode" value="all" checked> Полнотекстовый поиск</label><br>
+  <label><input type="radio" name="mode" value="lemma"> Лемма и словоформы</label><br>
+  <label><input type="radio" name="mode" value="translation"> Перевод слова</label><br>
+  <label><input type="radio" name="mode" value="example"> Примеры</label><br>
+  <label><input type="radio" name="mode" value="example_translation"> Перевод примеров</label>
+</div>
+
+<div id="results"></div>
+
+<script src="{{ base_url }}static/full_dict.js"></script>
+<script src="{{ base_url }}static/search.js"></script>

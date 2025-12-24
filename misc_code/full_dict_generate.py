@@ -10,6 +10,8 @@ for _, r in df.iterrows():
     pos = r['Part of Speech']
     if pos == "complex verb":
         pos = 'cv'
+    elif pos == "complex noun":
+        pos = 'cn'
     elif pos == "noun, adjective":
         pos = 'n/adj'
     elif pos == "adjective":
