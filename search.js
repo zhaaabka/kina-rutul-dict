@@ -1,23 +1,19 @@
 (function () {
   const input = document.getElementById("search");
   const resultsDiv = document.getElementById("results");
-
   const data = window.data;
 
   function normalize(text) {
     return text
       .toLowerCase()
       .normalize("NFD")
-      .replace(/[\u0300-\u036fːʼʁɨˤʷ]/g, "");
   }
 
   function matchesEntry(key, entry, query) {
     const q = normalize(query);
 
-    // 1. Заголовок (ключ словаря)
     if (normalize(key).includes(q)) return true;
 
-    // 2. Переводы
     for (const tr of entry.translations || []) {
       if (
         (tr.text_rus && normalize(tr.text_rus).includes(q)) ||
@@ -27,7 +23,6 @@
       }
     }
 
-    // 3. Примеры
     for (const ex of entry.examples || []) {
       if (
         normalize(ex.original).includes(q) ||
@@ -37,9 +32,8 @@
       }
     }
 
-    // 4. Словоизменение
-    for (const form of entry.inflection || []) {
-      if (normalize(form).includes(q)) return true;
+    for (const f of entry.inflection || []) {
+      if (normalize(f).includes(q)) return true;
     }
 
     return false;
@@ -49,26 +43,44 @@
     const div = document.createElement("div");
     div.className = "entry";
 
+    /* 1️⃣ Заголовок + ссылка */
+    const link = `/kina-rutul-dict/words/${entry.id}.html`;
+
+    const inflection =
+      entry.inflection && entry.inflection.length
+        ? `, ${entry.inflection.join(", ")}`
+        : "";
+
+    const header = `
+      <a href="${link}"><b>${key}</b></a>
+      (${entry.pos}${inflection})
+    `;
+
+    /* 2️⃣ Переводы */
     const translations = entry.translations
-      .map(t => `• ${t.text_rus}${t.text_en ? " — " + t.text_en : ""}`)
-      .join("<br>");
-
-    const examples = (entry.examples || [])
-      .map(ex =>
-        `<div class="example">"${ex.original}" — ${ex.translation}</div>`
+      .map(
+        (t, i) =>
+          `${i + 1}. ${t.text_rus || ""}${
+            t.text_en ? " | " + t.text_en : ""
+          };`
       )
-      .join("");
+      .join(" ");
 
-    const inflection = entry.inflection.length
-      ? `<div><b>Формы:</b> ${entry.inflection.join(", ")}</div>`
-      : "";
+    /* 3️⃣ Примеры */
+    let examples = "";
+    if (entry.examples && entry.examples.length) {
+      examples =
+        " Примеры: " +
+        entry.examples
+          .map(
+            ex =>
+              `<i>${ex.original}</i> — ${ex.translation};`
+          )
+          .join(" ");
+    }
 
     div.innerHTML = `
-      <div class="lemma">${key}</div>
-      <div class="pos">${entry.pos}</div>
-      <div>${translations}</div>
-      ${inflection}
-      ${examples}
+      ${header}: ${translations}${examples}
     `;
 
     return div;
