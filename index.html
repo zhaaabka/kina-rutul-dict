@@ -72,70 +72,61 @@
   </a>
 </p>
 
-<hr>
+<h2>How to cite</h2>
 
 <div class="cite-block">
-  <h2>How to cite</h2>
-
-  <div class="tabs">
-    <button class="btn btn-outline-success active"
-            onclick="showTab('plain')">
+  <div class="tabs mb-2">
+    <button class="btn btn-outline-success active me-2"
+            onclick="showTab('plain', this)">
       Plain text
     </button>
     <button class="btn btn-outline-success"
-            onclick="showTab('bibtex')">
+            onclick="showTab('bibtex', this)">
       BibTeX
     </button>
   </div>
 
-  <div class="tab-content">
+
+<div class="tab-content">
 
   <div id="plain" class="cite-content active">
-    <button class="copy-btn"
-            onclick="copyCitation('plain', this)">
-      Copy
-    </button>
-    <pre>Alekseeva, Anastasia, Nikita Beklemishev, Michael Daniel, Nina Dobrushina, Konstantin Filatov, Anastasia Ivanova, Timur Maisak (2025). <i>Dictionary of Kina Rutul</i>. Moscow: Linguistic Convergence Laboratory. HSE University. <a href="https://zhaaabka.github.io/kina-rutul-dict/">https://zhaaabka.github.io/kina-rutul-dict/</a>.</pre>
+    <p>Alekseeva, Anastasia, Nikita Beklemishev, Michael Daniel, Nina Dobrushina, Konstantin Filatov, Anastasia Ivanova, Timur Maisak (2025). <i>Dictionary of Kina Rutul</i>. Moscow: Linguistic Convergence Laboratory. HSE University. <a href="https://zhaaabka.github.io/kina-rutul-dict/">https://zhaaabka.github.io/kina-rutul-dict/</a>.</p>
   </div>
 
   <div id="bibtex" class="cite-content">
-    <button class="copy-btn"
-            onclick="copyCitation('bibtex', this)">
-      Copy
-    </button>
+    <div class="bibtex-header">
+      <span class="copy-icon"
+            title="Copy to clipboard"
+            onclick="copyCitation('bibtex')">
+        📋
+      </span>
+    </div>
     <pre>@book{alekseevaetal2025,<br>  title = {Dictionary of Kina Rutul},<br>  author = {Anastasia Alekseeva and Nikita Beklemishev and Michael Daniel and Nina Dobrushina and Kinstantin Filatov and Anastasia Ivanova and Timur Maisak},<br>  year = {2025},<br>  publisher = {Linguistic Convergence Laboratory, HSE University},<br>  address = {Moscow},<br>  url = {https://zhaaabka.github.io/kina-rutul-dict/}<br>}</pre>
   </div>
-
 </div>
 
 </div>
 
 <script>
-function showTab(name) {
-  document.querySelectorAll('.tab').forEach(tab =>
-    tab.classList.remove('active')
-  );
+function showTab(name, button) {
+  // кнопки
+  document.querySelectorAll('.tabs .btn')
+    .forEach(btn => btn.classList.remove('active'));
+  button.classList.add('active');
 
-  document.querySelectorAll('.cite-content').forEach(block =>
-    block.classList.remove('active')
-  );
+  // блоки
+  document.querySelectorAll('.cite-content')
+    .forEach(block => block.classList.remove('active'));
 
   document.getElementById(name).classList.add('active');
-  event.target.classList.add('active');
 }
 
-function copyCitation(id, button) {
+function copyCitation(id) {
   const text = document
     .querySelector('#' + id + ' pre')
     .innerText;
 
-  navigator.clipboard.writeText(text).then(() => {
-    const original = button.textContent;
-    button.textContent = 'Copied!';
-    setTimeout(() => {
-      button.textContent = original;
-    }, 1000);
-  });
+  navigator.clipboard.writeText(text);
 }
 </script>
 </main>
