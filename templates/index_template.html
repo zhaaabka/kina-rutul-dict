@@ -19,23 +19,68 @@
 
 <hr>
 
-<h2>{{ bibtex_title }}</h2>
+<div class="cite-block">
+  <h2>{{ bibtex_title }}</h2>
 
-<div class="mb-3">
-  <button class="btn btn-sm btn-outline-secondary"
-          onclick="openTab('text')">
-    Plain text
-  </button>
-  <button class="btn btn-sm btn-outline-secondary"
-          onclick="openTab('bibtex')">
-    BibTeX
-  </button>
+  <div class="tabs">
+    <button class="tab active"
+            onclick="showTab('plain')">
+      Plain text
+    </button>
+    <button class="tab"
+            onclick="showTab('bibtex')">
+      BibTeX
+    </button>
+  </div>
+
+  <div class="tab-content">
+
+  <div id="plain" class="content active">
+    <button class="copy-btn"
+            onclick="copyCitation('plain', this)">
+      Copy
+    </button>
+    <pre>{{ citation_text }}</pre>
+  </div>
+
+  <div id="bibtex" class="content">
+    <button class="copy-btn"
+            onclick="copyCitation('bibtex', this)">
+      Copy
+    </button>
+    <pre>{{ citation_bibtex }}</pre>
+  </div>
+
 </div>
 
-<div id="text" class="tab-content">
-  <pre>{{ citation_text }}</pre>
 </div>
 
-<div id="bibtex" class="tab-content" style="display:none">
-  <pre>{{ citation_bibtex }}</pre>
-</div>
+<script>
+function showTab(name) {
+  document.querySelectorAll('.tab').forEach(tab =>
+    tab.classList.remove('active')
+  );
+  document.querySelectorAll('.content').forEach(content =>
+    content.classList.remove('active')
+  );
+
+  document.getElementById(name).classList.add('active');
+  event.target.classList.add('active');
+}
+
+function copyCitation(id, button) {
+  const text = document
+    .querySelector('#' + id + ' pre')
+    .innerText;
+
+  navigator.clipboard.writeText(text).then(() => {
+    const original = button.textContent;
+    button.textContent = 'Copied!';
+    setTimeout(() => {
+      button.textContent = original;
+    }, 1000);
+  });
+}
+</script>
+
+
