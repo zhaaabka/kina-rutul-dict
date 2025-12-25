@@ -170,13 +170,13 @@ def generate_pages(data_file: str, infl_files: List[str]):
     }
 
     root = Path(__file__).parent.absolute()
-    templates_dir = root.joinpath('templates')
     out_dir = root.joinpath(out_dir)
     if not out_dir.is_dir():
         out_dir.mkdir()
-    env = Environment(loader=FileSystemLoader(templates_dir))
-    word_template = env.get_template("word_template.html")
-    base_template = env.get_template("base.html")
+    
+    env = Environment(loader=FileSystemLoader("."))
+    word_template = env.get_template("templates/word_template.html")
+    base_template = env.get_template("templates/base.html")
 
 
     inflection_data = load_inflection(*infl_files)
@@ -208,8 +208,10 @@ def generate_pages(data_file: str, infl_files: List[str]):
             
             full_html = base_template.render(
                 title=f"Kina Rutul — {data['Lexical entry']}",
-                content=word_content
+                content=word_content,
+                base_url="/kina-rutul-dict/"
             )
+
 
             
             with open(out_file, "w", encoding="utf-8") as f:
