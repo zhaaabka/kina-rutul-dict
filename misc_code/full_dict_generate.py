@@ -1,7 +1,9 @@
 import json
 import pandas as pd
 
-df = pd.read_csv("data/rutul_dict.tsv", sep='\t')
+path = "D:/github/kina-rutul-dict/kina-rutul-dict/"
+
+df = pd.read_csv(path + "data/rutul_dict.tsv", sep='\t')
 
 dict = {}
 
@@ -51,7 +53,7 @@ for _, r in df.iterrows():
                 ex['translation'] = examples_transl[l]
                 dict[word]['examples'].append(ex)
             
-with open("full_dict.js", "w", encoding="utf-8") as f:
+with open(path + "static/full_dict.js", "w", encoding="utf-8") as f:
     f.write("window.data = ")
     json.dump(
         dict,
@@ -60,3 +62,5 @@ with open("full_dict.js", "w", encoding="utf-8") as f:
         indent=2
     )
     f.write(";\n")
+
+print("Сгенерировано: full_dict.js")

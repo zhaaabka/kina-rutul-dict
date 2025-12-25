@@ -4,7 +4,7 @@ from typing import Generator, List, Tuple
 import csv
 import re
 import os
-import tqdm
+from tqdm import tqdm
 
 from jinja2 import (Environment, FileSystemLoader, Template)
 

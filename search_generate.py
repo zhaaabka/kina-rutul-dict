@@ -15,3 +15,5 @@ html = base_template.render(
 
 with open("search.html", "w", encoding="utf-8") as f:
     f.write(html)
+
+print("Сгенерирован search.html")
