@@ -183,14 +183,18 @@ mark {
   padding: 0.8em;
 }
 
-.content {
+.cite-content {
   display: none;
+}
+
+.cite-content.active {
+  display: block;
+}
+
+.cite-content pre {
   white-space: pre-wrap;
 }
 
-.content.active {
-  display: block;
-}
 
 .copy-btn {
   float: right;

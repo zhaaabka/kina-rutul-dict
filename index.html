@@ -78,11 +78,11 @@
   <h2>How to cite</h2>
 
   <div class="tabs">
-    <button class="tab active"
+    <button class="btn btn-outline-success active"
             onclick="showTab('plain')">
       Plain text
     </button>
-    <button class="tab"
+    <button class="btn btn-outline-success"
             onclick="showTab('bibtex')">
       BibTeX
     </button>
@@ -90,7 +90,7 @@
 
   <div class="tab-content">
 
-  <div id="plain" class="content active">
+  <div id="plain" class="cite-content active">
     <button class="copy-btn"
             onclick="copyCitation('plain', this)">
       Copy
@@ -98,7 +98,7 @@
     <pre>Alekseeva, Anastasia, Nikita Beklemishev, Michael Daniel, Nina Dobrushina, Konstantin Filatov, Anastasia Ivanova, Timur Maisak (2025). <i>Dictionary of Kina Rutul</i>. Moscow: Linguistic Convergence Laboratory. HSE University. <a href="https://zhaaabka.github.io/kina-rutul-dict/">https://zhaaabka.github.io/kina-rutul-dict/</a>.</pre>
   </div>
 
-  <div id="bibtex" class="content">
+  <div id="bibtex" class="cite-content">
     <button class="copy-btn"
             onclick="copyCitation('bibtex', this)">
       Copy
@@ -115,8 +115,9 @@ function showTab(name) {
   document.querySelectorAll('.tab').forEach(tab =>
     tab.classList.remove('active')
   );
-  document.querySelectorAll('.content').forEach(content =>
-    content.classList.remove('active')
+
+  document.querySelectorAll('.cite-content').forEach(block =>
+    block.classList.remove('active')
   );
 
   document.getElementById(name).classList.add('active');
@@ -137,8 +138,6 @@ function copyCitation(id, button) {
   });
 }
 </script>
-
-
 </main>
 
 <!-- FOOTER -->
