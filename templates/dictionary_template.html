@@ -1,11 +1,7 @@
 <h1>Dictionary</h1>
 
-<h2>How to use</h2>
-<p>You can <b>search</b> the information in all the columns given.</p>
-<p>To see the full page for the word click on it in the column <b>Glossing Label</b>. It contains examples in Rutul and their translations to Russian and also some morphological information for the word (<b>Inflection</b> section). If the word is a <b>complex noun</b>, in Inflection there will be a link to the word, which is inflected in this complex noun. Same is for <b>complex verbs</b>.</p>
-<p>The column <b>Russian</b> represents a list of meanings translated to Russian for each lexical entry, <b>English</b> does the same, but in English. Orthography shows the word written in cyrillic transcription. Part of Speech indicates the part of speech of the lexical entry: noun, verb, adjective, complex noun and complex verb. <b>Glossing label</b> shows the gloss which is used for the entry in the Kina Rutul texts.</p>
+<p>You can search the information in all the columns given. For the full <b>lexical entry page</b>, click on the gloss in Glossing label column.</p>
 
-<h2>Dictionary</h2>
 <table id="dict" class="display" style="width:100%">
   <thead>
     <tr>
@@ -17,7 +13,7 @@
       {% for c in columns %}
         <th>
           <input type="text"
-                 placeholder="Поиск {{ c }}"
+                 placeholder="Search {{ c }}"
                  style="width:100%; box-sizing:border-box;">
         </th>
       {% endfor %}

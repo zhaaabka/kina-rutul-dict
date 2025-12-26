@@ -16,11 +16,10 @@
 }
 
 function getSearchMode() {
-  const checked = document.querySelector(
-    'input[name="mode"]:checked'
-  );
-  return checked ? checked.value : "all";
+  const btn = document.getElementById("search-mode-btn");
+  return btn ? btn.dataset.mode : "all";
 }
+
 
  function matchesEntry(key, entry, query) {
   const q = normalize(query);
@@ -138,7 +137,7 @@ function getSearchMode() {
         .join(" ");
 
 
-    /* Примеры */
+ 
     let examples = "";
     if (entry.examples && entry.examples.length) {
     examples =

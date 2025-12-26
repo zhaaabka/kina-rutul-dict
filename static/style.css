@@ -40,7 +40,7 @@ body {
 
 h1, h2, h3 {
   margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 h1 {
@@ -114,13 +114,13 @@ mark {
 
 .virtual-key {
   display: inline-block;
-  padding: 0.3em 0.5em;
-  margin: 0.15em;
+  padding: 0.2em 0.4em;
+  margin: 0.1em;
   border: 1px solid #ccc;
   border-radius: 4px;
   cursor: pointer;
   user-select: none;
-  font-size: 1.1em;
+  font-size: 0.95em;
 }
 
 .virtual-key:hover {
@@ -153,7 +153,6 @@ mark {
 }
 
 .cite-block {
-  margin-top: 3em;
   padding: 1em;
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 1rem;
@@ -250,3 +249,10 @@ mark {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
+.action-card:hover {
+  text-decoration: none;
+}
+
+.action-card:hover p {
+  text-decoration: none;
+}
