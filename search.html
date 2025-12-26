@@ -51,6 +51,8 @@
 <main class="container page-container">
   <h1>Search</h1>
 
+<p>Choose a <b>search mode</b>: <i>Full text</i> (entire entry), <i>Lemma & forms</i> (lemma and forms only), <i>Translation</i> (meanings in RU/EN), <i>Examples</i> and <i>Example translation</i> (examples and their translations in RU/EN).</p>
+
 <div id="virtual-keyboard" class="mb-3">
   <span class="virtual-key">Ӏ</span>
   <span class="virtual-key">ˤ</span>
@@ -72,21 +74,57 @@
   <span class="virtual-key">ɨ</span>
   <span class="virtual-key">ä</span>
   <span class="virtual-key">ü</span>
-  <span class="virtual-key">а̂</span>
-  <span class="virtual-key">о̂</span>
 </div>
 
-<input id="search" type="text"
-       class="form-control mb-2"
-       placeholder="Введите слово или перевод">
+<div class="input-group mb-3">
 
-<div id="search-modes" class="mb-3">
-  <label><input type="radio" name="mode" value="all" checked> Полнотекстовый поиск</label><br>
-  <label><input type="radio" name="mode" value="lemma"> Лемма и словоформы</label><br>
-  <label><input type="radio" name="mode" value="translation"> Перевод слова</label><br>
-  <label><input type="radio" name="mode" value="example"> Примеры</label><br>
-  <label><input type="radio" name="mode" value="example_translation"> Перевод примеров</label>
+  <!-- Dropdown -->
+  <button class="btn btn-outline-accent dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          id="search-mode-btn"
+          data-mode="all">
+    Full text
+  </button>
+
+  <ul class="dropdown-menu">
+    <li>
+      <a class="dropdown-item active" href="#" data-mode="all">
+        Full text
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item" href="#" data-mode="lemma">
+        Lemma & forms
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item" href="#" data-mode="translation">
+        Translation
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item" href="#" data-mode="example">
+        Examples
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item" href="#" data-mode="example_translation">
+        Example translation
+      </a>
+    </li>
+  </ul>
+
+  <!-- Input -->
+  <input id="search"
+         type="text"
+         class="form-control"
+         placeholder="Search"
+         aria-label="Search">
+
 </div>
+
 
 <div id="results"></div>
 
@@ -95,7 +133,7 @@
 </main>
 
 <!-- FOOTER -->
-<footer class="container text-muted small mt-5 mb-4">
+<footer class="container text-center text-muted small mt-5 mb-4">
   Dictionary of Kina Rutul · HSE University · 2025
 </footer>
 
