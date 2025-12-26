@@ -10,7 +10,7 @@
 
 body {
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: var(--text-main);
   background: #fff;
   line-height: 1.5;
@@ -155,7 +155,6 @@ mark {
 .cite-block {
   margin-top: 3em;
   padding: 1em;
-  border-top: 1px solid #ccc;
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 1rem;
 }
@@ -214,3 +213,40 @@ mark {
   --bs-btn-active-bg: var(--accent);
   --bs-btn-active-border-color: var(--accent);
 }
+
+.home-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.action-card {
+  display: block;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--text-main);
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.action-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.action-card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.action-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+

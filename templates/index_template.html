@@ -4,18 +4,25 @@
 <p>{{ p }}</p>
 {% endfor %}
 
-<p>
-  <a class="btn btn-outline-accent btn-accent"
-     href="{{ base_url }}dictionary.html">
-    Browse the dictionary
+<div class="home-actions">
+
+  <a href="{{ base_url }}dictionary.html" class="action-card">
+    <h3>Browse the dictionary</h3>
+    <p>Explore all lexical entries alphabetically.</p>
   </a>
-</p>
-<p>
-  <a class="btn btn-outline-accent btn-accent"
-     href="{{ base_url }}search.html">
-    Full search
+
+  <a href="{{ base_url }}search.html" class="action-card">
+    <h3>Full search</h3>
+    <p>Search by lemma & forms, meanings or examples.</p>
   </a>
-</p>
+
+  <a href="{{ base_url }}instructions.html" class="action-card">
+    <h3>Instructions</h3>
+    <p>How to use the dictionary.</p>
+  </a>
+
+</div>
+
 
 <h2>{{ bibtex_title }}</h2>
 

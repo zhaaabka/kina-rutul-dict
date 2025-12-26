@@ -11,8 +11,7 @@ content = index_template.render(
     title="Kina Rutul Dictionary",
     paragraphs=[
         "This is the dictionary of the Rutul language (&lt; Lezgic &lt; Nakh-Dagestanian; <a href='https://glottolog.org/resource/languoid/id/rutu1240'>rutu1240</a>), spoken in the settlement of Kina (Russia, Dagestan Republic).",
-        "This dictionary was collected during the fieldwork in 2016–2023 of Linguistic convergence laboratory (HSE University). We are grateful for all the consultants who helped us in our work.",
-        "The dictionary contains 1200+ lexical entries of different parts of speech (nouns, verbs, etc.), list of meanings collected for these entries, exemplifying sentences and also some morphological information."
+        "This dictionary was collected during the fieldwork in 2016–2023 of Linguistic convergence laboratory (HSE University). We are very grateful for all the consultants who helped us in our work. The dictionary contains 1200+ lexical entries of different parts of speech (nouns, verbs, etc.), list of meanings collected for these entries, exemplifying sentences and also some morphological information."
     ],
     bibtex_title="How to cite",
     citation_text=('Alekseeva, Anastasia, Nikita Beklemishev, Michael Daniel, Nina Dobrushina, Konstantin Filatov, Anastasia Ivanova, Timur Maisak (2025). <i>Dictionary of Kina Rutul</i>. Moscow: Linguistic Convergence Laboratory. HSE University. <a href="https://zhaaabka.github.io/kina-rutul-dict/">https://zhaaabka.github.io/kina-rutul-dict/</a>.'),
