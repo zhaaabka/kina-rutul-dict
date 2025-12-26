@@ -1,15 +1,16 @@
 :root {
-  --accent: #1f6f5b;
-  --accent-soft: #e6f2ee;
+  --accent: #33661d;
+  --accent-soft: #dee6cc;
   --text-main: #111;
-  --text-muted: #555;
+  --text-muted: #292929;
+  --marked: #f5cdB3;
 }
 
 /* ---------- BASE ---------- */
 
 body {
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--text-main);
   background: #fff;
   line-height: 1.5;
@@ -44,6 +45,7 @@ h1, h2, h3 {
 
 h1 {
   font-size: 2rem;
+  color: var(--accent);
 }
 
 h2 {
@@ -64,6 +66,7 @@ table {
   font-weight: 600;
   padding-right: 1rem;
   vertical-align: top;
+  max-width: 1200px;
 }
 
 .dict-table td {
@@ -105,7 +108,7 @@ a:hover {
 /* ---------- HIGHLIGHT (for search) ---------- */
 
 mark {
-  background-color: var(--accent-soft);
+  background-color: var(--marked);
   padding: 0 0.2em;
 }
 
@@ -147,11 +150,6 @@ mark {
 .example {
   margin-left: 1rem;
   color: #333;
-}
-
-mark {
-  background: var(--accent-soft);
-  padding: 0 0.1em;
 }
 
 .cite-block {
