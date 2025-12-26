@@ -204,3 +204,8 @@ document.querySelectorAll(".virtual-key").forEach(key => {
     input.focus();
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const input = document.getElementById('search');
+  input.placeholder = 'Search anywhere in the entry';
+});

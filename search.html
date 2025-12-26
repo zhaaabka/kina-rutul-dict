@@ -79,12 +79,13 @@
 <div class="input-group mb-3">
 
   <!-- Dropdown -->
-  <button class="btn btn-outline-accent dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-          id="search-mode-btn"
-          data-mode="all">
+  <button
+    id="search-mode-btn"
+    class="btn dropdown-toggle search-mode-btn"
+    type="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+    data-mode="all">
     Full text
   </button>
 
@@ -117,13 +118,15 @@
   </ul>
 
   <!-- Input -->
-  <input id="search"
-         type="text"
-         class="form-control"
-         placeholder="Search"
-         aria-label="Search">
+  <input
+    id="search"
+    type="text"
+    class="form-control"
+    placeholder="Search"
+    aria-label="Search">
 
 </div>
+
 
 
 <div id="results"></div>

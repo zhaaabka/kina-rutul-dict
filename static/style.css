@@ -153,7 +153,6 @@ mark {
 }
 
 .cite-block {
-  padding: 1em;
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 1rem;
 }
@@ -255,4 +254,30 @@ mark {
 
 .action-card:hover p {
   text-decoration: none;
+}
+
+.search-mode-btn {
+  color: var(--accent);
+  border-color: var(--accent);
+  background-color: #fff;
+}
+
+.search-mode-btn:hover,
+.search-mode-btn:focus {
+  color: #fff;
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.search-mode-btn:focus {
+  box-shadow: 0 0 0 0.15rem rgba(51, 102, 29, 0.25);
+}
+
+.dropdown-menu {
+  font-size: 0.95rem;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: var(--accent);
 }
