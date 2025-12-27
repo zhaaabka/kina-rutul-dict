@@ -19,10 +19,20 @@
 
 </head>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const tooltipTriggerList = [].slice.call(
+    document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  );
+  tooltipTriggerList.map(el => new bootstrap.Tooltip(el));
+});
+</script>
+
+
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-light border-bottom">
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top custom-navbar">
   <div class="container">
     <a class="navbar-brand fw-semibold" href="/kina-rutul-dict/index.html">
       Home
@@ -43,6 +53,29 @@
           <a class="nav-link" href="/kina-rutul-dict/search.html">Search</a>
         </li>
       </ul>
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item ms-2">
+          <a class="nav-link icon-link"
+            href="https://github.com/zhaaabka/kina-rutul-dict"
+            target="_blank"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            title="Source code">
+            <i class="bi bi-github"></i>
+          </a>
+        </li>
+        <li class="nav-item ms-2">
+          <a class="nav-link icon-link"
+            href="/kina-rutul-dict/static/data.xlsx"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            title="Download data">
+            <i class="bi bi-download"></i>
+          </a>
+        </li>
+      </ul>
+
+      
     </div>
   </div>
 </nav>

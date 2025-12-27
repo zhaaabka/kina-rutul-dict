@@ -19,10 +19,20 @@
 
 </head>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const tooltipTriggerList = [].slice.call(
+    document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  );
+  tooltipTriggerList.map(el => new bootstrap.Tooltip(el));
+});
+</script>
+
+
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-light border-bottom">
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top custom-navbar">
   <div class="container">
     <a class="navbar-brand fw-semibold" href="/kina-rutul-dict/index.html">
       Home
@@ -43,6 +53,29 @@
           <a class="nav-link" href="/kina-rutul-dict/search.html">Search</a>
         </li>
       </ul>
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item ms-2">
+          <a class="nav-link icon-link"
+            href="https://github.com/zhaaabka/kina-rutul-dict"
+            target="_blank"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            title="Source code">
+            <i class="bi bi-github"></i>
+          </a>
+        </li>
+        <li class="nav-item ms-2">
+          <a class="nav-link icon-link"
+            href="/kina-rutul-dict/static/data.xlsx"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            title="Download data">
+            <i class="bi bi-download"></i>
+          </a>
+        </li>
+      </ul>
+
+      
     </div>
   </div>
 </nav>
@@ -54,7 +87,9 @@
 
 <p>This is the dictionary of the Rutul language (&lt; Lezgic &lt; Nakh-Dagestanian; <a href='https://glottolog.org/resource/languoid/id/rutu1240'>rutu1240</a>), spoken in the settlement of Kina (Russia, Dagestan Republic).</p>
 
-<p>This dictionary was collected during the fieldwork in 2016–2023 of Linguistic convergence laboratory (HSE University). We are very grateful for all the consultants who helped us in our work. The dictionary contains 1200+ lexical entries of different parts of speech (nouns, verbs, etc.), list of meanings collected for these entries, exemplifying sentences and also some morphological information.</p>
+<p>This dictionary was collected during the fieldwork in 2016–2023 of Linguistic convergence laboratory (HSE University). We are very grateful for all the consultants who helped us in our work.</p>
+
+<p>The dictionary contains 1200+ lexical entries of different parts of speech (nouns, verbs, etc.), list of meanings collected for these entries, exemplifying sentences and also some morphological information.</p>
 
 
 <div class="home-actions">
@@ -78,7 +113,6 @@
 
 
 <h2>How to cite</h2>
-
 <div class="cite-block">
   <div class="tabs mb-2">
     <button class="btn btn-outline-accent btn-accent active me-2"

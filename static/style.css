@@ -4,6 +4,8 @@
   --text-main: #111;
   --text-muted: #292929;
   --marked: #f5cdB3;
+  --nav-accent: #a15938;
+  --nav-accent-soft: #f5d8cb;
 }
 
 /* ---------- BASE ---------- */
@@ -25,16 +27,34 @@ body {
 /* ---------- NAVBAR ---------- */
 
 .navbar-brand {
-  color: var(--accent) !important;
+  color: var(--nav-accent) !important;
 }
 
 .nav-link {
-  color: var(--accent);
+  color: var(--nav-accent);
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
 }
 
 .nav-link:hover {
-  text-decoration: underline;
+  background-color: var(--nav-accent-soft);
+  text-decoration: none;
 }
+
+.custom-navbar {
+  border-bottom: 3px solid var(--nav-accent);
+  z-index: 1030; /* поверх контента */
+}
+
+.icon-link {
+  font-size: 1.2rem;
+  color: var(--nav-accent);
+}
+
+.icon-link:hover {
+  background-color: var(--nav-accent-soft);
+}
+
 
 /* ---------- HEADINGS ---------- */
 
