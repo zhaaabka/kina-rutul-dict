@@ -42,7 +42,7 @@ body {
 }
 
 .custom-navbar {
-  border-bottom: 3px solid var(--nav-accent);
+  border-bottom: 3px solid var(--nav-accent-soft);
   z-index: 1030; /* поверх контента */
 }
 
@@ -136,11 +136,13 @@ mark {
   display: inline-block;
   padding: 0.2em 0.4em;
   margin: 0.1em;
-  border: 1px solid #ccc;
+  border: 1px solid var(--nav-accent);
   border-radius: 4px;
   cursor: pointer;
   user-select: none;
   font-size: 0.95em;
+  
+  color: var(--nav-accent);
 }
 
 .virtual-key:hover {
@@ -148,7 +150,7 @@ mark {
 }
 
 .virtual-key:active {
-  background: #ddd;
+  background: var(--nav-accent-soft);
 }
 
 .entry {
