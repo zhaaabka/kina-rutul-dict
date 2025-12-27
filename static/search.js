@@ -206,6 +206,42 @@ document.querySelectorAll(".virtual-key").forEach(key => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('search-mode-btn');
   const input = document.getElementById('search');
-  input.placeholder = 'Search anywhere in the entry';
+
+  const placeholders = {
+    all: 'Search anywhere in the entry',
+    lemma: 'Search lemma or word forms',
+    translation: 'Search Russian or English translations',
+    example: 'Search example sentences',
+    example_translation: 'Search translations of examples'
+  };
+
+  document.querySelectorAll('.dropdown-item').forEach(item => {
+    item.addEventListener('click', e => {
+      e.preventDefault();
+
+      const mode = item.dataset.mode;
+      const text = item.textContent;
+
+      // обновляем кнопку
+      btn.textContent = text;
+      btn.dataset.mode = mode;
+
+      // активный пункт
+      document.querySelectorAll('.dropdown-item')
+        .forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+
+      // placeholder
+      input.placeholder = placeholders[mode] || 'Search';
+
+      // фокус обратно в поле
+      input.focus();
+    });
+  });
+
+  // начальный placeholder
+  input.placeholder = placeholders[btn.dataset.mode] || 'Search';
 });
+
