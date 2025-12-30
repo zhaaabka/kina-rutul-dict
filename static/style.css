@@ -303,3 +303,19 @@ mark {
 .dropdown-item:active {
   background-color: var(--accent);
 }
+
+.inflection-table {
+  font-size: 1.15rem;
+  color: var(--text-main);
+}
+
+.inflection-table th {
+  font-weight: 500;
+  color: var(--text-main);
+  padding-right: 1.2rem;
+  white-space: nowrap;
+}
+
+.inflection-table td {
+  color: var(--text-main);
+}

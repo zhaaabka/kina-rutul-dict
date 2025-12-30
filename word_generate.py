@@ -164,10 +164,7 @@ def check_page_name(label: str) -> None:
 def generate_pages(data_file: str, infl_files: List[str]):
     template_file = "word_template.html"
     out_dir = 'words'
-    complex_pos = {
-        f'complex {pos}': f'This is a complex {pos} consisting of the words:'
-        for pos in ['verb', 'noun']
-    }
+    complex_poses = {}
 
     root = Path(__file__).parent.absolute()
     out_dir = root.joinpath(out_dir)
@@ -195,13 +192,27 @@ def generate_pages(data_file: str, infl_files: List[str]):
 
             check_page_name(data['lexeme_id'])
 
+            if data["Part of Speech"].startswith("complex"):
+                complex_poses[data["lexeme_id"]] = f"This is a {data['Part of Speech']} consisting of the words: "
+                complws = ["main_word", "2nd_word", "3rd_word"]
+                complexx = []
+                for compl in complws:
+                    if data[compl]:
+                        if data[f'{compl}_id']:
+                            idd = data[f'{compl}_id']
+                            complexx.append('<a href="{{ base_url }}words/' + f'{idd}">{data[compl]}</a>')
+                        else:
+                            complexx.append(data[compl])
+                complexx = ", ".join(complexx)
+                complex_poses[data["lexeme_id"]] += complexx
+
             out_file = out_dir.joinpath(
                 f"{data['lexeme_id'].replace(', ', '-')}.html"
             )
             
             word_content = word_template.render(
                 data=data,
-                complex_pos=complex_pos,
+                complex_poses=complex_poses,
                 glossing_labels=glossing_labels
             )
 

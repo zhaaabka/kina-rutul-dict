@@ -4,30 +4,32 @@
   {{ data["Lexical entry"] }}
 </h1>
 
-<p class="text-muted">
+<p>
+  <b>{{ data["Part of Speech"] }}</b>
+  {% if complex_poses[data["lexeme_id"]] %}
+    <br>
+    {{ complex_poses[data["lexeme_id"]] }}.
+  {% endif %}
+</p>
+
+<p>
   <b>Orthography:</b> {{ data["Orthography"] }} <br>
   <b>Part of speech:</b> {{ data["Part of Speech"] }} <br>
   <b>Glossing label:</b>
   {{ glossing_labels.get(data["lexeme_id"], "") }}
 </p>
 
-<hr>
+<p>Collected by {{ data["who_collected"] }}</p>
 
 {# ===== Meanings ===== #}
 
 <h2>Meanings</h2>
 
-<ol>
+<ol class="list-group list-group-numbered mb-4">
 {% for m in data["meanings"] if m.meaning or m.meaning_rus %}
-  <li class="mb-3">
+  <li class="list-group-item">
 
-    <div>
-      <b>{{ m.meaning }}</b>
-      {% if m.meaning_rus %}
-        — {{ m.meaning_rus }}
-      {% endif %}
-    </div>
-
+    <b>‘{{ m.meaning_rus }}’</b> — <b>‘{{ m.meaning }}’</b>
 
     {% if m.examples %}
       <ul class="mt-2">
@@ -35,9 +37,11 @@
           <li class="example">
             <i>{{ ex.original }}</i>
             {% if ex.cyr %}
-              / <i>{{ ex.cyr }}</i>
+              <br>
+              <i>{{ ex.cyr }}</i>
             {% endif %}
-            — ‘{{ ex.rus }}’
+            <br>
+            ‘{{ ex.rus }}’
           </li>
         {% endfor %}
       </ul>
@@ -49,11 +53,10 @@
 
 {# ===== Inflection ===== #}
 
-{% if data["inflection_data"] %}
-<hr>
 <h2>Inflection</h2>
+{% if data["inflection_data"] %}
 
-<table class="table table-sm table-borderless w-auto">
+<table class="table table-sm table-borderless w-auto inflection-table">
   {% for k, v in data["inflection_data"].items() %}
     {% if v %}
     <tr>
@@ -63,4 +66,9 @@
     {% endif %}
   {% endfor %}
 </table>
+
+{% else %}
+  <p>See <a href="{{ base_url }}words/{{ data['main_word_id'] }}">{{data["main_word"]}}</a>.</p>
+
 {% endif %}
+
