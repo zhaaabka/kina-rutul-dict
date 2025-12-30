@@ -1,6 +1,30 @@
 <h1>Dictionary</h1>
 
 <p>You can search the information in all the columns given. For the full <b>lexical entry page</b>, click on the gloss in Glossing label column.</p>
+<p>For searching information with virtual keyboard, click on the search in the column needed, then use the keyboard.</p>
+
+<div id="virtual-keyboard" class="mb-3">
+  <span class="virtual-key">Ӏ</span>
+  <span class="virtual-key">ˤ</span>
+  <span class="virtual-key">ʷ</span>
+  <span class="virtual-key">ʲ</span>
+  <span class="virtual-key">ʼ</span>
+  <span class="virtual-key">ː</span>
+  <span class="virtual-key">ʁ</span>
+  <span class="virtual-key">χ</span>
+  <span class="virtual-key">ɢ</span>
+  <span class="virtual-key">ɣ</span>
+  <span class="virtual-key">ʔ</span>
+  <span class="virtual-key">ʒ</span>
+  <span class="virtual-key">ǯ</span>
+  <span class="virtual-key">š</span>
+  <span class="virtual-key">č</span>
+  <span class="virtual-key">ɐ</span>
+  <span class="virtual-key">ɞ</span>
+  <span class="virtual-key">ɨ</span>
+  <span class="virtual-key">ä</span>
+  <span class="virtual-key">ü</span>
+</div>
 
 <table id="dict" class="display" style="width:100%">
   <thead>
@@ -13,7 +37,7 @@
       {% for c in columns %}
         <th>
           <input type="text"
-                 placeholder="Search {{ c }}"
+                 placeholder="{{ c }}"
                  style="width:100%; box-sizing:border-box;">
         </th>
       {% endfor %}
@@ -36,6 +60,88 @@
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 
 <script>
+function normalize(text) {
+  if (!text) return "";
+
+  return text
+    .replace(/[I1lӏ]/g, "Ӏ")
+    .toLowerCase()
+    .replace(/ˁ/g, "ˤ")
+    .replace(/['’]/g, "ʼ")
+    .replace(/:/g, "ː")
+    .normalize("NFD")
+    .replace(/[\u0301]/g, "")
+    .normalize("NFC");
+}
+</script>
+
+<script>
+$.fn.dataTable.ext.search.push(function (
+  settings,
+  data,
+  dataIndex
+) {
+  const table = $('#dict').DataTable();
+
+  let visible = true;
+
+  $('#dict thead tr:eq(1) th').each(function (i) {
+    const input = $(this).find('input');
+    if (!input.length) return;
+
+    const query = normalize(input.val());
+    if (!query) return;
+
+    const cellText = normalize(data[i]);
+
+    if (!cellText.includes(query)) {
+      visible = false;
+    }
+  });
+
+  return visible;
+});
+</script>
+
+<script>
+let activeInput = null;
+
+// отслеживаем, в каком поле сейчас курсор
+$(document).on('focus', '#dict thead input', function () {
+  activeInput = this;
+});
+</script>
+
+
+<script>
+$(document).on('click', '.virtual-key', function () {
+  if (!activeInput) return;
+
+  const char = $(this).text();
+
+  const start = activeInput.selectionStart;
+  const end = activeInput.selectionEnd;
+
+  const value = activeInput.value;
+
+  activeInput.value =
+    value.slice(0, start) +
+    char +
+    value.slice(end);
+
+  activeInput.selectionStart =
+    activeInput.selectionEnd =
+    start + char.length;
+
+  // триггерим перерисовку таблицы
+  $('#dict').DataTable().draw();
+
+  activeInput.focus();
+});
+</script>
+
+
+<script>
 $(document).ready(function () {
   const table = $('#dict').DataTable({
     pageLength: 20,
@@ -45,15 +151,14 @@ $(document).ready(function () {
     order: [[2, 'asc']]
   });
 
-  $('#dict thead tr:eq(1) th').each(function (i) {
+  $('#dict thead tr:eq(1) th').each(function () {
     const input = $(this).find('input');
     if (input.length) {
       input.on('keyup change clear', function () {
-        if (table.column(i).search() !== this.value) {
-          table.column(i).search(this.value).draw();
-        }
+        table.draw();
       });
     }
   });
 });
 </script>
+

@@ -93,6 +93,18 @@ table {
   vertical-align: top;
 }
 
+/* Bold glossing label column */
+#dict tbody td:nth-child(0) {
+  font-weight: 600;
+}
+
+#dict thead input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.15rem var(--accent-soft);
+}
+
+
 /* ---------- MEANINGS ---------- */
 
 ol {
