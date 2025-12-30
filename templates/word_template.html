@@ -8,7 +8,16 @@
   <p>
     <b>{{ data["Part of Speech"] }}</b> <br>
     {% if complex_poses[data["lexeme_id"]] %}
-      {{ complex_poses[data["lexeme_id"]] }}. <br>
+      This is a {{ data["Part of Speech"] }} consisting of the words: 
+      {% for w in complex_poses[data["lexeme_id"]] %}
+        {% if w.word_id %}
+          <a href="{{ base_url }}{{ w.word_id }}">{{ w.word }}</a>
+        {% else %}
+          {{ w.word }}
+        {% endif %}
+        {% if not loop.last %}, {% endif %}
+    {% endfor %}
+      <br>
     {% endif %}
     Collected by {{ data["who_collected"] }}
   </p>
