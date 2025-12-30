@@ -94,7 +94,7 @@ table {
 }
 
 /* Bold glossing label column */
-#dict tbody td:nth-child(0) {
+#dict tbody td:nth-child(1) {
   font-weight: 600;
 }
 
