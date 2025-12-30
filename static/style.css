@@ -319,3 +319,7 @@ mark {
 .inflection-table td {
   color: var(--text-main);
 }
+
+.entryinfo {
+  font-size: 1.05rem
+}

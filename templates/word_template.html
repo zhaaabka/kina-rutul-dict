@@ -4,22 +4,21 @@
   {{ data["Lexical entry"] }}
 </h1>
 
-<p>
-  <b>{{ data["Part of Speech"] }}</b>
-  {% if complex_poses[data["lexeme_id"]] %}
-    <br>
-    {{ complex_poses[data["lexeme_id"]] }}.
-  {% endif %}
-</p>
+<div class="entryinfo">
+  <p>
+    <b>{{ data["Part of Speech"] }}</b> <br>
+    {% if complex_poses[data["lexeme_id"]] %}
+      {{ complex_poses[data["lexeme_id"]] }}. <br>
+    {% endif %}
+    Collected by {{ data["who_collected"] }}
+  </p>
 
-<p>
-  <b>Orthography:</b> {{ data["Orthography"] }} <br>
-  <b>Part of speech:</b> {{ data["Part of Speech"] }} <br>
-  <b>Glossing label:</b>
-  {{ glossing_labels.get(data["lexeme_id"], "") }}
-</p>
-
-<p>Collected by {{ data["who_collected"] }}</p>
+  <p>
+    <b>Orthography:</b> {{ data["Orthography"] }} <br>
+    <b>Glossing label:</b>
+    {{ glossing_labels.get(data["lexeme_id"], "") }}
+  </p>
+</div>
 
 {# ===== Meanings ===== #}
 
@@ -68,7 +67,7 @@
 </table>
 
 {% else %}
-  <p>See <a href="{{ base_url }}words/{{ data['main_word_id'] }}">{{data["main_word"]}}</a>.</p>
+  <p>See <a href="{{ base_url }}{{ data['main_word_id'] }}">{{data["main_word"]}}</a>.</p>
 
 {% endif %}
 

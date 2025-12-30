@@ -200,7 +200,7 @@ def generate_pages(data_file: str, infl_files: List[str]):
                     if data[compl]:
                         if data[f'{compl}_id']:
                             idd = data[f'{compl}_id']
-                            complexx.append('<a href="{{ base_url }}words/' + f'{idd}">{data[compl]}</a>')
+                            complexx.append('<a href="{{ base_url }}' + f'{idd}">{data[compl]}</a>')
                         else:
                             complexx.append(data[compl])
                 complexx = ", ".join(complexx)
