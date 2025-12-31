@@ -93,10 +93,11 @@ table {
   vertical-align: top;
 }
 
-/* Bold glossing label column */
-#dict tbody td:nth-child(1) {
-  font-weight: 600;
+
+#dict tbody td a {
+  font-weight: 500;
 }
+
 
 #dict thead input:focus {
   outline: none;
@@ -334,4 +335,14 @@ mark {
 
 .entryinfo {
   font-size: 1.05rem
+}
+
+.dt-page-jump {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.dt-page-jump input {
+  margin: 0 0.4rem;
+  padding: 0.1rem 0.3rem;
 }

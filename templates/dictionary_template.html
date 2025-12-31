@@ -55,6 +55,14 @@
   </tbody>
 </table>
 
+<div class="dt-page-jump mt-2">
+  Page:
+  <input type="number"
+         id="page-jump"
+         min="1"
+         style="width: 5em;">
+  <span id="page-total"></span>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
@@ -64,7 +72,7 @@ function normalize(text) {
   if (!text) return "";
 
   return text
-    .replace(/[I1lӏ]/g, "Ӏ")
+    .replace(/[I1ӏ]/g, "Ӏ")
     .toLowerCase()
     .replace(/ˁ/g, "ˤ")
     .replace(/['’]/g, "ʼ")
@@ -140,6 +148,14 @@ $(document).on('click', '.virtual-key', function () {
 });
 </script>
 
+<script>
+const params = new URLSearchParams(window.location.search);
+
+const savedPage = parseInt(params.get('page'), 10) || 0;
+const savedOrder = JSON.parse(params.get('order') || '[[2,"asc"]]');
+const savedFilters = JSON.parse(params.get('filters') || '[]');
+</script>
+
 
 <script>
 $(document).ready(function () {
@@ -148,9 +164,58 @@ $(document).ready(function () {
     orderCellsTop: true,
     fixedHeader: false,
     dom: 'lrtip',
-    order: [[2, 'asc']]
+    order: savedOrder,
+    stateSave: true
   });
 
+
+$('#dict thead tr:eq(1) input').each(function (i) {
+  if (savedFilters[i]) {
+    this.value = savedFilters[i];
+  }
+});
+
+table.page(savedPage).draw(false);
+
+
+table.on('stateSaveParams', function (e, settings, data) {
+  const params = new URLSearchParams();
+
+  params.set('page', data.start / data.length);
+  params.set('order', JSON.stringify(data.order));
+  params.set('filters', JSON.stringify(
+    $('#dict thead tr:eq(1) input').map(function () {
+      return this.value;
+    }).get()
+  ));
+
+  history.replaceState(null, '', '?' + params.toString());
+});
+
+
+  function updatePageInfo() {
+    const info = table.page.info();
+    $('#page-total').text(`of ${info.pages}`);
+    $('#page-jump').val(info.page + 1);
+    $('#page-jump').attr('max', info.pages);
+  }
+
+  updatePageInfo();
+
+  table.on('draw', function () {
+    updatePageInfo();
+  });
+
+  $('#page-jump').on('change', function () {
+    const page = parseInt(this.value, 10) - 1;
+    const info = table.page.info();
+
+    if (page >= 0 && page < info.pages) {
+      table.page(page).draw(false);
+    }
+  });
+
+  
   $('#dict thead tr:eq(1) th').each(function () {
     const input = $(this).find('input');
     if (input.length) {
@@ -160,5 +225,6 @@ $(document).ready(function () {
     }
   });
 });
+
 </script>
 

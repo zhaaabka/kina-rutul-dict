@@ -5,7 +5,7 @@
 
  function normalize(text) {
   return text
-    .replace(/[I1lӏ]/g, "Ӏ")
+    .replace(/[I1ӏ]/g, "Ӏ")
     .toLowerCase()
     .replace(/ˁ/g, "ˤ")
     .replace(/['’]/g, "ʼ")
