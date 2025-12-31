@@ -348,12 +348,37 @@ mark {
 }
 
 
-.pos-filter {
-  font-size: 0.9rem;
-  line-height: 1.4;
+.pos-select {
+  position: relative;
 }
 
-.pos-filter label {
-  display: block;
+#pos-search {
+  width: 100%;
   cursor: pointer;
+  background: #fff;
+}
+
+.pos-dropdown {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  background: #fff;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.pos-dropdown div {
+  padding: 0.4em 0.6em;
+  cursor: pointer;
+}
+
+.pos-dropdown div:hover {
+  background: #f0f0f0;
+}
+
+.pos-dropdown div.active {
+  background: #e0e0ff;
+  font-weight: 500;
 }

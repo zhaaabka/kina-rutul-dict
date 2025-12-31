@@ -137,56 +137,106 @@ document.addEventListener('DOMContentLoaded', () => {
     <tr>
       
         <th>
-          
+          <div class="pos-select">
             <input type="text"
-                  placeholder="Glossing Label"
-                  style="width:100%; box-sizing:border-box;">
-          
-        </th>
-      
-        <th>
-          
-            <input type="text"
-                  placeholder="Lexical entry"
-                  style="width:100%; box-sizing:border-box;">
-          
-        </th>
-      
-        <th>
-          
-            <input type="text"
-                  placeholder="Orthography"
-                  style="width:100%; box-sizing:border-box;">
-          
-        </th>
-      
-        <th>
-          
-            <input type="text"
-                  placeholder="Russian"
-                  style="width:100%; box-sizing:border-box;">
-          
-        </th>
-      
-        <th>
-          
-            <input type="text"
-                  placeholder="English"
-                  style="width:100%; box-sizing:border-box;">
-          
-        </th>
-      
-        <th>
-          
-            <div class="pos-filter">
-              <label><input type="checkbox" value="noun"> noun</label><br>
-              <label><input type="checkbox" value="verb"> verb</label><br>
-              <label><input type="checkbox" value="adjective"> adjective</label><br>
-              <label><input type="checkbox" value="complex noun"> complex noun</label><br>
-              <label><input type="checkbox" value="complex verb"> complex verb</label>
+                  id="pos-search"
+                  placeholder="Part of speech"
+                  readonly>
+            <div class="pos-dropdown">
+              <div data-value="noun">noun</div>
+              <div data-value="verb">verb</div>
+              <div data-value="adjective">adjective</div>
+              <div data-value="complex noun">complex noun</div>
+              <div data-value="complex verb">complex verb</div>
             </div>
-          
+          </div>
         </th>
+
+      
+        <th>
+          <div class="pos-select">
+            <input type="text"
+                  id="pos-search"
+                  placeholder="Part of speech"
+                  readonly>
+            <div class="pos-dropdown">
+              <div data-value="noun">noun</div>
+              <div data-value="verb">verb</div>
+              <div data-value="adjective">adjective</div>
+              <div data-value="complex noun">complex noun</div>
+              <div data-value="complex verb">complex verb</div>
+            </div>
+          </div>
+        </th>
+
+      
+        <th>
+          <div class="pos-select">
+            <input type="text"
+                  id="pos-search"
+                  placeholder="Part of speech"
+                  readonly>
+            <div class="pos-dropdown">
+              <div data-value="noun">noun</div>
+              <div data-value="verb">verb</div>
+              <div data-value="adjective">adjective</div>
+              <div data-value="complex noun">complex noun</div>
+              <div data-value="complex verb">complex verb</div>
+            </div>
+          </div>
+        </th>
+
+      
+        <th>
+          <div class="pos-select">
+            <input type="text"
+                  id="pos-search"
+                  placeholder="Part of speech"
+                  readonly>
+            <div class="pos-dropdown">
+              <div data-value="noun">noun</div>
+              <div data-value="verb">verb</div>
+              <div data-value="adjective">adjective</div>
+              <div data-value="complex noun">complex noun</div>
+              <div data-value="complex verb">complex verb</div>
+            </div>
+          </div>
+        </th>
+
+      
+        <th>
+          <div class="pos-select">
+            <input type="text"
+                  id="pos-search"
+                  placeholder="Part of speech"
+                  readonly>
+            <div class="pos-dropdown">
+              <div data-value="noun">noun</div>
+              <div data-value="verb">verb</div>
+              <div data-value="adjective">adjective</div>
+              <div data-value="complex noun">complex noun</div>
+              <div data-value="complex verb">complex verb</div>
+            </div>
+          </div>
+        </th>
+
+      
+        <th>
+          <div class="pos-select">
+            <input type="text"
+                  id="pos-search"
+                  placeholder="Part of speech"
+                  readonly>
+            <div class="pos-dropdown">
+              <div data-value="noun">noun</div>
+              <div data-value="verb">verb</div>
+              <div data-value="adjective">adjective</div>
+              <div data-value="complex noun">complex noun</div>
+              <div data-value="complex verb">complex verb</div>
+            </div>
+          </div>
+        </th>
+
       
     </tr>
 
@@ -20254,6 +20304,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <span id="page-total"></span>
 </div>
 
+
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 
@@ -20272,6 +20323,36 @@ function normalize(text) {
     .normalize("NFC");
 }
 </script>
+
+<script>
+let selectedPOS = [];
+
+$(document).on('click', '#pos-search', function () {
+  $('.pos-dropdown').toggle();
+});
+
+$(document).on('click', '.pos-dropdown div', function (e) {
+  e.stopPropagation();
+
+  const value = $(this).data('value');
+
+  if (selectedPOS.includes(value)) {
+    selectedPOS = selectedPOS.filter(v => v !== value);
+    $(this).removeClass('active');
+  } else {
+    selectedPOS.push(value);
+    $(this).addClass('active');
+  }
+
+  $('#pos-search').val(selectedPOS.join(', '));
+  $('#dict').DataTable().draw();
+});
+
+$(document).on('click', function () {
+  $('.pos-dropdown').hide();
+});
+</script>
+
 
 <script>
 $.fn.dataTable.ext.search.push(function (
@@ -20320,6 +20401,13 @@ $.fn.dataTable.ext.search.push(function (
       visible = false;
     }
   });
+
+  if (selectedPOS.length) {
+    const cellPOS = data[posIndex].toLowerCase().split(',').map(s => s.trim());
+
+    const match = selectedPOS.some(pos => cellPOS.includes(pos));
+    if (!match) return false;
+  }
 
   return visible;
 });
