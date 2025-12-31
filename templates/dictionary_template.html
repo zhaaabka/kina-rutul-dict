@@ -85,7 +85,6 @@
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-<script type="application/javascript"></script>
 
 <script>
 function normalize(text) {
@@ -113,6 +112,10 @@ const savedPOS = JSON.parse(params.get('pos') || '[]');
 </script>
 
 <script>
+let table = null;
+</script>
+
+<script>
 let selectedPOS = [];
 
 if (typeof savedPOS !== 'undefined' && savedPOS.length) {
@@ -128,9 +131,11 @@ if (typeof savedPOS !== 'undefined' && savedPOS.length) {
   $('#pos-search').val(selectedPOS.join(', '));
 }
 
-$(document).on('click', '#pos-search', function () {
+$(document).on('click', '#pos-search', function (e) {
+  e.stopPropagation();
   $('.pos-dropdown').toggle();
 });
+
 
 $(document).on('click', '.pos-dropdown div', function (e) {
   e.stopPropagation();
@@ -146,8 +151,13 @@ $(document).on('click', '.pos-dropdown div', function (e) {
   }
 
   $('#pos-search').val(selectedPOS.join(', '));
-  $('#dict').DataTable().draw();
+  if (table) table.draw();
 });
+
+$(document).on('click', '.pos-dropdown', function (e) {
+  e.stopPropagation();
+});
+
 
 $(document).on('click', function () {
   $('.pos-dropdown').hide();
@@ -233,7 +243,7 @@ $(document).on('click', '.virtual-key', function () {
     start + char.length;
 
   // триггерим перерисовку таблицы
-  $('#dict').DataTable().draw();
+  if (table) table.draw();
 
   activeInput.focus();
 });
@@ -241,9 +251,9 @@ $(document).on('click', '.virtual-key', function () {
 
 <script>
 $(document).ready(function () {
-  const table = $('#dict').DataTable({
+  table = $('#dict').DataTable({
     pageLength: 20,
-    orderCellsTop: true,
+    orderCellsTop: false,
     fixedHeader: false,
     dom: 'lrtip',
     order: savedOrder,
