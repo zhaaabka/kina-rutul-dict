@@ -15,6 +15,19 @@
     .normalize("NFC");
 }
 
+function saveSearchState() {
+  const params = new URLSearchParams();
+
+  const input = document.getElementById("search");
+  const btn = document.getElementById("search-mode-btn");
+
+  params.set("q", input.value);
+  params.set("mode", btn.dataset.mode || "all");
+
+  history.replaceState(null, "", "?" + params.toString());
+}
+
+
 function getSearchMode() {
   const btn = document.getElementById("search-mode-btn");
   return btn ? btn.dataset.mode : "all";
@@ -171,6 +184,8 @@ function getSearchMode() {
     const query = input.value.trim();
     resultsDiv.innerHTML = "";
 
+    saveSearchState();
+
     if (query.length < 2) return;
 
     for (const [key, entry] of Object.entries(data)) {
@@ -238,10 +253,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // фокус обратно в поле
       input.focus();
+
+      saveSearchState();
     });
   });
 
   // начальный placeholder
   input.placeholder = placeholders[btn.dataset.mode] || 'Search';
+
+
+  const params = new URLSearchParams(window.location.search);
+  const savedQuery = params.get("q");
+  const savedMode = params.get("mode");
+
+  if (savedMode) {
+    btn.dataset.mode = savedMode;
+
+    const item = document.querySelector(
+      `.dropdown-item[data-mode="${savedMode}"]`
+    );
+    if (item) {
+      btn.textContent = item.textContent;
+      document.querySelectorAll('.dropdown-item')
+        .forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+    }
+
+    input.placeholder = placeholders[savedMode] || 'Search';
+  }
+
+  if (savedQuery) {
+    input.value = savedQuery;
+    input.dispatchEvent(new Event("input"));
+  }
 });
 
