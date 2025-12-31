@@ -134,112 +134,69 @@ document.addEventListener('DOMContentLoaded', () => {
         <th>Part of Speech</th>
       
     </tr>
+
     <tr>
       
         <th>
-          <div class="pos-select">
+          
             <input type="text"
-                  id="pos-search"
-                  placeholder="Part of speech"
-                  readonly>
-            <div class="pos-dropdown">
-              <div data-value="noun">noun</div>
-              <div data-value="verb">verb</div>
-              <div data-value="adjective">adjective</div>
-              <div data-value="complex noun">complex noun</div>
-              <div data-value="complex verb">complex verb</div>
-            </div>
-          </div>
+                  placeholder="Glossing Label"
+                  style="width:100%; box-sizing:border-box;">
+          
         </th>
-
       
         <th>
-          <div class="pos-select">
+          
             <input type="text"
-                  id="pos-search"
-                  placeholder="Part of speech"
-                  readonly>
-            <div class="pos-dropdown">
-              <div data-value="noun">noun</div>
-              <div data-value="verb">verb</div>
-              <div data-value="adjective">adjective</div>
-              <div data-value="complex noun">complex noun</div>
-              <div data-value="complex verb">complex verb</div>
-            </div>
-          </div>
+                  placeholder="Lexical entry"
+                  style="width:100%; box-sizing:border-box;">
+          
         </th>
-
       
         <th>
-          <div class="pos-select">
+          
             <input type="text"
-                  id="pos-search"
-                  placeholder="Part of speech"
-                  readonly>
-            <div class="pos-dropdown">
-              <div data-value="noun">noun</div>
-              <div data-value="verb">verb</div>
-              <div data-value="adjective">adjective</div>
-              <div data-value="complex noun">complex noun</div>
-              <div data-value="complex verb">complex verb</div>
-            </div>
-          </div>
+                  placeholder="Orthography"
+                  style="width:100%; box-sizing:border-box;">
+          
         </th>
-
       
         <th>
-          <div class="pos-select">
+          
             <input type="text"
-                  id="pos-search"
-                  placeholder="Part of speech"
-                  readonly>
-            <div class="pos-dropdown">
-              <div data-value="noun">noun</div>
-              <div data-value="verb">verb</div>
-              <div data-value="adjective">adjective</div>
-              <div data-value="complex noun">complex noun</div>
-              <div data-value="complex verb">complex verb</div>
-            </div>
-          </div>
+                  placeholder="Russian"
+                  style="width:100%; box-sizing:border-box;">
+          
         </th>
-
       
         <th>
-          <div class="pos-select">
+          
             <input type="text"
-                  id="pos-search"
-                  placeholder="Part of speech"
-                  readonly>
-            <div class="pos-dropdown">
-              <div data-value="noun">noun</div>
-              <div data-value="verb">verb</div>
-              <div data-value="adjective">adjective</div>
-              <div data-value="complex noun">complex noun</div>
-              <div data-value="complex verb">complex verb</div>
-            </div>
-          </div>
+                  placeholder="English"
+                  style="width:100%; box-sizing:border-box;">
+          
         </th>
-
       
         <th>
-          <div class="pos-select">
-            <input type="text"
-                  id="pos-search"
-                  placeholder="Part of speech"
-                  readonly>
-            <div class="pos-dropdown">
-              <div data-value="noun">noun</div>
-              <div data-value="verb">verb</div>
-              <div data-value="adjective">adjective</div>
-              <div data-value="complex noun">complex noun</div>
-              <div data-value="complex verb">complex verb</div>
+          
+            <div class="pos-select">
+              <input type="text"
+                    id="pos-search"
+                    class="pos-search-input"
+                    placeholder="Part of speech"
+                    readonly>
+              <div class="pos-dropdown">
+                <div data-value="noun">noun</div>
+                <div data-value="verb">verb</div>
+                <div data-value="adjective">adjective</div>
+                <div data-value="complex noun">complex noun</div>
+                <div data-value="complex verb">complex verb</div>
+              </div>
             </div>
-          </div>
+          
         </th>
-
       
     </tr>
-
   </thead>
 
   <tbody>
@@ -20307,6 +20264,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script type="application/javascript"></script>
 
 <script>
 function normalize(text) {
@@ -20353,6 +20311,10 @@ $(document).on('click', function () {
 });
 </script>
 
+<script>
+const posIndex = 5;
+</script>
+
 
 <script>
 $.fn.dataTable.ext.search.push(function (
@@ -20365,28 +20327,6 @@ $.fn.dataTable.ext.search.push(function (
   let visible = true;
 
   $('#dict thead tr:eq(1) th').each(function (i) {
-
-    // ===== Part of Speech (checkbox filter) =====
-    if ($(this).find('.pos-filter').length) {
-      const selected = $(this)
-        .find('input[type="checkbox"]:checked')
-        .map(function () { return this.value; })
-        .get();
-
-      if (!selected.length) return;
-
-      const cell = data[i].toLowerCase();
-
-      const match = selected.some(pos =>
-        cell.includes(pos)
-      );
-
-      if (!match) {
-        visible = false;
-      }
-
-      return;
-    }
 
     // ===== обычный текстовый фильтр =====
     const input = $(this).find('input[type="text"]');
