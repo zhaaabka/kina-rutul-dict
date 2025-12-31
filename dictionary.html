@@ -20283,7 +20283,29 @@ function normalize(text) {
 </script>
 
 <script>
+const params = new URLSearchParams(window.location.search);
+
+const savedPage = parseInt(params.get('page'), 10) || 0;
+const savedOrder = JSON.parse(params.get('order') || '[[2,"asc"]]');
+const savedFilters = JSON.parse(params.get('filters') || '[]');
+const savedPOS = JSON.parse(params.get('pos') || '[]');
+</script>
+
+<script>
 let selectedPOS = [];
+
+if (typeof savedPOS !== 'undefined' && savedPOS.length) {
+  selectedPOS = savedPOS;
+
+  $('.pos-dropdown div').each(function () {
+    const value = $(this).data('value');
+    if (selectedPOS.includes(value)) {
+      $(this).addClass('active');
+    }
+  });
+
+  $('#pos-search').val(selectedPOS.join(', '));
+}
 
 $(document).on('click', '#pos-search', function () {
   $('.pos-dropdown').toggle();
@@ -20317,18 +20339,30 @@ const posIndex = 5;
 
 
 <script>
-$.fn.dataTable.ext.search.push(function (
-  settings,
-  data,
-  dataIndex
-) {
-  const table = $('#dict').DataTable();
+$.fn.dataTable.ext.search.push(function (settings, data) {
 
+  // ===== POS FILTER =====
+  if (selectedPOS.length) {
+    const cellPOS = data[posIndex]
+      .toLowerCase()
+      .split(',')
+      .map(s => s.trim());
+
+    const match = selectedPOS.some(pos =>
+      cellPOS.includes(pos)
+    );
+
+    if (!match) return false;
+  }
+
+  // ===== TEXT FILTERS (all except POS) =====
   let visible = true;
 
   $('#dict thead tr:eq(1) th').each(function (i) {
 
-    // ===== обычный текстовый фильтр =====
+    // пропускаем колонку Part of Speech
+    if (i === posIndex) return;
+
     const input = $(this).find('input[type="text"]');
     if (!input.length) return;
 
@@ -20342,15 +20376,9 @@ $.fn.dataTable.ext.search.push(function (
     }
   });
 
-  if (selectedPOS.length) {
-    const cellPOS = data[posIndex].toLowerCase().split(',').map(s => s.trim());
-
-    const match = selectedPOS.some(pos => cellPOS.includes(pos));
-    if (!match) return false;
-  }
-
   return visible;
 });
+
 </script>
 
 <script>
@@ -20391,16 +20419,6 @@ $(document).on('click', '.virtual-key', function () {
 </script>
 
 <script>
-const params = new URLSearchParams(window.location.search);
-
-const savedPage = parseInt(params.get('page'), 10) || 0;
-const savedOrder = JSON.parse(params.get('order') || '[[2,"asc"]]');
-const savedFilters = JSON.parse(params.get('filters') || '[]');
-const savedPOS = JSON.parse(params.get('pos') || '[]');
-</script>
-
-
-<script>
 $(document).ready(function () {
   const table = $('#dict').DataTable({
     pageLength: 20,
@@ -20409,17 +20427,6 @@ $(document).ready(function () {
     dom: 'lrtip',
     order: savedOrder,
     stateSave: true
-  });
-
-  $('.pos-filter input').each(function () {
-    if (savedPOS.includes(this.value)) {
-      this.checked = true;
-    }
-  });
-
-
-  $(document).on('change', '.pos-filter input[type="checkbox"]', function () {
-    $('#dict').DataTable().draw();
   });
 
 
@@ -20442,14 +20449,7 @@ $(document).ready(function () {
         return this.value;
       }).get()
     ));
-    params.set(
-      'pos',
-      JSON.stringify(
-        $('.pos-filter input:checked')
-          .map(function () { return this.value; })
-          .get()
-      )
-    );
+    params.set('pos', JSON.stringify(selectedPOS));
 
 
     history.replaceState(null, '', '?' + params.toString());
