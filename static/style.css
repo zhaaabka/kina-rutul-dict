@@ -346,3 +346,14 @@ mark {
   margin: 0 0.4rem;
   padding: 0.1rem 0.3rem;
 }
+
+
+.pos-filter {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.pos-filter label {
+  display: block;
+  cursor: pointer;
+}

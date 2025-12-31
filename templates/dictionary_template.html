@@ -36,12 +36,23 @@
     <tr>
       {% for c in columns %}
         <th>
-          <input type="text"
-                 placeholder="{{ c }}"
-                 style="width:100%; box-sizing:border-box;">
+          {% if c == "Part of Speech" %}
+            <div class="pos-filter">
+              <label><input type="checkbox" value="noun"> noun</label><br>
+              <label><input type="checkbox" value="verb"> verb</label><br>
+              <label><input type="checkbox" value="adjective"> adjective</label><br>
+              <label><input type="checkbox" value="complex noun"> complex noun</label><br>
+              <label><input type="checkbox" value="complex verb"> complex verb</label>
+            </div>
+          {% else %}
+            <input type="text"
+                  placeholder="{{ c }}"
+                  style="width:100%; box-sizing:border-box;">
+          {% endif %}
         </th>
       {% endfor %}
     </tr>
+
   </thead>
 
   <tbody>
@@ -94,7 +105,31 @@ $.fn.dataTable.ext.search.push(function (
   let visible = true;
 
   $('#dict thead tr:eq(1) th').each(function (i) {
-    const input = $(this).find('input');
+
+    // ===== Part of Speech (checkbox filter) =====
+    if ($(this).find('.pos-filter').length) {
+      const selected = $(this)
+        .find('input[type="checkbox"]:checked')
+        .map(function () { return this.value; })
+        .get();
+
+      if (!selected.length) return;
+
+      const cell = data[i].toLowerCase();
+
+      const match = selected.some(pos =>
+        cell.includes(pos)
+      );
+
+      if (!match) {
+        visible = false;
+      }
+
+      return;
+    }
+
+    // ===== обычный текстовый фильтр =====
+    const input = $(this).find('input[type="text"]');
     if (!input.length) return;
 
     const query = normalize(input.val());
@@ -154,6 +189,7 @@ const params = new URLSearchParams(window.location.search);
 const savedPage = parseInt(params.get('page'), 10) || 0;
 const savedOrder = JSON.parse(params.get('order') || '[[2,"asc"]]');
 const savedFilters = JSON.parse(params.get('filters') || '[]');
+const savedPOS = JSON.parse(params.get('pos') || '[]');
 </script>
 
 
@@ -168,29 +204,49 @@ $(document).ready(function () {
     stateSave: true
   });
 
-
-$('#dict thead tr:eq(1) input').each(function (i) {
-  if (savedFilters[i]) {
-    this.value = savedFilters[i];
-  }
-});
-
-table.page(savedPage).draw(false);
+  $('.pos-filter input').each(function () {
+    if (savedPOS.includes(this.value)) {
+      this.checked = true;
+    }
+  });
 
 
-table.on('stateSaveParams', function (e, settings, data) {
-  const params = new URLSearchParams();
+  $(document).on('change', '.pos-filter input[type="checkbox"]', function () {
+    $('#dict').DataTable().draw();
+  });
 
-  params.set('page', data.start / data.length);
-  params.set('order', JSON.stringify(data.order));
-  params.set('filters', JSON.stringify(
-    $('#dict thead tr:eq(1) input').map(function () {
-      return this.value;
-    }).get()
-  ));
 
-  history.replaceState(null, '', '?' + params.toString());
-});
+  $('#dict thead tr:eq(1) input').each(function (i) {
+    if (savedFilters[i]) {
+      this.value = savedFilters[i];
+    }
+  });
+
+  table.page(savedPage).draw(false);
+
+
+  table.on('stateSaveParams', function (e, settings, data) {
+    const params = new URLSearchParams();
+
+    params.set('page', data.start / data.length);
+    params.set('order', JSON.stringify(data.order));
+    params.set('filters', JSON.stringify(
+      $('#dict thead tr:eq(1) input').map(function () {
+        return this.value;
+      }).get()
+    ));
+    params.set(
+      'pos',
+      JSON.stringify(
+        $('.pos-filter input:checked')
+          .map(function () { return this.value; })
+          .get()
+      )
+    );
+
+
+    history.replaceState(null, '', '?' + params.toString());
+  });
 
 
   function updatePageInfo() {
