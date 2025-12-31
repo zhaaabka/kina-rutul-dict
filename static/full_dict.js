@@ -22561,7 +22561,7 @@ window.data = {
     "pos": "n",
     "inflection": [
       "3",
-      "tʼurôjid"
+      "tʼurɞjid"
     ],
     "translations": [
       {
