@@ -84,36 +84,6 @@ window.data = {
       }
     ]
   },
-  "abʁur | абгъур": {
-    "id": "v3",
-    "pos": "v",
-    "inflection": [
-      "oˤwʁura",
-      "owʁus",
-      "owʁa",
-      "omowubʁ ~ omobʁ"
-    ],
-    "translations": [
-      {
-        "text_rus": "впускать внутрь",
-        "text_en": "let in"
-      },
-      {
-        "text_rus": "искупать (ребенка)",
-        "text_en": "bath (child)"
-      }
-    ],
-    "examples": [
-      {
-        "original": "χala aʁʷa zɨ! | хала агъва зы!",
-        "translation": "В дом пусти меня!"
-      },
-      {
-        "original": "χɨnɨχ xije aʁura | хыных хьийе агъура",
-        "translation": "Ребенка искупали"
-      }
-    ]
-  },
   "abgɨr | абгыр": {
     "id": "v2",
     "pos": "v",
@@ -285,12 +255,8 @@ window.data = {
     ],
     "translations": [
       {
-        "text_rus": "вырезать (круглые кусочки теста, что-то из бумаги)",
-        "text_en": "cut out (round pieces of dough, smth out of paper)"
-      },
-      {
-        "text_rus": "протыкать, прорезать",
-        "text_en": "pierce, cut through"
+        "text_rus": "вырезать (круглые кусочки теста, что-то из бумаги), протыкать, прорезать",
+        "text_en": "cut out (round pieces of dough, smth out of paper), cut through"
       },
       {
         "text_rus": "разбивать яйца",
@@ -2343,24 +2309,24 @@ window.data = {
     ]
   },
   "waχɨr | вахыр": {
-    "id": "v186",
+    "id": "v187",
     "pos": "v",
     "inflection": [
       "wáχara",
       "wáχas",
       "wáχa",
-      "mówaχ ~ máwaχ"
+      "máwaχ ~ mówaχ"
     ],
     "translations": [
       {
-        "text_rus": "бежать",
-        "text_en": "run"
+        "text_rus": "ломаться",
+        "text_en": "break (intr.)"
       }
     ],
     "examples": [
       {
-        "original": "had jaχɨr hejwan χaqowɢur | гьад йахыр гьейван хахъовкъур",
-        "translation": "Он побежал, чтобы догнать лошадь"
+        "original": "sin istekʼanbɨr jaχɨra, cʼindɨbɨr leʔχešur hɨgɨtʼi | син истекӀанбыр йахыра, цӀиндыбыр леъхешур гьыгытӀи",
+        "translation": "Все стаканы разбились, надо купить новые"
       }
     ]
   },
@@ -3439,6 +3405,13 @@ window.data = {
       }
     ]
   },
+  "gʲaʁowʁur | гʼагъовгъур": {
+    "id": "v233",
+    "pos": "v",
+    "inflection": [],
+    "translations": [],
+    "examples": []
+  },
   "gʲowʁur | гʼовгъур": {
     "id": "v32",
     "pos": "v",
@@ -3450,7 +3423,11 @@ window.data = {
     ],
     "translations": [
       {
-        "text_rus": "предать",
+        "text_rus": "пустить кого-то под, спрятать что-то под",
+        "text_en": "SUB-shift"
+      },
+      {
+        "text_rus": "предать, выдать секрет",
         "text_en": "betray"
       },
       {
@@ -3460,7 +3437,11 @@ window.data = {
     ],
     "examples": [
       {
-        "original": "edemira gʲowʁurʔaj ǯudu muˤɢ | едемира гʼовгъуръай джуду муӀкъ",
+        "original": "zad get gʲowʁura iskʼamaχda | зад гет гʼовгъура искӀамахда",
+        "translation": "Я пустила кошку под стол"
+      },
+      {
+        "original": "edemira gʲowʁuraj ǯudu muˤɢʷ | едемира гʼовгъурай джуду муӀкъв",
         "translation": "Мужчина предал своё село"
       },
       {
@@ -3791,7 +3772,7 @@ window.data = {
         "translation": "Наша футбольная команда проиграла"
       },
       {
-        "original": "χɨnɨχ qьuʔ gergɨr ninɨːla | хыных хъьуъ гергыр ниныыла",
+        "original": "χɨnɨχ quʔ gergɨr ninɨːla | хыных хъуъ гергыр ниныыла",
         "translation": "Ребенок отстал от мамы"
       },
       {
@@ -4169,6 +4150,13 @@ window.data = {
         "translation": "Все гости на свадьбе вышли танцевать"
       }
     ]
+  },
+  "giwčʼur | гивчӀур": {
+    "id": "v235",
+    "pos": "v",
+    "inflection": [],
+    "translations": [],
+    "examples": []
   },
   "gigu | гигу": {
     "id": "n68",
@@ -6219,6 +6207,13 @@ window.data = {
       }
     ]
   },
+  "howʁur | гьовгъур": {
+    "id": "v234",
+    "pos": "v",
+    "inflection": [],
+    "translations": [],
+    "examples": []
+  },
   "hubgur | гьубгур": {
     "id": "v40",
     "pos": "v",
@@ -7074,26 +7069,22 @@ window.data = {
     ]
   },
   "daraqʼdɨ | даракьды": {
-    "id": "a22",
-    "pos": "adj",
+    "id": "n138",
+    "pos": "n",
     "inflection": [
-      "daraqʼa",
-      "daraqʼana"
+      "4",
+      "NO DATA"
     ],
     "translations": [
       {
-        "text_rus": "оранжевый",
-        "text_en": "orange (colour)"
-      },
-      {
-        "text_rus": "оранжевый (о человеке, болеющем желтухой)",
-        "text_en": "orange (person suffering from jaundice)"
+        "text_rus": "желток",
+        "text_en": "egg yolk"
       }
     ],
     "examples": [
       {
-        "original": "χaˤl daraqʼa hišira | хаӀл даракьа гьишира",
-        "translation": "Небо стало оранжевым (во время заката)"
+        "original": "ʁɨlʁɨd daraqʼdɨ | гъылгъыд даракьды",
+        "translation": "Яичный желток"
       }
     ]
   },
@@ -11121,6 +11112,13 @@ window.data = {
       }
     ]
   },
+  "kʲowʁur | кʼовгъур": {
+    "id": "v232",
+    "pos": "v",
+    "inflection": [],
+    "translations": [],
+    "examples": []
+  },
   "kʲoʁubqʼura | кʼогъубкьура": {
     "id": "v78",
     "pos": "v",
@@ -12230,36 +12228,40 @@ window.data = {
     ]
   },
   "kičipqɨr | кичипхъыр": {
-    "id": "v122",
+    "id": "v62",
     "pos": "v",
     "inflection": [
-      "kičwílqara",
-      "kičípqas",
-      "kíčipqa",
-      "kičméwlɨk"
+      "kičwilqara",
+      "kičipqas",
+      "kičépqa",
+      "kičméwrɨk"
     ],
     "translations": [
       {
-        "text_rus": "драться",
-        "text_en": "fight"
+        "text_rus": "прилипать",
+        "text_en": "stick (intr.)"
       },
       {
-        "text_rus": "прилипать",
-        "text_en": "stick"
+        "text_rus": "подраться",
+        "text_en": "fight"
       }
     ],
     "examples": [
       {
-        "original": "rɨˤɢa gɨdijer kičitqɨra | рыӀкъа гыдийер кичитхъыра",
-        "translation": "На улице ребята подрались"
+        "original": "it klenkajek kičitqɨra | ит кленкайек кичитхъыра",
+        "translation": "Мёд к клеенке прилип"
       },
       {
-        "original": "izdɨ uχnakʲ paˤɢʷaled tʼíli kičipqɨra | изды ухнакʼ паӀкъвалед тӀи́ли кичипхъыра",
-        "translation": "К моему платью лист лопуха прилип"
+        "original": "zer qɨrejikʲ kičibqɨraj | зер хъырейикʼ кичибхъырай",
+        "translation": "Корова к смоле прилепилась"
       },
       {
-        "original": "izdɨ čʼarɨmɨkʲ beqʼ kičitqɨra | изды чӀарымыкʼ бекь кичитхъыра",
-        "translation": "К моим волосам жвачка прилипла"
+        "original": "bekʲ kičitkɨr izdɨ čʼarɨmɨk | бекʼ кичиткыр изды чӀарымык",
+        "translation": "Жвачка прилипла к мои волосам"
+      },
+      {
+        "original": "izdɨ χɨnɨχ na sa maddɨ χɨnɨχ kičitqɨraj | изды хыных на са мадды хыных кичитхъырай",
+        "translation": "Мой мальчик с другим мальчиком подрался"
       }
     ]
   },
@@ -15569,7 +15571,11 @@ window.data = {
     "examples": [
       {
         "original": "kʼɨbka leriqʼa! | кӀыбка лерикьа!",
-        "translation": "Побыстрее дойди! В гору поднялся"
+        "translation": "Побыстрее дойди!"
+      },
+      {
+        "original": "edemi sɨwa lejqʼɨra | едеми сыва лейкьыра",
+        "translation": "В гору поднялся"
       },
       {
         "original": "zaː χabar lewiqʼɨr | заː хабар левикьыр",
@@ -18708,6 +18714,36 @@ window.data = {
       {
         "original": "ɣarɨra owʁú ʁiwxiraj | гӀарыра овгъу́ гъивхьирай",
         "translation": "Змея прыскает ядом"
+      }
+    ]
+  },
+  "owʁur | овгъур": {
+    "id": "v3",
+    "pos": "v",
+    "inflection": [
+      "ábʁura ~ áwubʁura",
+      "ówʁus",
+      "ówʁa",
+      "amábʁʷ ~ amáwubʁ ~ omówubʁ"
+    ],
+    "translations": [
+      {
+        "text_rus": "впускать внутрь",
+        "text_en": "let in"
+      },
+      {
+        "text_rus": "искупать (ребенка)",
+        "text_en": "bath (child)"
+      }
+    ],
+    "examples": [
+      {
+        "original": "χala aʁʷa zɨ! | хала агъва зы!",
+        "translation": "В дом пусти меня!"
+      },
+      {
+        "original": "χɨnɨχ xije aʁura | хыных хьийе агъура",
+        "translation": "Ребенка искупали"
       }
     ]
   },
@@ -24052,6 +24088,13 @@ window.data = {
         "translation": "Жена на меня постоянно ругается, мол я на диване валяюсь"
       }
     ]
+  },
+  "χewčʼur | хевчӀур": {
+    "id": "v236",
+    "pos": "v",
+    "inflection": [],
+    "translations": [],
+    "examples": []
   },
   "χeʁewšur | хегъевшур": {
     "id": "v221",

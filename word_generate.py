@@ -40,7 +40,8 @@ def merge_meanings(data: dict) -> None:
             'example': data[f'example_{i}'],
             'example_cyr': data[f'example_{i}_cyr'],
             'example_rus': data[f'example_{i}_rus'],
-            'diathesis': data[f'diathesis_{i}']
+            'diathesis': data[f'diathesis_{i}'],
+            'glossing_label': data[f'glossing_label_{i}']
         })
         del data[f'meaning_{i}'], data[f'meaning_{i}_rus'], \
             data[f'example_{i}'], data[f'example_{i}_rus'], data[f'diathesis_{i}']
@@ -131,9 +132,19 @@ def insert_inflection(data: dict, inflection_data: dict) -> None:
                  'Glossing label',
                  'Lexical entry']
     if data['lexeme_id'] in inflection_data:
-        data['inflection_data'] = inflection_data[data['lexeme_id']]
-        for k in blacklist:
-            del data['inflection_data'][k]
+        if data['Part of Speech'] == 'verb':
+            forms = ['PFV', 'IPFV', 'INF', 'IMP', 'PROH']
+            genders = ['1', '2', '3', '4', 'HPL', 'AnPL', 'NPL']
+            data['inflection_data'] = {}
+            for f in forms:
+                data['inflection_data'][f] = {}
+                for g in genders:
+                    if str(inflection_data[data['lexeme_id']][f'{f}.{g}']) != '':
+                        data['inflection_data'][f][g] = inflection_data[data['lexeme_id']][f'{f}.{g}']
+        else:
+            data['inflection_data'] = inflection_data[data['lexeme_id']]
+            for k in blacklist:
+                del data['inflection_data'][k]
     else:
         data['inflection_data'] = None
 

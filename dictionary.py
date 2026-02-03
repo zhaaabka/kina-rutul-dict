@@ -52,7 +52,7 @@ for _, r in df.iterrows():
         for j in range(len(meanings_rus)):
             sep = "<br>" if j < len(meanings_rus) - 1 else ""
             rus_html += f"{j + 1}. {html.escape(meanings_rus[j])}{sep}"
-    else:
+    elif len(meanings_rus) == 1:
         rus_html = html.escape(meanings_rus[0])
 
     
@@ -61,7 +61,7 @@ for _, r in df.iterrows():
         for j in range(len(meanings_eng)):
             sep = "<br>" if j < len(meanings_eng) - 1 else ""
             eng_html += f"{j + 1}. {html.escape(meanings_eng[j])}{sep}"
-    else:
+    elif len(meanings_eng) == 1:
         eng_html = html.escape(meanings_eng[0])
 
 
