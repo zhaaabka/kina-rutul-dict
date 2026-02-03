@@ -382,3 +382,22 @@ mark {
   background: #e0e0ff;
   font-weight: 500;
 }
+
+.inflection-verb-table {
+  font-size: 1.15rem;
+  color: var(--text-main);
+}
+
+.inflection-verb-table th,
+.inflection-verb-table td {
+    border-left: 1px solid var(--bs-border-color, #dee2e6);
+}
+
+.inflection-verb-table th:first-child,
+.inflection-verb-table td:first-child {
+    border-left: none;
+}
+
+.inflection-verb-table thead th {
+    border-bottom: 1px solid var(--bs-border-color, #dee2e6);
+}
