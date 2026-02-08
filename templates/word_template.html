@@ -5,6 +5,16 @@
   {{ data["Orthography"] }}
 </h1>
 
+{% if data["audio"] == "yes": %}
+  <button onclick="document.getElementById('audio-{{ data.lexeme_id }}').play()">
+    ▶
+  </button>
+
+  <audio id="audio-{{ data.lexeme_id }}" preload="none">
+    <source src="{{ base_url }}assets/audio/{{ data['lexeme_id'] }}.mp3">
+  </audio>
+{% endif %}
+
 <div class="entryinfo">
   <p>
     <b>{{ data["Part of Speech"] }}</b> <br>
@@ -80,7 +90,7 @@
       {% endfor %}
     {% endfor %}
 
-    <table class="table table-sm table-borderless w-auto inflection-table">
+    <table class="table table-sm table-borderless w-auto inflection-verb-table">
       <thead>
         <tr>
           <th></th>
