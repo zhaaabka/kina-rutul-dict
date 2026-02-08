@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <base href="{{ base_url }}">
   <title>{{ title }}</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <ul class="navbar-nav ms-auto align-items-center">
         <li class="nav-item ms-2">
           <a class="nav-link icon-link"
-            href="https://github.com/zhaaabka/kina-rutul-dict"
+            href="{{ base_url }}"
             target="_blank"
             data-bs-toggle="tooltip"
             data-bs-placement="bottom"

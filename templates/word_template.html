@@ -1,133 +1,133 @@
-{# templates/word_template.html #}
+  {# templates/word_template.html #}
 
-<h1>
-  {{ data["Lexical entry"] }}<br>
-  {{ data["Orthography"] }}
-</h1>
+  <h1>
+    {{ data["Lexical entry"] }}<br>
+    {{ data["Orthography"] }}
+  </h1>
 
-{% if data["audio"] == "yes": %}
-  <button onclick="document.getElementById('audio-{{ data.lexeme_id }}').play()">
-    ▶
-  </button>
+  {% if data["audio"] == "yes": %}
+    <button onclick="document.getElementById('audio-{{ data.lexeme_id }}').play()">
+      ▶
+    </button>
 
-  <audio id="audio-{{ data.lexeme_id }}" preload="none">
-    <source src="{{ site_root }}assets/audio/{{ data['lexeme_id'] }}.mp3">
-  </audio>
-{% endif %}
-
-<div class="entryinfo">
-  <p>
-    <b>{{ data["Part of Speech"] }}</b> <br>
-    {% if complex_poses[data["lexeme_id"]] %}
-      This is a {{ data["Part of Speech"] }} consisting of the words: 
-      {% for w in complex_poses[data["lexeme_id"]] %}
-        {% if w.word_id %}
-          <a href="{{ base_url }}{{ w.word_id }}">{{ w.word }}</a>
-        {% else %}
-          {{ w.word }}
-        {% endif %}
-        {% if not loop.last %}, {% endif %}
-    {% endfor %}
-      <br>
-    {% endif %}
-    Collected by {{ data["who_collected"] }}
-    <br>
-        <b>Glossing label:</b> {{ glossing_labels.get(data["lexeme_id"], "") }}
-  </p>
-</div>
-
-{# ===== Meanings ===== #}
-
-<h2>Meanings</h2>
-
-<ol class="list-group list-group-numbered mb-4">
-{% for m in data["meanings"] if m.meaning or m.meaning_rus %}
-  <li class="list-group-item">
-
-    <b>‘{{ m.meaning_rus }}’</b> — <b>‘{{ m.meaning }}’</b><br>
-
-    {% if m.glossing_label %}
-      <span style="display: block; margin-left: 1em;">
-        Glossing label: <b><span style="color: var(--nav-accent);">{{ m.glossing_label }}</span></b>
-      </span>
-    {% endif %}
-
-    {% if m.examples %}
-      <ul class="mt-2">
-        {% for ex in m.examples %}
-          <li class="example">
-            <i>{{ ex.original }}</i>
-            {% if ex.cyr %}
-              <br>
-              <i>{{ ex.cyr }}</i>
-            {% endif %}
-            <br>
-            ‘{{ ex.rus }}’
-          </li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-
-  </li>
-{% endfor %}
-</ol>
-
-{# ===== Inflection ===== #}
-
-<h2>Inflection</h2>
-{% if data["inflection_data"] %}
-
-  {% if data["Part of Speech"] == "verb" %}
-
-    {% set aspects = data["inflection_data"] %}
-
-    {% set all_classes = [] %}
-    {% for aspect, forms in aspects.items() %}
-      {% for cls in forms.keys() %}
-        {% if cls not in all_classes %}
-          {% set _ = all_classes.append(cls) %}
-        {% endif %}
-      {% endfor %}
-    {% endfor %}
-
-    <table class="table table-sm table-borderless w-auto inflection-verb-table">
-      <thead>
-        <tr>
-          <th></th>
-          {% for cls in all_classes %}
-            <th>{{ cls }}</th>
-          {% endfor %}
-        </tr>
-      </thead>
-
-      <tbody>
-        {% for aspect, forms in aspects.items() %}
-          <tr>
-            <th>{{ aspect }}</th>
-            {% for cls in all_classes %}
-              <td>{{ forms.get(cls, "") }}</td>
-            {% endfor %}
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-
-
-  {% else %}
-    <table class="table table-sm table-borderless w-auto inflection-table">
-      {% for k, v in data["inflection_data"].items() %}
-        {% if v %}
-        <tr>
-          <th>{{ k }}</th>
-          <td>{{ v }}</td>
-        </tr>
-        {% endif %}
-      {% endfor %}
-    </table>
+    <audio id="audio-{{ data.lexeme_id }}" preload="none">
+      <source src="assets/audio/{{ data['lexeme_id'] }}.mp3">
+    </audio>
   {% endif %}
 
-{% else %}
-  <p>See <a href="{{ base_url }}{{ data['main_word_id'] }}">{{data["main_word"]}}</a>.</p>
+  <div class="entryinfo">
+    <p>
+      <b>{{ data["Part of Speech"] }}</b> <br>
+      {% if complex_poses[data["lexeme_id"]] %}
+        This is a {{ data["Part of Speech"] }} consisting of the words: 
+        {% for w in complex_poses[data["lexeme_id"]] %}
+          {% if w.word_id %}
+            <a href="words/{{ w.word_id }}">{{ w.word }}</a>
+          {% else %}
+            {{ w.word }}
+          {% endif %}
+          {% if not loop.last %}, {% endif %}
+      {% endfor %}
+        <br>
+      {% endif %}
+      Collected by {{ data["who_collected"] }}
+      <br>
+          <b>Glossing label:</b> {{ glossing_labels.get(data["lexeme_id"], "") }}
+    </p>
+  </div>
 
-{% endif %}
+  {# ===== Meanings ===== #}
+
+  <h2>Meanings</h2>
+
+  <ol class="list-group list-group-numbered mb-4">
+  {% for m in data["meanings"] if m.meaning or m.meaning_rus %}
+    <li class="list-group-item">
+
+      <b>‘{{ m.meaning_rus }}’</b> — <b>‘{{ m.meaning }}’</b><br>
+
+      {% if m.glossing_label %}
+        <span style="display: block; margin-left: 1em;">
+          Glossing label: <b><span style="color: var(--nav-accent);">{{ m.glossing_label }}</span></b>
+        </span>
+      {% endif %}
+
+      {% if m.examples %}
+        <ul class="mt-2">
+          {% for ex in m.examples %}
+            <li class="example">
+              <i>{{ ex.original }}</i>
+              {% if ex.cyr %}
+                <br>
+                <i>{{ ex.cyr }}</i>
+              {% endif %}
+              <br>
+              ‘{{ ex.rus }}’
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+    </li>
+  {% endfor %}
+  </ol>
+
+  {# ===== Inflection ===== #}
+
+  <h2>Inflection</h2>
+  {% if data["inflection_data"] %}
+
+    {% if data["Part of Speech"] == "verb" %}
+
+      {% set aspects = data["inflection_data"] %}
+
+      {% set all_classes = [] %}
+      {% for aspect, forms in aspects.items() %}
+        {% for cls in forms.keys() %}
+          {% if cls not in all_classes %}
+            {% set _ = all_classes.append(cls) %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+
+      <table class="table table-sm table-borderless w-auto inflection-verb-table">
+        <thead>
+          <tr>
+            <th></th>
+            {% for cls in all_classes %}
+              <th>{{ cls }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for aspect, forms in aspects.items() %}
+            <tr>
+              <th>{{ aspect }}</th>
+              {% for cls in all_classes %}
+                <td>{{ forms.get(cls, "") }}</td>
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+
+    {% else %}
+      <table class="table table-sm table-borderless w-auto inflection-table">
+        {% for k, v in data["inflection_data"].items() %}
+          {% if v %}
+          <tr>
+            <th>{{ k }}</th>
+            <td>{{ v }}</td>
+          </tr>
+          {% endif %}
+        {% endfor %}
+      </table>
+    {% endif %}
+
+  {% else %}
+    <p>See <a href="words/{{ data['main_word_id'] }}">{{data["main_word"]}}</a>.</p>
+
+  {% endif %}
 
