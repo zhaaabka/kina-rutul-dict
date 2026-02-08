@@ -229,7 +229,8 @@ def generate_pages(data_file: str, infl_files: List[str]):
             full_html = base_template.render(
                 title=f"Kina Rutul — {data['Lexical entry']}",
                 content=word_content,
-                base_url="/kina-rutul-dict/"
+                base_url="/kina-rutul-dict/",
+                site_root="/kina-rutul-dict/"
             )
 
 

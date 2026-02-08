@@ -11,7 +11,7 @@
   </button>
 
   <audio id="audio-{{ data.lexeme_id }}" preload="none">
-    <source src="{{ base_url }}assets/audio/{{ data['lexeme_id'] }}.mp3">
+    <source src="{{ site_root }}assets/audio/{{ data['lexeme_id'] }}.mp3">
   </audio>
 {% endif %}
 
@@ -22,7 +22,7 @@
       This is a {{ data["Part of Speech"] }} consisting of the words: 
       {% for w in complex_poses[data["lexeme_id"]] %}
         {% if w.word_id %}
-          <a href="{{ base_url }}words/{{ w.word_id }}">{{ w.word }}</a>
+          <a href="{{ base_url }}{{ w.word_id }}">{{ w.word }}</a>
         {% else %}
           {{ w.word }}
         {% endif %}
@@ -127,7 +127,7 @@
   {% endif %}
 
 {% else %}
-  <p>See <a href="{{ base_url }}words/{{ data['main_word_id'] }}">{{data["main_word"]}}</a>.</p>
+  <p>See <a href="{{ base_url }}{{ data['main_word_id'] }}">{{data["main_word"]}}</a>.</p>
 
 {% endif %}
 
